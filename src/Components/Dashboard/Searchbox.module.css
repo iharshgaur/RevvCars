@@ -43,6 +43,10 @@
   margin-top: 5%;
 }
 
+.SearchBox__Submit > p {
+  margin: 0;
+}
+
 .SearchBox__Submit > button {
   width: 70%;
   height: 50px;

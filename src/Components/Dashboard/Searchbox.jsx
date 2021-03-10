@@ -1,15 +1,12 @@
 import React from "react";
 import style from "./Searchbox.module.css";
-import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import InputLabel from "@material-ui/core/InputLabel";
-import Input from "@material-ui/core/Input";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
+import { useSelector, useDispatch } from "react-redux";
+
+import { setUserRequest } from "../../Redux/Dashboard/action";
 const cities = [
   {
     value: "Delhi-NCR",
@@ -43,9 +40,37 @@ const cities = [
 
 function Searchbox() {
   const [city, setCity] = React.useState("Delhi-NCR");
+  const [start_date, setStartDate] = React.useState("");
+  const [duration, setDuration] = React.useState(1);
+  const [end_date, setEndDate] = React.useState("");
   const [open, setOpen] = React.useState(false);
   const [rental, setRental] = React.useState(true);
   const [subscription, setSubscription] = React.useState(false);
+  // const storeCity = useSelector((state) => state.dashboard.city);
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    if (start_date !== "" && end_date !== "") {
+      let start = start_date.split("T")[0];
+      let end = end_date.split("T")[0];
+
+      start = start.split("-").map(Number);
+      start = new Date(start[0], start[1] - 1, start[2]);
+
+      end = end.split("-").map(Number);
+      end = new Date(end[0], end[1] - 1, end[2]);
+      setDuration((end.getTime() - start.getTime()) / (1000 * 3600 * 24));
+    }
+  }, [start_date, end_date]);
+
+  const handleSubmit = () => {
+    const payload = {
+      city,
+      start_date,
+      end_date,
+    };
+    dispatch(setUserRequest(payload));
+  };
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -159,13 +184,24 @@ function Searchbox() {
           {city}
         </Button>
         <div className={style.SearchBox__Dropdowns__Date}>
-          <input type="datetime-local" />
-          <input type="datetime-local" />
+          <input
+            type="datetime-local"
+            onChange={(e) => setStartDate(e.target.value)}
+          />
+          <input
+            type="datetime-local"
+            onChange={(e) => setEndDate(e.target.value)}
+          />
         </div>
       </div>
 
       <div className={style.SearchBox__Submit}>
-        <button>Search</button>
+        {duration > 0 && start_date !== end_date && (
+          <p>
+            Duration : {duration} {duration === 1 ? "Day" : "Days"}
+          </p>
+        )}
+        <button onClick={handleSubmit}>Search</button>
       </div>
     </div>
   );

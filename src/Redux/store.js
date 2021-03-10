@@ -4,12 +4,11 @@ import {
     compose,
     createStore
 } from "redux";
-import {
-    RentalSec
-} from "../components/RentalSec/RentalSec";
+
+import {dashboardreducer} from "./Dashboard/reducer"
 
 const rootReducer = combineReducers({
-    mycars: RentalSec
+    dashboard: dashboardreducer
 });
 
 const customThunks = (store) => (next) => (action) => {
