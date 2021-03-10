@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="17.74" height="18.321" viewBox="0 0 17.74 18.321">
+    <defs>
+        <style>
+            .cls-1{fill:#888993}
+        </style>
+    </defs>
+    <g id="noun_date_1433879">
+        <g id="Group">
+            <path id="Compound_Path" d="M31.881 15.417h-3.436V13.8h-1.516v1.643h-6.318V13.8h-1.516v1.643h-3.437a.758.758 0 0 0-.758.758v15.162a.758.758 0 0 0 .758.758h16.223a.758.758 0 0 0 .758-.758V16.2a.758.758 0 0 0-.758-.783zm-.758 15.162H16.416V16.933h2.679v1.213h1.516v-1.213h6.318v1.213h1.516v-1.213h2.679z" class="cls-1" data-name="Compound Path" transform="translate(-14.9 -13.8)"/>
+            <path id="Path" d="M0 0h7.396v1.687H0z" class="cls-1" transform="translate(3.393 7.554)"/>
+            <path id="Path-2" d="M0 0h9.612v1.687H0z" class="cls-1" data-name="Path" transform="translate(4.05 11.556)"/>
+        </g>
+    </g>
+</svg>
