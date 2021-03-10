@@ -4,11 +4,8 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.3",
-<<<<<<< HEAD
     "@material-ui/lab": "^4.0.0-alpha.57",
-=======
     "@material-ui/icons": "^4.11.2",
->>>>>>> ea4453f5a3d6c5fb2cb7773f4aff99b8942cd773
     "@material-ui/styles": "^4.11.3",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",

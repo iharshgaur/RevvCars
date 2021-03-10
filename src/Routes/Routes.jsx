@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { RentalSec } from "../components/RentalSec/RentalSec";
+import { RentalSec } from "../Components/RentalSec/RentalSec";
 
 const Routes = () => {
   return (

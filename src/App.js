@@ -1,9 +1,5 @@
 
 import './App.css';
-import Dashboard from './Pages/Dashboard';
-import {
-  RentalSec
-} from './components/RentalSec/RentalSec';
 import {
   Routes
 } from './Routes/Routes';
