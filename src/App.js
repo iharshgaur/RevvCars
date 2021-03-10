@@ -1,11 +1,13 @@
 
 import './App.css';
-import Dashboard from './Pages/Dashboard';
+import {
+  Routes
+} from './Routes/Routes';
 
 function App() {
-  return (
-    <div className="App">
-     <Dashboard/>
+  return ( 
+  <div className = "App" >
+    <Routes / >
     </div>
   );
 }
