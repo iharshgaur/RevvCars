@@ -1,6 +1,6 @@
 .container{
     width: 50%;
-    height: 98%;
+    height: fit-content;
     margin-top: 1%;
     margin-left:3%;
     margin-bottom:5%;
@@ -10,5 +10,10 @@
     color: #7f8091;
     font-size: 21px;
     font-weight: 500;
-    padding-bottom: 10px;
+   padding-bottom: 10px;
+}
+.bannerImg
+{
+    width: 100%;
+    margin-top: 10px;
 }

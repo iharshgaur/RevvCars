@@ -83,6 +83,53 @@ app.delete("/revv_cars/:id",async(req,res)=>{
 res.status(200).json(data)
 })
 
+const subscriptionSchema = mongoose.Schema({
+    car_name:{
+        type: String,
+        required:true   
+     },
+    car_images:{
+        type: String,
+        required:true
+    },
+    car_type:{
+        type:String,
+        required:true
+    },
+    car_specs:{
+        type:Array,
+        required:true
+    },
+    car_subscription_price:{
+        type:Number,
+        required:true
+    },
+    car_discount:{
+        type:Number,
+        required:true
+    }
+})
+
+const sub = mongoose.model("subscription",subscriptionSchema)
+
+app.get("/subscription",async(req,res)=>{
+    const data = await sub.find({}).lean().exec()
+    res.status(200).json(data)
+    console.log(data.length) 
+})
+
+
+app.post("/subscription",async(req,res)=>{
+    const data = await sub.create(req.body)  
+    res.status(201).json(data)
+})
+
+app.delete("/subscription/:id",async(req,res)=>{
+    const data = await sub.findByIdAndDelete(req.params.id)
+res.status(200).json(data)
+})
+
+
 const start =async()=>{
     await connect()
     app.listen(port,()=>{
