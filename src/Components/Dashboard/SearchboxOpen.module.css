@@ -1,6 +1,7 @@
 .SearchBox {
   position: absolute;
   width: 40%;
+  height: 65%;
   max-width: 500px;
   max-height: 500px;
   background-color: white;
@@ -22,10 +23,12 @@
 }
 .SearchBox__MidRow {
   text-align: center;
-  margin: 3% 0;
+  margin: 8% 0;
   color: grey;
 }
-
+.SearchBox__MidRow > img {
+  width: 40%;
+}
 .SearchBox__Dropdowns__Date {
   display: flex;
   justify-content: space-around;
@@ -39,19 +42,31 @@
   width: 100%;
 }
 .SearchBox__Submit {
-  text-align: center;
+  display: flex;
+  justify-content: center;
   margin-top: 5%;
-}
-
-.SearchBox__Submit > p {
-  margin: 0;
+  text-align: center;
+  width: 100%;
 }
 
 .SearchBox__Submit > button {
-  width: 70%;
+  padding: 0;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 10px grey;
+  width: 50%;
+}
+
+.SearchBox__Submit > button > p {
+  margin-top: 5px;
+}
+
+.SearchBox__Submit > button > button {
+  width: 100%;
   height: 50px;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   color: white;
   font-size: 18px;
   font-weight: bold;

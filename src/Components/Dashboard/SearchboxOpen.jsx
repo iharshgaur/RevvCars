@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./Searchbox.module.css";
+import style from "./SearchboxOpen.module.css";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
@@ -40,35 +40,10 @@ const cities = [
 
 function Searchbox() {
   const [city, setCity] = React.useState("Delhi-NCR");
-  const [start_date, setStartDate] = React.useState("");
-  const [duration, setDuration] = React.useState(0);
-  const [end_date, setEndDate] = React.useState("");
   const [open, setOpen] = React.useState(false);
   const currentDate = new Date();
   const dispatch = useDispatch();
   const history = useHistory();
-  React.useEffect(() => {
-    if (start_date !== "" && end_date !== "") {
-      let start = start_date.split("T")[0];
-      let end = end_date.split("T")[0];
-
-      start = start.split("-").map(Number);
-      start = new Date(start[0], start[1] - 1, start[2]);
-
-      end = end.split("-").map(Number);
-      end = new Date(end[0], end[1] - 1, end[2]);
-      setDuration((end.getTime() - start.getTime()) / (1000 * 3600 * 24));
-    }
-  }, [start_date, end_date]);
-
-  const handleSubmit = () => {
-    const payload = {
-      city,
-      start_date,
-      end_date,
-    };
-    if (duration >= 0) dispatch(setUserRequest(payload));
-  };
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -91,8 +66,9 @@ function Searchbox() {
             border: "none",
             backgroundColor: "transparent",
             boxShadow: "0 0 2px",
-            color: "white",
-            backgroundImage: "linear-gradient(270deg, #1caba2 25%, #1c7fab)",
+          }}
+          onClick={() => {
+            history.push("/");
           }}
         >
           Rentals
@@ -108,9 +84,8 @@ function Searchbox() {
             border: "none",
             backgroundColor: "transparent",
             boxShadow: "0 0 2px",
-          }}
-          onClick={() => {
-            history.push("/open");
+            color: "white",
+            backgroundImage: "linear-gradient(270deg, #1caba2 25%, #1c7fab)",
           }}
         >
           Subscriptions
@@ -118,8 +93,11 @@ function Searchbox() {
       </div>
 
       <div className={style.SearchBox__MidRow}>
-        <img src="https://www.revv.co.in/imgs/logo-rentals.svg" alt="Banner" />
-        <h5>Self drive car rentals in India</h5>
+        <img
+          src="https://www.revv.co.in/grapheneImages/newopen/logo_subscription.png"
+          alt="Banner"
+        />
+        <h5>Car Subscriptions in Delhi-NCR</h5>
       </div>
 
       <div className={style.SearchBox__Dropdowns}>
@@ -154,54 +132,15 @@ function Searchbox() {
         >
           {city}
         </Button>
-        <div className={style.SearchBox__Dropdowns__Date}>
-          <div>
-            <label htmlFor="">
-              <h5 style={{ color: "grey" }}>Start Date</h5>
-            </label>
-            <input
-              type="datetime-local"
-              onChange={(e) => setStartDate(e.target.value)}
-              min={
-                currentDate.getMonth() < 10
-                  ? `${
-                      currentDate.getFullYear() +
-                      "-0" +
-                      (currentDate.getMonth() + 1) +
-                      "-" +
-                      currentDate.getDate()
-                    }T00:00:00`
-                  : `${
-                      currentDate.getFullYear() +
-                      "-" +
-                      (currentDate.getMonth() + 1) +
-                      "-" +
-                      currentDate.getDate()
-                    }T00:00:00`
-              }
-            />
-          </div>
-          <div>
-            <label htmlFor="">
-              <h5 style={{ color: "grey" }}>End Date</h5>
-            </label>
-            <br />
-            <input
-              type="datetime-local"
-              onChange={(e) => setEndDate(e.target.value)}
-              min={start_date}
-            />
-          </div>
-        </div>
       </div>
 
       <div className={style.SearchBox__Submit}>
-        {duration >= 0 && start_date !== "" && end_date !== "" && (
+        <button>
+          <button>Explore Cars</button>
           <p>
-            Duration : {duration} {duration === 1 ? "Day" : "Days"}
+            Starting at <b>Rs. 11,099/</b> month
           </p>
-        )}
-        <button onClick={handleSubmit}>Search</button>
+        </button>
       </div>
     </div>
   );
