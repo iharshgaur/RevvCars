@@ -6,7 +6,8 @@ export const FilterPart = () => {
         <div className ={style.container}> 
             <p className={style.heading}>Filter by</p>
             <p className={style.headingForSearch}>City</p>
-            <p className={style.filterHead}>City</p>
+            <p className={style.filterHead}>Hyderabad</p>
+            <hr className ={style.filterHead_line}/>
         </div>
     )
 }
