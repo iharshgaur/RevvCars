@@ -9,8 +9,12 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.1",
+<<<<<<< HEAD
     "antd": "^4.13.1",
     "bootstrap": "^4.6.0",
+=======
+    "dotenv": "^8.2.0",
+>>>>>>> 1a53a95058c188fda87e8b57f1b40a29b5666ed5
     "express": "^4.17.1",
     "mongoose": "^5.11.15",
     "react": "^17.0.1",
@@ -29,7 +33,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "nodemon ./backend/server.js"
   },
   "eslintConfig": {
     "extends": [
