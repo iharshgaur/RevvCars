@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+}
+
+.mainContainer{
+    height: 1800px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+
