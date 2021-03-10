@@ -1,0 +1,15 @@
+.Cards {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 0 2% 0;
+  margin-bottom: 5%;
+}
+.Cards__Card {
+  width: 25%;
+  height: 200px;
+  margin: 3%;
+  margin-bottom: 0;
+  border: 1px solid red;
+}

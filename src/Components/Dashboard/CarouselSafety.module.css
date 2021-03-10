@@ -1,0 +1,33 @@
+.CarouselBanner {
+  width: 100%;
+  position: relative;
+}
+.CarouselItem {
+  margin-top: 5%;
+  height: 500px;
+}
+.CarouselItem > img {
+  width: 30%;
+  margin-top: 5%;
+  margin-left: 50%;
+}
+
+.CarouselCaption {
+  color: black;
+}
+
+.SearchBox {
+  position: absolute;
+  width: 40%;
+  background-color: white;
+  height: 60%;
+  border: none;
+  box-shadow: 0 0 10px;
+  border-radius: 3px;
+  margin-top: 8%;
+  margin-left: 5%;
+  z-index: 1;
+}
+.SearchBox > h2 {
+  color: black;
+}

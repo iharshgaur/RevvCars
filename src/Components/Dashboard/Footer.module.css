@@ -1,0 +1,59 @@
+.Footer__Top {
+  background-color: #656c80;
+  color: #fff;
+  padding: 4%;
+}
+
+.Footer__Top__Cities,
+.Footer__Bottom {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3%;
+}
+.Footer__Bottom {
+  margin-top: 0;
+}
+.Footer__Top__Cities__Column,
+.Footer__Bottom__Column {
+  display: flex;
+  flex-direction: column;
+}
+
+.Footer__Top__Cities__Column > button,
+.Footer__Bottom__Column > button {
+  border: none;
+  background: transparent;
+  text-align: left;
+  color: #fff;
+  margin: 2px;
+}
+
+.Footer__Top__Cities__Column > button:hover,
+.Footer__Bottom__Column > button:hover {
+  color: #0ebaba;
+}
+.Footer__Bottom {
+  background-color: #4a4e5a;
+  color: #fff;
+  padding: 5%;
+}
+
+.GreenFont {
+  color: #0ebaba;
+}
+
+.Footer__Bottom__Column__Mid {
+  margin-top: 5%;
+}
+.Footer__Bottom__Column__Mid > button > img {
+  width: 100%;
+}
+.Footer__Bottom__Column__Mid > button {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: none;
+  margin: 5px;
+  background-color: #0ebaba;
+  padding: 3%;
+}

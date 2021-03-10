@@ -1,0 +1,35 @@
+.Process {
+  margin: 5%;
+}
+
+.Process__Circle__Container {
+  display: flex;
+  width: 80%;
+  height: 300px;
+  margin-top: 5%;
+}
+.Process__Circle__Container > div {
+  margin: 0 5%;
+  display: flex;
+  flex-direction: column;
+}
+.Process__Circle__Container > div > div {
+  margin-top: 20%;
+  width: 200px;
+}
+.Process__Circle__Container > div > button {
+  width: 110px;
+  height: 110px;
+  border-radius: 100%;
+  border: 10px solid #dddddd;
+  background-color: #0ebaba;
+  transition: 0.5s;
+  box-shadow: 0px 0px 10px grey;
+}
+.Process__Circle__Container > div > button > img {
+  width: 70%;
+}
+.Process__Circle__Container > div > button:hover {
+  transform: scale(1.2);
+  transition: 0.5s;
+}
