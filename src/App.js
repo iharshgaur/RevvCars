@@ -1,13 +1,12 @@
 
 import './App.css';
-import {
-  Routes
-} from './Routes/Routes';
+import { SubscriptionPage } from './Pages/subscription/MainPart/SubscriptionPage';
+
 
 function App() {
   return ( 
   <div className = "App" >
-    <Routes / >
+      <SubscriptionPage/>
     </div>
   );
 }

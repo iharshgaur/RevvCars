@@ -1,39 +1,26 @@
 .container
 {
     width: 16%;
-    height: 50%;
-    border: 1px solid black;
+    height: 55%;
     margin-top: 1%;
     margin-left:10%;
+   
 }
 .heading
 {
     padding: 0;
     text-align: left;
+    padding-left: 7px;
     font-size: 18px;
     font-weight: 700;
     color: #868686;
 }
-.headingForSearch
+.pricingHead
 {
-    margin-top: 15px;
     padding: 0;
     text-align: left;
+    padding-left: 7px;
+    padding-top: 20px;
     font-size: 16px;
-    font-weight: 600;
-    color: rgba(27,28,36,.8);
-}
-.filterHead
-{
-    margin-top: 15px;
-    padding: 0;
-    text-align: left;
-    font-size: 19px;
-
-    font-weight: 700;
-    color: rgba(27,28,36,.8);
-}
-.filterHead_line
-{
-    margin-top: 5px;
+    font-weight: 500;
 }

@@ -1,0 +1,103 @@
+.container{
+    height: 110px;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 4px;
+    box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
+    background-color: #fff;
+}
+.imageBox
+{
+    height: 100%;
+    width: 150px;
+    margin-left: 30px;
+    float: left;
+}
+.imageBox>img{
+    height: 70%;
+    width: 100%;
+    margin-top: 15px;
+}
+.specBox
+{
+    height: 100%;
+    width: 210px;
+    margin-left: 25px;
+    float: left;
+}
+.specBox>p{
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(27, 28, 36);
+    margin-top: 15px;
+}
+.specBox_div1{
+    height: 25px;
+    width: 80px;
+    float: left;
+    margin-top: 25px;
+}
+.specBox_div1>img{
+    height: 60%;
+    width: 18px;
+    float: left;
+    margin-top: 1px;
+}
+.specBox_div1>p{
+    margin-left: 5px;
+    font-size: 12px;
+    float: left;
+    color: rgba(89,89,105,.8)
+}
+
+.specBox_div2{
+    height: 25px;
+    width: 80px;
+    float: left;
+    margin-left: 20px;
+    margin-top: 25px;
+}
+.specBox_div2>img{
+    height: 60%;
+    width: 18px;
+    float: left;
+    margin-top: 1px;
+}
+.specBox_div2>p{
+    margin-left: 5px;
+    font-size: 12px;
+    float: left;
+    color: rgba(89,89,105,.8)
+}
+.priceBox
+{
+    height: 100%;
+    width: 200px;
+    float: right;
+    margin-right: 20px;
+}
+.discount{
+
+    font-weight: 700;
+    line-height: .82;
+    text-align: left;
+    color: #1b1c24;
+    font-size: 25px;
+    margin-top: 20px;
+}
+.originalPrice
+{
+    font-weight: 500;
+    text-align: left;
+    line-height: 1.21;
+    color: #a2a2a2;
+    text-decoration: line-through;
+    font-size: 18px;
+    margin-top: 5px;
+}
+.discount_span
+{
+    color: #a2a2a2;
+    font-size: 14px;
+    font-weight:500;
+}

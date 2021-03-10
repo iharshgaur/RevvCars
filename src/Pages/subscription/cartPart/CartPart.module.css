@@ -1,8 +1,14 @@
 .container{
     width: 50%;
     height: 98%;
-    background-color: burlywood;
     margin-top: 1%;
     margin-left:3%;
     margin-bottom:5%;
+}
+.heading
+{
+    color: #7f8091;
+    font-size: 21px;
+    font-weight: 500;
+    padding-bottom: 10px;
 }
