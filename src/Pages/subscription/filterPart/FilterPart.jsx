@@ -71,30 +71,16 @@ const useStyles = makeStyles((theme) => ({
     }}
 
 
-export const FilterPart = () => {
+export const FilterPart = ({handleChangePrice,price,handleChangeSegment,segment,handleChangeFuel,fuel,handleChangeTrans,trans}) => {
     const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
  
-  const [price, setPrice] = React.useState({
-        price: '',
-        name: '0',
-      });
-const [segment, setSegment] = React.useState({
-HatchBack: false,
-Sedan: false,
-Suv:false
-});
 
-const [fuel,setFuel] = React.useState({
-    Petrol:false,
-    Diesel:false
-})
+
+
     
-const [trans,setTrans] = React.useState({
-    Auto:false,
-    Manual:false
-})
+
 
 const [brand,setBrands] = React.useState({
     Maruthi:false,
@@ -107,35 +93,23 @@ const [brand,setBrands] = React.useState({
     Toyota:false
 })
     
-    const handleChangePrice = (event) => {
-    const name = event.target.name;
-    setPrice({
-        ...price,
-        [name]: event.target.value,
-    });
-    };
-    React.useEffect(()=>{
-        setPersonName(["Bangalore"])
-    },[])
+
+
+
+    
+
+
+
+
 
   const handleChange = (event) => {
     setPersonName(event.target.value);
   };
 
 
-  const handleChangeSegment = (event) => {
-    setSegment({ ...segment, [event.target.name]: event.target.checked });
   
-  };
 
-  const handleChangeFuel = (event) => {
-    setFuel({ ...fuel, [event.target.name]: event.target.checked });
-   
-  };
-  const handleChangeTrans = (event) => {
-    setTrans({ ...trans, [event.target.name]: event.target.checked });
-   
-  };
+
 
   const handleChangeBrands = (event) => {
     setBrands({ ...brand, [event.target.name]: event.target.checked });
@@ -178,11 +152,10 @@ const [brand,setBrands] = React.useState({
           className={classes.color}
         >
           <option aria-label="None" value="" />
-          <option value={10000 && 15000}> 10000 - 15000</option>
-          <option value={15000 && 20000}> 15000 - 20000</option>
-          <option value={20000 && 25000}> 20000 - 25000</option>
-          <option value={25000 && 30000}> 25000 - 30000</option>
-          <option value={30000 && 35000}> 30000 - 35000</option>
+          <option value={10000 }> 10000 - 15000</option>
+          <option value={15000}> 15000 - 20000</option>
+          <option value={20000}> 20000 - 25000</option>
+          <option value={25000}> 25000 - More</option>
       
         </Select>
         {/* cehckbox for the car segment */}
@@ -217,9 +190,9 @@ const [brand,setBrands] = React.useState({
 <FormControlLabel
         control={
           <Checkbox
-            checked={segment.SUV}
+            checked={segment.Suv}
             onChange={handleChangeSegment}
-            name="SUV"
+            name="Suv"
             className={classes.checkbox}
             style={{color:"#1caba2"}}
           />

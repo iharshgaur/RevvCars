@@ -1,24 +1,14 @@
 import React from 'react'
 import { CartItems } from '../items/CartItems'
 import style from "./CartPart.module.css"
-import axios from "axios"
-import { StepContent } from '@material-ui/core'
-export const CartPart = () => {
 
-    const [data,SetData] = React.useState(null)
-    const getUrl = "http://localhost:1234/subscription"
+import { StepContent } from '@material-ui/core'
+export const CartPart = ({data}) => {
+
     const banner1 = "https://revvselfdrivecar.s3-us-west-2.amazonaws.com/Open/prop-cards/destkop/zreo-down-payment.svg"
     const banner2 = "https://revvselfdrivecar.s3-us-west-2.amazonaws.com/Open/prop-cards/destkop/insurance.svg"
 
-    const getData = ()=>{
-        return axios.get(getUrl).then(res=>SetData(res.data)).catch(err=>console.log(err))
-    }
 
-    React.useEffect(()=>{
-        getData()
-    },[])
-
-    
     
 
     return (

@@ -129,6 +129,90 @@ app.delete("/subscription/:id",async(req,res)=>{
 res.status(200).json(data)
 })
 
+//get request for price
+
+app.get("/price/btw10-15",async(req,res)=>{
+    const data = await sub.find({$and:[{car_subscription_price:{$gt:10000}},{car_subscription_price:{$lt:15000}}]})
+    res.status(200).json(data)
+})
+
+
+app.get("/price/btw15-20",async(req,res)=>{
+    const data = await sub.find({$and:[{car_subscription_price:{$gt:15000}},{car_subscription_price:{$lt:20000}}]})
+    res.status(200).json(data)
+})
+
+app.get("/price/btw20-25",async(req,res)=>{
+    const data = await sub.find({$and:[{car_subscription_price:{$gt:20000}},{car_subscription_price:{$lt:25000}}]})
+    res.status(200).json(data)
+})
+
+app.get("/price/btw25-30",async(req,res)=>{
+    const data = await sub.find({$and:[{car_subscription_price:{$gt:25000}},{car_subscription_price:{$lt:40000}}]})
+    res.status(200).json(data)
+})
+
+// filtering the segment
+app.get("/hatch",async(req,res)=>{
+    const data = await sub.find({car_type:{$eq:"Hatch Back"}})
+    res.status(200).json(data)
+})
+
+app.get("/sedan",async(req,res)=>{
+    const data = await sub.find({car_type:{$eq:"Sedan"}})
+    res.status(200).json(data)
+})
+
+app.get("/suv",async(req,res)=>{
+    const data = await sub.find({car_type:{$eq:"SUV"}})
+
+    res.status(200).json(data)
+})
+
+app.get("/hatch&sedan",async(req,res)=>{
+    const data = await sub.find({car_type:{$eq:"Hatch Back"}})
+    const data2 = await sub.find({car_type:{$eq:"Sedan"}})
+
+    const updateData = [...data,...data2]
+    console.log(updateData)
+    res.status(200).json(updateData)
+})
+
+app.get("/hatch&suv",async(req,res)=>{
+    const data = await sub.find({car_type:{$eq:"Hatch Back"}})
+    const data2 = await sub.find({car_type:{$eq:"SUV"}})
+
+    const updateData = [...data,...data2]
+    console.log(updateData)
+    res.status(200).json(updateData)
+})
+app.get("/sedan&suv",async(req,res)=>{
+    const data = await sub.find({car_type:{$eq:"Sedan"}})
+    const data2 = await sub.find({car_type:{$eq:"SUV"}})
+
+    const updateData = [...data,...data2]
+    console.log(updateData)
+    res.status(200).json(updateData)
+})
+//filtering the petrol
+app.get("/petrol",async(req,res)=>{
+    const data = await sub.find({car_specs:{$eq:"petrol"}})
+    res.status(200).json(data)
+})
+app.get("/diesel",async(req,res)=>{
+    const data = await sub.find({car_specs:{$eq:"diesel"}})
+    res.status(200).json(data)
+})
+
+//filtering with transistion
+app.get("/manual",async(req,res)=>{
+    const data = await sub.find({car_specs:{$eq:"Manual"}})
+    res.status(200).json(data)
+})
+app.get("/automatic",async(req,res)=>{
+    const data = await sub.find({car_specs:{$eq:"Automatic"}})
+    res.status(200).json(data)
+})
 
 const start =async()=>{
     await connect()
