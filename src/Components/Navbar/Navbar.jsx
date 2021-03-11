@@ -7,8 +7,7 @@ import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import { TextField } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
-import { authUser, logoutUser } from "../../Redux/Auth/action";
+import { authUser, logoutUser, createUser } from "../../Redux/Auth/action";
 const useStyles = makeStyles((theme) => ({
   modal: {
     display: "flex",
@@ -51,14 +50,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 function Navbar() {
   const [email, setEmail] = React.useState("");
+  const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
   const classes = useStyles();
   const dispatch = useDispatch();
   const [openLogin, setOpenLogin] = React.useState(false);
   const [openSignUp, setOpenSignUp] = React.useState(false);
-  const history = useHistory();
-  const { isAuth } = useSelector((state) => state.auth);
-  console.log(isAuth);
+  const { isAuth, currentUser } = useSelector((state) => state.auth);
+
   const handleLogin = () => {
     const payload = {
       email,
@@ -66,6 +65,17 @@ function Navbar() {
     };
 
     dispatch(authUser(payload));
+  };
+
+  const handleCreateUser = () => {
+    const payload = {
+      username,
+      email,
+      password,
+      cars_booked: [""],
+      cars_subscribed: [""],
+    };
+    dispatch(createUser(payload));
   };
   const handleOpenLogin = () => {
     setOpenLogin(true);
@@ -112,7 +122,7 @@ function Navbar() {
       <div className={styles.Navbar__Button__Info}>
         <button>Cars Subscription</button>
         <button>How it works</button>
-        <button onClick={() => history.push("/cars")}>FAQs</button>
+        <button>FAQs</button>
         {!toggleLogin ? (
           <>
             <button onClick={handleOpenLogin}>Login or Signup</button>
@@ -215,20 +225,28 @@ function Navbar() {
                       className={classes.textField}
                       id="standard-basic"
                       label="Enter Username"
+                      onChange={(e) => setUsername(e.target.value)}
                     />
                     <TextField
                       className={classes.textField}
                       id="standard-basic"
                       label="Enter Email"
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                     <TextField
                       className={classes.textField}
                       id="standard-basic"
                       label="Enter Password"
+                      onChange={(e) => setPassword(e.target.value)}
                     />
                   </div>
 
-                  <Button className={classes.LoginBtn}>SignUp</Button>
+                  <Button
+                    className={classes.LoginBtn}
+                    onClick={handleCreateUser}
+                  >
+                    SignUp
+                  </Button>
                 </div>
               </Fade>
             </Modal>
@@ -236,7 +254,7 @@ function Navbar() {
         ) : (
           <>
             <button onMouseOver={() => setToggleUser(!toggleUser)}>
-              Harsh Gaur
+              {currentUser.username}
             </button>
             {toggleUser && (
               <div

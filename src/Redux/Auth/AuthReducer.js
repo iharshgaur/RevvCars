@@ -7,6 +7,7 @@ import {
 
 const initState = {
   isAuth : false,
+  currentUser: {},
   error: "",
   isError : false,
 };
@@ -22,6 +23,7 @@ const AuthReducer = (state = initState, { type, payload }) => {
         ...state,
         isAuth : true,
         error : "",
+        currentUser : payload,
         isError: false,
       };
     case AUTH_USER_FAILURE:

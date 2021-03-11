@@ -31,6 +31,12 @@ let usersSchema = new mongoose.Schema({
   password : {
     type : String,
     required : true
+  },
+  cars_booked : {
+    type : Array,
+  }, 
+  cars_subscribed : {
+    type : Array,
   }
 })
 const users = mongoose.model("users", usersSchema);
@@ -40,6 +46,10 @@ app.get("/users", async (req, res) => {
   res.status(200).json(data);
 });
 
+app.post("/users", async (req, res) => {
+  const data = await users.create(req.body);
+  res.status(201).json(data);
+});
 
 let rentalCarSchema = new mongoose.Schema(
   {
