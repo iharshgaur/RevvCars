@@ -92,6 +92,87 @@ app.delete("/revv_cars/:id", async (req, res) => {
   res.status(200).json(data);
 });
 
+// filtering the segment
+app.get("/rentalCar/hatch", async (req, res) => {
+  const data = await rental_cars.find({ car_type: { $eq: "Hatch Back" } });
+  res.status(200).json(data);
+});
+
+app.get("/rentalCar/sedan", async (req, res) => {
+  const data = await rental_cars.find({ car_type: { $eq: "Sedan" } });
+  res.status(200).json(data);
+});
+
+app.get("/rentalCar/suv", async (req, res) => {
+  const data = await rental_cars.find({ car_type: { $eq: "SUV" } });
+  res.status(200).json(data);
+});
+app.get("/rentalCar/muv", async (req, res) => {
+  const data = await rental_cars.find({ car_type: { $eq: "MUV" } });
+  res.status(200).json(data);
+});
+
+app.get("/rentalCar/hatch&sedan", async (req, res) => {
+  const data = await rental_cars.find({ car_type: { $eq: "Hatch Back" } });
+  const data2 = await rental_cars.find({ car_type: { $eq: "Sedan" } });
+
+  const updateData = [...data, ...data2];
+
+  res.status(200).json(updateData);
+});
+
+app.get("/rentalCar/hatch&suv", async (req, res) => {
+  const data = await rental_cars.find({ car_type: { $eq: "Hatch Back" } });
+  const data2 = await rental_cars.find({ car_type: { $eq: "SUV" } });
+
+  const updateData = [...data, ...data2];
+
+  res.status(200).json(updateData);
+});
+app.get("/rentalCar/sedan&suv", async (req, res) => {
+  const data = await rental_cars.find({ car_type: { $eq: "Sedan" } });
+  const data2 = await rental_cars.find({ car_type: { $eq: "SUV" } });
+
+  const updateData = [...data, ...data2];
+
+  res.status(200).json(updateData);
+});
+
+//filtering the petrol
+app.get("/rentalCar/petrol", async (req, res) => {
+  const data = await rental_cars.find({ car_specs: { $eq: "petrol" } });
+  res.status(200).json(data);
+});
+app.get("/rentalCar/diesel", async (req, res) => {
+  const data = await rental_cars.find({ car_specs: { $eq: "diesel" } });
+  res.status(200).json(data);
+});
+
+//filtering with transistion
+app.get("/rentalCar/manual", async (req, res) => {
+  const data = await rental_cars.find({ car_specs: { $eq: "Manual" } });
+  res.status(200).json(data);
+});
+app.get("/rentalCar/automatic", async (req, res) => {
+  const data = await rental_cars.find({ car_specs: { $eq: "Automatic" } });
+  res.status(200).json(data);
+});
+//filtering with Seats
+app.get("/rentalCar/FSeat", async (req, res) => {
+  const data = await rental_cars.find({ car_specs: { $eq: 5 } });
+  res.status(200).json(data);
+});
+app.get("/rentalCar/SSeat", async (req, res) => {
+  const data = await rental_cars.find({ car_specs: { $eq: 7 } });
+  res.status(200).json(data);
+});
+//filtering with Brands
+app.get("/rentalCar/Toyota", async (req, res) => {
+  const data = await rental_cars.find({
+    car_name: { $eq: "Toyota Innova Crysta" },
+  });
+  res.status(200).json(data);
+});
 const start = async () => {
   await connect();
   app.listen(port, () => {
