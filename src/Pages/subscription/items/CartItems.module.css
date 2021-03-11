@@ -9,6 +9,7 @@
 .container:hover{
     box-shadow: none;
     border: 0.5px solid rgb(228, 228, 228);
+    cursor: pointer;
 }
 .imageBox
 {

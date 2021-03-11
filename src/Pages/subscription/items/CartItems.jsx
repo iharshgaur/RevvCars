@@ -32,7 +32,6 @@ export const CartItems = ({car_specs,car_name,car_images,car_type,car_subscripti
                     <p className={style.discount}>₹ {discountPrice}<span className={style.discount_span}>/month</span></p>
                     <p className={style.originalPrice}>₹ {originalPrice}</p>
                 </div>
-
             </div>            
       
     )
