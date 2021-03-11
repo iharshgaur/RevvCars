@@ -132,7 +132,7 @@
 
 .containerWrap__right {
   width: 70%;
-  border: 1px solid red;
+
   margin-left: 2%;
   /* height: 300vh; */
 }
@@ -150,7 +150,7 @@
 }
 .containerWrap__left__second {
   width: 100%;
-  border: 1px solid purple;
+  border: 1px solid #e4e5e7;
   height: 95%;
   margin-top: 20px;
   border-bottom: none;
@@ -160,4 +160,8 @@
 .containerWrap__right__second {
   width: 96%;
   margin-top: 10px;
+}
+label {
+  color: #707070;
+  font-weight: 400;
 }

@@ -9,13 +9,16 @@ const CarsDesc = ({
   car_rental_price,
   car_specs,
   extra_price,
+  car_is_booked,
   _id,
 }) => {
   //for the color of rental price
   const [divcolor, setDivColor] = React.useState("white");
   const [divText, setDivText] = React.useState("#1caba2");
   const [trueDiv, setTrueDiv] = React.useState(false);
-  const handleChangeColor = () => {
+  const [value, setValue] = React.useState(0);
+  const handleChangeColor = (price) => {
+    setValue(price);
     setTrueDiv((prev) => !prev);
     if (trueDiv) {
       setDivColor("white");
@@ -95,7 +98,7 @@ const CarsDesc = ({
           <div
             className={styles.container3__a}
             style={{ backgroundColor: divcolor, color: divText }}
-            onClick={handleChangeColor}
+            onClick={() => handleChangeColor(car_rental_price[1])}
           >
             <p
               style={{
@@ -157,7 +160,7 @@ const CarsDesc = ({
               }}
               onClick={() => handleCheckOut(_id)}
             >
-              BOOK
+              {car_is_booked ? <p>SOLD OUT</p> : <p>BOOK</p>}
             </button>
           </Link>
         </div>
