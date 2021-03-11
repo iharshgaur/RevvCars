@@ -3,6 +3,9 @@ import { Route, Switch } from "react-router-dom";
 import { RentalSec } from "../Components/RentalSec/RentalSec";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import Open from "../Pages/Dashboard/Open";
+import { CarsDesc } from "../components/RentalSec/CarsDesc";
+import { Booking } from "../components/RentalSec/Booking";
+
 const Routes = () => {
   return (
     <div>
@@ -15,6 +18,12 @@ const Routes = () => {
         </Route>
         <Route exact path="/open">
           <Open />
+        </Route>
+        <Route exact path="/cars">
+          <CarsDesc />
+        </Route>
+        <Route exact path="/bookcars">
+          <Booking />
         </Route>
       </Switch>
     </div>

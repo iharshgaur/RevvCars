@@ -2,7 +2,7 @@ import {
   GET_CAR_FAILURE,
   GET_CAR_REQUEST,
   GET_CAR_SUCCESS,
-} from "./actionTypes";
+} from "./actionType";
 import axios from "axios";
 const getCarRequest = (payload) => {
   return {
@@ -25,15 +25,15 @@ const getCarFailure = (payload) => {
   };
 };
 
-const getUrl = "http://localhost:1234/rental";
-const getCar = (payload) => (dispatch) => {
+// const getUrl = "http://localhost:1234/rental";
+const getCarById = (payload) => (dispatch) => {
   dispatch(getCarRequest);
   axios
-    .get(getUrl)
+    .get(`http://localhost:1234/rental/${payload}`)
     .then((res) => dispatch(getCarSuccess(res.data)))
     .catch((err) => {
       dispatch(getCarFailure(err));
     });
 };
 
-export { getCar };
+export { getCarById };

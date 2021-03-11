@@ -3,6 +3,7 @@
   padding: 0px;
   outline: 0px;
 }
+
 .container {
   width: 100%;
   height: 12vh;
@@ -18,17 +19,20 @@
   justify-content: space-evenly;
   align-items: center;
 }
+
 .input {
-  width: 22%;
-  height: 40%;
+  width: 20vw;
+  height: 7.2vh;
   border-radius: 7px;
   border: 1px solid lightblue;
   font-size: 17px;
 }
+
 .input[type="text"] {
   text-indent: 30px;
   padding-top: 20px;
 }
+
 .button {
   width: 22%;
   height: 68%;
@@ -47,12 +51,14 @@
   cursor: pointer;
   border: none;
 }
+
 .city {
   position: absolute;
   top: 1vw;
   left: 10vw;
   font-size: 11px;
 }
+
 .map {
   position: absolute;
   top: 2vw;
@@ -60,12 +66,14 @@
   width: 3vw;
   height: 5vh;
 }
+
 .startDate {
   position: absolute;
   top: 1vw;
   left: 32vw;
   font-size: 11px;
 }
+
 .date {
   position: absolute;
   top: 2vw;
@@ -73,12 +81,14 @@
   width: 3.1vw;
   height: 4vh;
 }
+
 .endDate {
   position: absolute;
   top: 1vw;
   left: 54vw;
   font-size: 11px;
 }
+
 .enddateImg {
   position: absolute;
   top: 2vw;
@@ -93,32 +103,61 @@
   width: 100vw;
   padding-top: 12vh;
 }
+
 .pageLink {
   width: 37vw;
   height: 6vh;
   margin-left: 3vw;
   margin-top: 7px;
 }
+
 .pageLink > span {
   font-size: 12px;
   color: #656565;
   cursor: pointer;
 }
+
 .pageLink > span:nth-child(4) {
   color: #1caba2;
 }
+
 .containerWrap {
   display: flex;
-  border: 1px solid black;
 }
+
 .containerWrap__left {
   width: 25%;
   height: 140vh;
-  border: 1px solid black;
 }
+
 .containerWrap__right {
-  width: 60%;
+  width: 70%;
   border: 1px solid red;
   margin-left: 2%;
   /* height: 300vh; */
+}
+
+.containerWrap__left__first {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.containerWrap__right__first {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.containerWrap__left__second {
+  width: 100%;
+  border: 1px solid purple;
+  height: 95%;
+  margin-top: 20px;
+  border-bottom: none;
+  border-radius: 5px;
+}
+
+.containerWrap__right__second {
+  width: 96%;
+  margin-top: 10px;
 }
