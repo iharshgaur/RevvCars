@@ -1,0 +1,69 @@
+.Footer__Top {
+  background-color: #2a2b36;
+  color: #fff;
+  padding: 4%;
+}
+
+.Footer__Top__Cities,
+.Footer__Bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3%;
+}
+.Footer__Bottom {
+  margin-top: 0;
+}
+.Footer__Top__Cities__Column,
+.Footer__Bottom__Column {
+  display: flex;
+  flex-direction: column;
+}
+
+.Footer__Top__Cities__Column > button,
+.Footer__Bottom__Column > button {
+  border: none;
+  background: transparent;
+  text-align: left;
+  color: grey;
+  margin: 2px;
+}
+
+.Footer__Top__Cities__Column > button:hover,
+.Footer__Bottom__Column > button:hover {
+  color: #0ebaba;
+}
+.Footer__Bottom {
+  background-color: #f4f4f4;
+  color: grey;
+  padding: 5%;
+}
+
+.GreenFont {
+  color: #0ebaba;
+}
+
+.Footer__Bottom__Column__Mid {
+  margin: 10% 0;
+}
+.Footer__Bottom__Column__Mid > button > img {
+  width: 70%;
+}
+.Footer__Bottom__Column__Mid > button {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: none;
+  margin: 5px;
+  background-color: white;
+  padding: 3%;
+}
+.Footer__Bottom__Column__Top {
+  position: relative;
+}
+.Footer__Bottom__Column__Top__Text {
+  position: absolute;
+  top: 60px;
+  left: 45px;
+  color: black;
+  font-size: 13px;
+}

@@ -1,0 +1,17 @@
+.CarouselBanner {
+  width: 100%;
+  position: relative;
+}
+.CarouselItem {
+  margin-top: 5%;
+  height: 500px;
+}
+.CarouselItem > img {
+  width: 30%;
+  margin-top: 5%;
+  margin-left: 50%;
+}
+
+.CarouselCaption {
+  color: black;
+}
