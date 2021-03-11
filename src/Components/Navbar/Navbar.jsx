@@ -8,7 +8,7 @@ import Fade from "@material-ui/core/Fade";
 import { TextField } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { authUser } from "../../Redux/Auth/action";
+import { authUser, logoutUser } from "../../Redux/Auth/action";
 const useStyles = makeStyles((theme) => ({
   modal: {
     display: "flex",
@@ -58,7 +58,7 @@ function Navbar() {
   const [openSignUp, setOpenSignUp] = React.useState(false);
   const history = useHistory();
   const { isAuth } = useSelector((state) => state.auth);
-
+  console.log(isAuth);
   const handleLogin = () => {
     const payload = {
       email,
@@ -87,6 +87,8 @@ function Navbar() {
   React.useEffect(() => {
     if (isAuth) {
       setToggleLogin(true);
+    } else {
+      setToggleLogin(false);
     }
   }, [isAuth]);
   return (
@@ -110,7 +112,7 @@ function Navbar() {
       <div className={styles.Navbar__Button__Info}>
         <button>Cars Subscription</button>
         <button>How it works</button>
-        <button onClick={() => history.push("/bookcars")}>FAQs</button>
+        <button onClick={() => history.push("/cars")}>FAQs</button>
         {!toggleLogin ? (
           <>
             <button onClick={handleOpenLogin}>Login or Signup</button>
@@ -245,7 +247,9 @@ function Navbar() {
 
                 <Button
                   style={{ width: "80%" }}
-                  onClick={() => setToggleLogin(false)}
+                  onClick={() => {
+                    dispatch(logoutUser());
+                  }}
                 >
                   Logout
                 </Button>

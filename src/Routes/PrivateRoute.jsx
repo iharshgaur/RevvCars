@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 function PrivateRoute({ children, exact = true, path, redirect = "/" }) {
   const isAuth = useSelector((state) => state.auth.isAuth);
-  console.log(isAuth, "here");
+
   return (
     <>
       {isAuth ? (

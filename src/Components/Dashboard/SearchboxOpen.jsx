@@ -6,7 +6,6 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { setUserRequest } from "../../Redux/Dashboard/action";
 const cities = [
   {
     value: "Delhi-NCR",
@@ -41,8 +40,6 @@ const cities = [
 function Searchbox() {
   const [city, setCity] = React.useState("Delhi-NCR");
   const [open, setOpen] = React.useState(false);
-  const currentDate = new Date();
-  const dispatch = useDispatch();
   const history = useHistory();
 
   const handleClickOpen = () => {
@@ -135,7 +132,7 @@ function Searchbox() {
       </div>
 
       <div className={style.SearchBox__Submit}>
-        <button>
+        <button onClick={() => history.push(`/subscription/${city}`)}>
           <button>Explore Cars</button>
           <p>
             Starting at <b>Rs. 11,099/</b> month

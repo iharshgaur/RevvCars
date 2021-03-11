@@ -30,7 +30,6 @@ const authUserFailure = (payload) => {
  const logoutUser = () =>{
   return {
     type: USER_LOGOUT,
-   
   };
 }
 
