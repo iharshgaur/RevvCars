@@ -9,6 +9,8 @@ import { CarsDesc } from "../Components/RentalSec/CarsDesc";
 import { Booking } from "../Components/RentalSec/Booking";
 import { PrivateRoute } from "./PrivateRoute";
 import {SubscriptionPage} from "../Pages/subscription/MainPart/SubscriptionPage"
+import { Payment } from "../Pages/SubscriptionPay/MainPage/Payment";
+import { FinalPayment } from "../Pages/payment/FinalPayment";
 
 const Routes = () => {
   return (
@@ -31,6 +33,12 @@ const Routes = () => {
         </PrivateRoute>
         <PrivateRoute exact={true} path="/subscription/:location">
         <SubscriptionPage/>
+        </PrivateRoute>
+        <PrivateRoute exact={true} path="/subpay/:id">
+          <Payment/>
+        </PrivateRoute>
+        <PrivateRoute exact={true} path="/payment/:id/:amount">
+          <FinalPayment/>
         </PrivateRoute>
       </Switch>
     </div>

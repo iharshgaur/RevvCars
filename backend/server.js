@@ -164,6 +164,8 @@ app.get("/subscription/:location",async(req,res)=>{
 res.status(200).json(locationCars)
 })
 
+
+
 app.post("/subscription",async(req,res)=>{
     const data = await sub.create(req.body)  
     res.status(201).json(data)
