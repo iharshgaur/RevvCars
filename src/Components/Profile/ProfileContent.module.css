@@ -1,0 +1,36 @@
+.Container {
+  padding-top: 5%;
+  display: flex;
+}
+.Container_Left {
+  background-color: #4d4d4d;
+  margin-left: 3%;
+  margin-top: 2%;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20%;
+  height: 200px;
+  box-shadow: 0px 0px 15px grey;
+}
+.Container_Left > button {
+  height: 40px;
+  border: none;
+  color: #fff;
+  border-bottom: 1px solid #404040;
+  border-top: 1px solid #404040;
+}
+.Container_Left > div {
+  height: 40px;
+}
+.Container_Right {
+  height: 500px;
+  width: 70%;
+  padding: 4%;
+  border: 1px solid red;
+}
+.Container_Right_Top {
+  display: flex;
+  justify-content: space-around;
+}
