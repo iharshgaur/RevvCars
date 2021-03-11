@@ -161,6 +161,8 @@ function Searchbox() {
             </label>
             <input
               type="datetime-local"
+              className={style.DateTime}
+              step={1800}
               onChange={(e) => setStartDate(e.target.value)}
               min={
                 currentDate.getMonth() < 10
@@ -188,6 +190,7 @@ function Searchbox() {
             <br />
             <input
               type="datetime-local"
+              className={style.DateTime}
               onChange={(e) => setEndDate(e.target.value)}
               min={start_date}
             />
@@ -198,7 +201,12 @@ function Searchbox() {
       <div className={style.SearchBox__Submit}>
         {duration >= 0 && start_date !== "" && end_date !== "" && (
           <p>
-            Duration : {duration} {duration === 1 ? "Day" : "Days"}
+            Duration :
+            {duration === 1
+              ? ` ${duration} Day`
+              : duration === 0
+              ? " Today"
+              : ` ${duration} Days`}
           </p>
         )}
         <button onClick={handleSubmit}>Search</button>

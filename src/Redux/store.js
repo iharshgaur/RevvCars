@@ -1,11 +1,12 @@
 
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
-import {dashboardreducer} from "./Dashboard/reducer"
-
+import {dashboardreducer} from "./Dashboard/reducer";
+import {AuthReducer} from "./Auth/AuthReducer";
 import { carreducer } from "./RentalSec/carreducer";
 import { Bookreducer } from "./Booking/bookingReducer";
 const rootReducer = combineReducers({
-    dashboard: dashboardreducer,
+  auth: AuthReducer,
+  dashboard: dashboardreducer,
   mycars: carreducer,
   mybookcars: Bookreducer,
 });

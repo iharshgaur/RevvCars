@@ -13,6 +13,7 @@ const useStyles = makeStyles({
   table: {
     width: "80%",
     margin: "2% auto",
+    overflow: "hidden",
   },
   Column: {
     width: "20%",

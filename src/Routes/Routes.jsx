@@ -5,26 +5,26 @@ import Dashboard from "../Pages/Dashboard/Dashboard";
 import Open from "../Pages/Dashboard/Open";
 import { CarsDesc } from "../Components/RentalSec/CarsDesc";
 import { Booking } from "../Components/RentalSec/Booking";
-
+import { PrivateRoute } from "./PrivateRoute";
 const Routes = () => {
   return (
     <div>
       <Switch>
-        <Route exact path="/cars">
-          <RentalSec />
-        </Route>
         <Route exact path="/">
           <Dashboard />
         </Route>
         <Route exact path="/open">
           <Open />
         </Route>
-        <Route exact path="/cars">
+        <PrivateRoute exact={true} path="/cars">
+          <RentalSec />
+        </PrivateRoute>
+        <PrivateRoute exact={true} path="/cars">
           <CarsDesc />
-        </Route>
-        <Route exact path="/bookcars">
+        </PrivateRoute>
+        <PrivateRoute exact={true} path="/bookcars">
           <Booking />
-        </Route>
+        </PrivateRoute>
       </Switch>
     </div>
   );
