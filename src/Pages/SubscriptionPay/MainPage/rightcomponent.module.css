@@ -105,6 +105,7 @@
     border-radius: 4px!important;
     color: #fff;
     border: #fff;
+    cursor: pointer;
 }
 .payContainerP{
     text-align: center;

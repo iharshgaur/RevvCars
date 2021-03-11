@@ -152,6 +152,8 @@ app.get("/subscription/:id",async(req,res)=>{
 res.status(200).json(data)
 })
 
+
+
 app.post("/subscription",async(req,res)=>{
     const data = await sub.create(req.body)  
     res.status(201).json(data)

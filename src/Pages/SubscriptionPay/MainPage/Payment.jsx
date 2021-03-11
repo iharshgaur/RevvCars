@@ -62,7 +62,7 @@ export const Payment = () => {
     const history = useHistory()
 
     const handleRoute = (id,price)=>{
-        return history.push(`/${id}/${price}`)
+        return history.push(`/payment/${id}/${price}`)
     }
 
     return (
