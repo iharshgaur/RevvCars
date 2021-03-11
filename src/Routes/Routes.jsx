@@ -3,8 +3,8 @@ import { Route, Switch } from "react-router-dom";
 import { RentalSec } from "../Components/RentalSec/RentalSec";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import Open from "../Pages/Dashboard/Open";
-import { CarsDesc } from "../components/RentalSec/CarsDesc";
-import { Booking } from "../components/RentalSec/Booking";
+import { CarsDesc } from "../Components/RentalSec/CarsDesc";
+import { Booking } from "../Components/RentalSec/Booking";
 
 const Routes = () => {
   return (

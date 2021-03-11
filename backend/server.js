@@ -92,14 +92,6 @@ app.delete("/revv_cars/:id", async (req, res) => {
   res.status(200).json(data);
 });
 
-<<<<<<< HEAD
-const start = async () => {
-  await connect();
-  app.listen(port, () => {
-    console.log(`listening to the port ${port}`);
-  });
-};
-=======
 const subscriptionSchema = mongoose.Schema({
     car_name:{
         type: String,
@@ -237,6 +229,5 @@ const start =async()=>{
         console.log(`listening to the port ${port}`)
     }) 
 }
->>>>>>> Manish
 
 start();
