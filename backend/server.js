@@ -147,6 +147,10 @@ app.get("/subscription",async(req,res)=>{
     res.status(200).json(data)
 })
 
+app.get("/subscription/:id",async(req,res)=>{
+    const data = await sub.findById(req.params.id)
+res.status(200).json(data)
+})
 
 app.post("/subscription",async(req,res)=>{
     const data = await sub.create(req.body)  
@@ -180,6 +184,8 @@ app.get("/price/btw25-30",async(req,res)=>{
     const data = await sub.find({$and:[{car_subscription_price:{$gt:25000}},{car_subscription_price:{$lt:40000}}]})
     res.status(200).json(data)
 })
+
+
 
 // filtering the segment
 app.get("/hatch",async(req,res)=>{
@@ -220,6 +226,7 @@ app.get("/sedan&suv",async(req,res)=>{
     const updateData = [...data,...data2]
     res.status(200).json(updateData)
 })
+
 //filtering the petrol
 app.get("/petrol",async(req,res)=>{
     const data = await sub.find({car_specs:{$eq:"petrol"}})

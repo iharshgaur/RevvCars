@@ -1,11 +1,15 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { RentalSec } from "../Components/RentalSec/RentalSec";
+
+
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import Open from "../Pages/Dashboard/Open";
 import { CarsDesc } from "../Components/RentalSec/CarsDesc";
 import { Booking } from "../Components/RentalSec/Booking";
 import { PrivateRoute } from "./PrivateRoute";
+import {SubscriptionPage} from "../Pages/subscription/MainPart/SubscriptionPage"
+
 const Routes = () => {
   return (
     <div>
@@ -24,6 +28,9 @@ const Routes = () => {
         </PrivateRoute>
         <PrivateRoute exact={true} path="/bookcars">
           <Booking />
+        </PrivateRoute>
+        <PrivateRoute exact={true} path="/subscription/:location">
+        <SubscriptionPage/>
         </PrivateRoute>
       </Switch>
     </div>
