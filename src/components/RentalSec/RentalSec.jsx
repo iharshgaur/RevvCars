@@ -1,8 +1,11 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Switch from "@material-ui/core/Switch";
-
+import axios from "axios";
 import styles from "./RentalSec.module.css";
+import { useSelector, shallowEqual, useDispatch } from "react-redux";
+import { getCar } from "../../Redux/RentalSec/action";
+import { CarsDesc } from "./CarsDesc";
 const RentalSec = () => {
   const [city, setCity] = React.useState();
   const [startdate, setStartDate] = React.useState();
@@ -13,6 +16,18 @@ const RentalSec = () => {
   };
   const [sortOpt, setSortOpt] = React.useState("Low To High");
   const handleSort = () => {};
+  // for the carsComponent
+  const dispatch = useDispatch();
+  const { cars, isLoading, isError } = useSelector(
+    (state) => state.mycars,
+    shallowEqual
+  );
+  React.useEffect(() => {
+    dispatch(getCar());
+  }, []);
+
+  //for the color of rental price
+
   return (
     <div>
       {/* Navpart Start*/}
@@ -76,7 +91,13 @@ const RentalSec = () => {
               >
                 {/* for the segment style */}
                 <h3 style={{ marginBottom: "2.1vh" }}>Segment</h3>
-                <div style={{ border: "1px solid red", height: "80%" }}>
+                <div
+                  style={{
+                    border: "1px solid red",
+                    height: "80%",
+                    textAlign: "center",
+                  }}
+                >
                   <input type="checkbox" style={{ marginBottom: "2.4vh" }} />
                   <label htmlFor="">Hatchback</label>
                   <br />
@@ -108,10 +129,14 @@ const RentalSec = () => {
                 }}
               >
                 {/* for the brand type */}
-                <h3 style={{ marginBottom: "2.1vh", marginLeft: "-1.9vw" }}>
-                  Brand
-                </h3>
-                <div style={{ border: "1px solid red", height: "80%" }}>
+                <h3 style={{ marginBottom: "2.1vh" }}>Brand</h3>
+                <div
+                  style={{
+                    border: "1px solid red",
+                    height: "80%",
+                    textAlign: "center",
+                  }}
+                >
                   <input
                     type="checkbox"
                     style={{ marginBottom: "2.4vh", marginLeft: "-2.6vw" }}
@@ -153,7 +178,13 @@ const RentalSec = () => {
               >
                 {/* for the fuel type */}
                 <h3 style={{ marginBottom: "2.1vh" }}>Fuel Type</h3>
-                <div style={{ border: "1px solid red", height: "80%" }}>
+                <div
+                  style={{
+                    border: "1px solid red",
+                    height: "80%",
+                    textAlign: "center",
+                  }}
+                >
                   <input
                     type="checkbox"
                     style={{ marginBottom: "2.4vh", marginLeft: "-3.6vw" }}
@@ -176,10 +207,14 @@ const RentalSec = () => {
                 }}
               >
                 {/* for the Transmission Type */}
-                <h3 style={{ marginBottom: "2.1vh", marginLeft: "2vw" }}>
-                  Transmission
-                </h3>
-                <div style={{ border: "1px solid red", height: "80%" }}>
+                <h3 style={{ marginBottom: "2.1vh" }}>Transmission</h3>
+                <div
+                  style={{
+                    border: "1px solid red",
+                    height: "80%",
+                    textAlign: "center",
+                  }}
+                >
                   <input type="checkbox" style={{ marginBottom: "2.4vh" }} />
                   <label htmlFor="">Automatic</label>
                   <br />
@@ -199,10 +234,14 @@ const RentalSec = () => {
                 }}
               >
                 {/* for the seating capacity */}
-                <h3 style={{ marginBottom: "2.1vh", marginLeft: "-1vw" }}>
-                  Segment
-                </h3>
-                <div style={{ border: "1px solid red", height: "80%" }}>
+                <h3 style={{ marginBottom: "2.1vh" }}>Segment</h3>
+                <div
+                  style={{
+                    border: "1px solid red",
+                    height: "80%",
+                    textAlign: "center",
+                  }}
+                >
                   <input
                     type="checkbox"
                     style={{ marginBottom: "2.4vh", marginLeft: "-2vw" }}
@@ -221,7 +260,7 @@ const RentalSec = () => {
           <div className={styles.containerWrap__right}>
             <div className={styles.containerWrap__right__first}>
               <div style={{ width: "20vw" }}>
-                <p style={{ marginLeft: "-10vw" }}>
+                <p style={{}}>
                   Car Rental in <b>{city}</b>
                 </p>
               </div>
@@ -257,8 +296,26 @@ const RentalSec = () => {
                     <option value="Low to High">Low to High</option>
                     <option value="High to Low">High to Low</option>
                   </select>
-                </div>{" "}
+                </div>
               </div>
+            </div>
+            <div className={styles.containerWrap__right__second}>
+              {isLoading ? (
+                <div>....isLoading</div>
+              ) : (
+                <div
+                  style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  {cars.map((ele) => (
+                    <CarsDesc key={ele._id} {...ele} />
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>
