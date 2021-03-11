@@ -66,7 +66,6 @@ function Navbar() {
 
     dispatch(authUser(payload));
   };
-  console.log(isAuth, error);
   const handleOpenLogin = () => {
     setOpenLogin(true);
   };

@@ -2,6 +2,7 @@ import {
   AUTH_USER_FAILURE,
   AUTH_USER_REQUEST,
   AUTH_USER_SUCCESS,
+  USER_LOGOUT
 } from "./actionType";
 
 
@@ -26,7 +27,12 @@ const authUserFailure = (payload) => {
     payload,
   };
 };
-
+ const logoutUser = () =>{
+  return {
+    type: USER_LOGOUT,
+   
+  };
+}
 
 
 const authUser = (payload) => (dispatch) => {
@@ -59,4 +65,6 @@ const authUser = (payload) => (dispatch) => {
     });
 };
 
-export { authUser };
+
+
+export { authUser,logoutUser };

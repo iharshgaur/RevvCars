@@ -2,6 +2,7 @@ import {
   AUTH_USER_FAILURE,
   AUTH_USER_REQUEST,
   AUTH_USER_SUCCESS,
+  USER_LOGOUT
 } from "./actionType";
 
 const initState = {
@@ -30,6 +31,11 @@ const AuthReducer = (state = initState, { type, payload }) => {
         error : payload,
         isError: true,
       };
+      case USER_LOGOUT:
+        return {
+          ...state,
+          isAuth: false
+        };
 
     default:
       return {
