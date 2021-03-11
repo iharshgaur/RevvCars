@@ -1,6 +1,7 @@
 import React from 'react'
+import { useHistory } from 'react-router'
 import style from "./CartItems.module.css"
-export const CartItems = ({car_specs,car_name,car_images,car_type,car_subscription_price,car_discount}) => {
+export const CartItems = ({car_specs,car_name,car_images,car_type,car_subscription_price,car_discount,_id}) => {
 
     const originalPrice = car_subscription_price.toString().split("")
     const dummy = originalPrice.splice(2,0,",").join("")
@@ -11,9 +12,14 @@ export const CartItems = ({car_specs,car_name,car_images,car_type,car_subscripti
     const discountPrice = price.toString().split("")
     const dummy2 = discountPrice.splice(2,0,",").join("")
 
+    const history = useHistory()
+
+    const routePage =(id)=>{
+        history.push(`/subpay/${id}`)
+    }
 
     return (
-            <div className={style.container}>
+            <div className={style.container} onClick={()=>routePage(_id)}>
                 <div className={style.imageBox}>
                     <img src={car_images} alt="pic"/>
                 </div>

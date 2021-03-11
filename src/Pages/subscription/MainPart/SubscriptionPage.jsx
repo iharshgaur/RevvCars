@@ -32,26 +32,27 @@ export const SubscriptionPage = () => {
     };
 
     React.useEffect(()=>{
-        console.log(price.price)
+        
         if(price.price == "")
         {
             getData(getUrl)
         }
         if(price.price == 10000)
         {
-            getData("http://localhost:1234/price/btw10-15")
+            console.log("yes")
+            return getData("http://localhost:1234/price/btw10-15")
         }
         if(price.price == 15000)
         {
-            getData("http://localhost:1234/price/btw15-20")
+            return  getData("http://localhost:1234/price/btw15-20")
         }
         if(price.price == 20000)
         {
-            getData("http://localhost:1234/price/btw20-25")
+            return getData("http://localhost:1234/price/btw20-25")
         }
         if(price.price == 25000)
         {
-            getData("http://localhost:1234/price/btw25-30")
+            return getData("http://localhost:1234/price/btw25-30")
         }
     },[price.price])
 
@@ -115,8 +116,6 @@ export const SubscriptionPage = () => {
         Diesel:false
     })
     
-
-    
   const handleChangeFuel = (event) => {
     setFuel({ ...fuel, [event.target.name]: event.target.checked });
    
@@ -144,7 +143,7 @@ export const SubscriptionPage = () => {
   const [trans,setTrans] = React.useState({
     Auto:false,
     Manual:false
-})
+    })
 
 const handleChangeTrans = (event) => {
     setTrans({ ...trans, [event.target.name]: event.target.checked });
@@ -161,8 +160,7 @@ const handleChangeTrans = (event) => {
          
   }
   if(trans.Auto===true){
-      return  getData("http://localhost:1234/automatic")
-         
+      return  getData("http://localhost:1234/automatic")     
   }
   if(trans.Manual===true){
       return  getData("http://localhost:1234/manual")   
