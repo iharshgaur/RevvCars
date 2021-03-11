@@ -1,0 +1,70 @@
+.Featured {
+  padding: 5%;
+}
+.Featured > h2 {
+  margin-bottom: 0;
+}
+.Cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 0 1% 0;
+  margin-bottom: 5%;
+}
+.Cards__Card {
+  width: 30%;
+  height: 250px;
+  margin: 4% 1%;
+  border-radius: 5px;
+  box-shadow: 0 0 5px grey;
+}
+
+.Cards__Card > img {
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 5px grey;
+  border: none;
+}
+.Cards__Card > div {
+  padding: 5%;
+  text-align: justify;
+}
+.Cards__Card > div > * {
+  margin-bottom: 15px;
+}
+
+.CardsInvestors {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 0 1% 0;
+  margin-bottom: 5%;
+}
+.CardsInvestors__Card {
+  width: 20%;
+  margin: 4% 1%;
+  border-radius: 5px;
+}
+.CardsInvestors__Card__Img {
+  height: 100px;
+  border-radius: 5px;
+  border: 1px solid #dddddd;
+}
+.CardsInvestors__Card__Img > img {
+  width: 50%;
+}
+
+.CardsInvestors__Card > div {
+  text-align: center;
+}
+.CardsInvestors__Card > div > h5 {
+  font-size: 15px;
+  color: gray;
+  margin-top: 5%;
+}
+.CardsInvestors__Container {
+  box-shadow: 0 0 5px grey;
+  padding: 2%;
+  padding-bottom: 0;
+  border-radius: 5px;
+}

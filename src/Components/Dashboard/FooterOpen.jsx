@@ -1,0 +1,132 @@
+import React from "react";
+import styles from "./FooterOpen.module.css";
+import { Button } from "@material-ui/core";
+function Footer() {
+  return (
+    <div className={styles.Footer}>
+      <div className={styles.Footer__Top}>
+        <div className={styles.Footer__Top__Cities}>
+          <div className={styles.Footer__Top__Cities__Column}>
+            <h5>Top 7 Hyundai Car Subscription Cities</h5>
+            <button>Car Rental in Bengaluru</button>
+            <button>Car Rental in Hydrabad</button>
+            <button>Car Rental in Mumbai</button>
+            <button>Car Rental in Delhi-NCR</button>
+            <button>Car Rental in Chennai</button>
+            <button>Car Rental in Pune</button>
+            <button>Car Rental in Kolkata</button>
+          </div>
+          <div className={styles.Footer__Top__Cities__Column}>
+            <h5>Top 7 Mahindra Car Subscription Cities</h5>
+            <button>Car Rental in Bhubaneshwar</button>
+            <button>Car Rental in Chandigarh</button>
+            <button>Car Rental in Coimbator</button>
+            <button>Car Rental in Jaipur</button>
+            <button>Car Rental in Kochi</button>
+            <button>Car Rental in Mangalore</button>
+            <button>Car Rental in Mysore</button>
+          </div>
+          <div className={styles.Footer__Top__Cities__Column}>
+            <h5>Top 7 Revv Car Subscription Cities</h5>
+            <button>Car Rental in Surat</button>
+            <button>Car Rental in Tirupati</button>
+            <button>Car Rental in Trivendram</button>
+            <button>Car Rental in Vadodara</button>
+            <button>Car Rental in Vijaywada</button>
+            <button>Car Rental in Vadodara</button>
+            <button>Car Rental in Vizag</button>
+          </div>
+        </div>
+      </div>
+      <div className={styles.Footer__Bottom}>
+        <div className={styles.Footer__Bottom__Column__One}>
+          <div className={styles.Footer__Bottom__Column__Top}>
+            <img src="https://www.revv.co.in/imgs/revvLogo.png" alt="logo" />
+            <p className={styles.Footer__Bottom__Column__Top__Text}>
+              Sanitised. Safe
+            </p>
+          </div>
+          <p style={{ width: "500px", marginTop: "20px" }}>
+            2021 Primemover Mobility Technologies Pvt Ltd. All rights reserved
+          </p>
+        </div>
+        <div className={styles.Footer__Bottom__Column}>
+          <button>Home</button>
+          <button>Open subscription</button>
+          <button>How it works?</button>
+          <button>Subscribe Vs Buy</button>
+          <button>FAQs</button>
+        </div>
+        <div className={styles.Footer__Bottom__Column}>
+          <h5>Social</h5>
+          <div className={styles.Footer__Bottom__Column__Mid}>
+            <button>
+              <img
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDI0IDI0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiBjbGFzcz0iIj48Zz48cGF0aCB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGQ9Im0xNS45OTcgMy45ODVoMi4xOTF2LTMuODE2Yy0uMzc4LS4wNTItMS42NzgtLjE2OS0zLjE5Mi0uMTY5LTMuMTU5IDAtNS4zMjMgMS45ODctNS4zMjMgNS42Mzl2My4zNjFoLTMuNDg2djQuMjY2aDMuNDg2djEwLjczNGg0LjI3NHYtMTAuNzMzaDMuMzQ1bC41MzEtNC4yNjZoLTMuODc3di0yLjkzOWMuMDAxLTEuMjMzLjMzMy0yLjA3NyAyLjA1MS0yLjA3N3oiIGZpbGw9IiM4MTgxODEiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiPjwvcGF0aD48L2c+PC9zdmc+"
+                alt="facebook"
+              />
+            </button>
+            <button>
+              <img
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSIiPjxnPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPGc+CgkJPHBhdGggZD0iTTUxMiw5Ny4yNDhjLTE5LjA0LDguMzUyLTM5LjMyOCwxMy44ODgtNjAuNDgsMTYuNTc2YzIxLjc2LTEyLjk5MiwzOC4zNjgtMzMuNDA4LDQ2LjE3Ni01OC4wMTYgICAgYy0yMC4yODgsMTIuMDk2LTQyLjY4OCwyMC42NC02Ni41NiwyNS40MDhDNDExLjg3Miw2MC43MDQsMzg0LjQxNiw0OCwzNTQuNDY0LDQ4Yy01OC4xMTIsMC0xMDQuODk2LDQ3LjE2OC0xMDQuODk2LDEwNC45OTIgICAgYzAsOC4zMiwwLjcwNCwxNi4zMiwyLjQzMiwyMy45MzZjLTg3LjI2NC00LjI1Ni0xNjQuNDgtNDYuMDgtMjE2LjM1Mi0xMDkuNzkyYy05LjA1NiwxNS43MTItMTQuMzY4LDMzLjY5Ni0xNC4zNjgsNTMuMDU2ICAgIGMwLDM2LjM1MiwxOC43Miw2OC41NzYsNDYuNjI0LDg3LjIzMmMtMTYuODY0LTAuMzItMzMuNDA4LTUuMjE2LTQ3LjQyNC0xMi45MjhjMCwwLjMyLDAsMC43MzYsMCwxLjE1MiAgICBjMCw1MS4wMDgsMzYuMzg0LDkzLjM3Niw4NC4wOTYsMTAzLjEzNmMtOC41NDQsMi4zMzYtMTcuODU2LDMuNDU2LTI3LjUyLDMuNDU2Yy02LjcyLDAtMTMuNTA0LTAuMzg0LTE5Ljg3Mi0xLjc5MiAgICBjMTMuNiw0MS41NjgsNTIuMTkyLDcyLjEyOCw5OC4wOCw3My4xMmMtMzUuNzEyLDI3LjkzNi04MS4wNTYsNDQuNzY4LTEzMC4xNDQsNDQuNzY4Yy04LjYwOCwwLTE2Ljg2NC0wLjM4NC0yNS4xMi0xLjQ0ICAgIEM0Ni40OTYsNDQ2Ljg4LDEwMS42LDQ2NCwxNjEuMDI0LDQ2NGMxOTMuMTUyLDAsMjk4Ljc1Mi0xNjAsMjk4Ljc1Mi0yOTguNjg4YzAtNC42NC0wLjE2LTkuMTItMC4zODQtMTMuNTY4ICAgIEM0ODAuMjI0LDEzNi45Niw0OTcuNzI4LDExOC40OTYsNTEyLDk3LjI0OHoiIGZpbGw9IiM5ZDlkOWQiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiPjwvcGF0aD4KCTwvZz4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8L2c+PC9zdmc+"
+                alt="twitter"
+              />
+            </button>
+            <button>
+              <img
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDUxMSA1MTEuOSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGc+PHBhdGggeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBkPSJtNTEwLjk0OTIxOSAxNTAuNWMtMS4xOTkyMTktMjcuMTk5MjE5LTUuNTk3NjU3LTQ1Ljg5ODQzOC0xMS44OTg0MzgtNjIuMTAxNTYyLTYuNS0xNy4xOTkyMTktMTYuNS0zMi41OTc2NTctMjkuNjAxNTYyLTQ1LjM5ODQzOC0xMi44MDA3ODEtMTMtMjguMzAwNzgxLTIzLjEwMTU2Mi00NS4zMDA3ODEtMjkuNS0xNi4yOTY4NzYtNi4zMDA3ODEtMzQuODk4NDM4LTEwLjY5OTIxOS02Mi4wOTc2NTctMTEuODk4NDM4LTI3LjQwMjM0My0xLjMwMDc4MS0zNi4xMDE1NjItMS42MDE1NjItMTA1LjYwMTU2Mi0xLjYwMTU2MnMtNzguMTk5MjE5LjMwMDc4MS0xMDUuNSAxLjVjLTI3LjE5OTIxOSAxLjE5OTIxOS00NS44OTg0MzggNS42MDE1NjItNjIuMDk3NjU3IDExLjg5ODQzOC0xNy4yMDMxMjQgNi41LTMyLjYwMTU2MiAxNi41LTQ1LjQwMjM0MyAyOS42MDE1NjItMTMgMTIuODAwNzgxLTIzLjA5NzY1NyAyOC4zMDA3ODEtMjkuNSA0NS4zMDA3ODEtNi4zMDA3ODEgMTYuMzAwNzgxLTEwLjY5OTIxOSAzNC44OTg0MzgtMTEuODk4NDM4IDYyLjA5NzY1Ny0xLjMwMDc4MSAyNy40MDIzNDMtMS42MDE1NjIgMzYuMTAxNTYyLTEuNjAxNTYyIDEwNS42MDE1NjJzLjMwMDc4MSA3OC4xOTkyMTkgMS41IDEwNS41YzEuMTk5MjE5IDI3LjE5OTIxOSA1LjYwMTU2MiA0NS44OTg0MzggMTEuOTAyMzQzIDYyLjEwMTU2MiA2LjUgMTcuMTk5MjE5IDE2LjU5NzY1NyAzMi41OTc2NTcgMjkuNTk3NjU3IDQ1LjM5ODQzOCAxMi44MDA3ODEgMTMgMjguMzAwNzgxIDIzLjEwMTU2MiA0NS4zMDA3ODEgMjkuNSAxNi4zMDA3ODEgNi4zMDA3ODEgMzQuODk4NDM4IDEwLjY5OTIxOSA2Mi4xMDE1NjIgMTEuODk4NDM4IDI3LjI5Njg3NiAxLjIwMzEyNCAzNiAxLjUgMTA1LjUgMS41czc4LjE5OTIxOS0uMjk2ODc2IDEwNS41LTEuNWMyNy4xOTkyMTktMS4xOTkyMTkgNDUuODk4NDM4LTUuNTk3NjU3IDYyLjA5NzY1Ny0xMS44OTg0MzggMzQuNDAyMzQzLTEzLjMwMDc4MSA2MS42MDE1NjItNDAuNSA3NC45MDIzNDMtNzQuODk4NDM4IDYuMjk2ODc2LTE2LjMwMDc4MSAxMC42OTkyMTktMzQuOTAyMzQzIDExLjg5ODQzOC02Mi4xMDE1NjIgMS4xOTkyMTktMjcuMzAwNzgxIDEuNS0zNiAxLjUtMTA1LjVzLS4xMDE1NjItNzguMTk5MjE5LTEuMzAwNzgxLTEwNS41em0tNDYuMDk3NjU3IDIwOWMtMS4xMDE1NjIgMjUtNS4zMDA3ODEgMzguNS04LjgwMDc4MSA0Ny41LTguNjAxNTYyIDIyLjMwMDc4MS0yNi4zMDA3ODEgNDAtNDguNjAxNTYyIDQ4LjYwMTU2Mi05IDMuNS0yMi41OTc2NTcgNy42OTkyMTktNDcuNSA4Ljc5Njg3Ni0yNyAxLjIwMzEyNC0zNS4wOTc2NTcgMS41LTEwMy4zOTg0MzggMS41cy03Ni41LS4yOTY4NzYtMTAzLjQwMjM0My0xLjVjLTI1LTEuMDk3NjU3LTM4LjUtNS4yOTY4NzYtNDcuNS04Ljc5Njg3Ni0xMS4wOTc2NTctNC4xMDE1NjItMjEuMTk5MjE5LTEwLjYwMTU2Mi0yOS4zOTg0MzgtMTkuMTAxNTYyLTguNS04LjMwMDc4MS0xNS0xOC4zMDA3ODEtMTkuMTAxNTYyLTI5LjM5ODQzOC0zLjUtOS03LjY5OTIxOS0yMi42MDE1NjItOC43OTY4NzYtNDcuNS0xLjIwMzEyNC0yNy0xLjUtMzUuMTAxNTYyLTEuNS0xMDMuNDAyMzQzcy4yOTY4NzYtNzYuNSAxLjUtMTAzLjM5ODQzOGMxLjA5NzY1Ny0yNSA1LjI5Njg3Ni0zOC41IDguNzk2ODc2LTQ3LjUgNC4xMDE1NjItMTEuMTAxNTYyIDEwLjYwMTU2Mi0yMS4xOTkyMTkgMTkuMjAzMTI0LTI5LjQwMjM0MyA4LjI5Njg3Ni04LjUgMTguMjk2ODc2LTE1IDI5LjM5ODQzOC0xOS4wOTc2NTcgOS0zLjUgMjIuNjAxNTYyLTcuNjk5MjE5IDQ3LjUtOC44MDA3ODEgMjctMS4xOTkyMTkgMzUuMTAxNTYyLTEuNSAxMDMuMzk4NDM4LTEuNSA2OC40MDIzNDMgMCA3Ni41LjMwMDc4MSAxMDMuNDAyMzQzIDEuNSAyNSAxLjEwMTU2MiAzOC41IDUuMzAwNzgxIDQ3LjUgOC44MDA3ODEgMTEuMDk3NjU3IDQuMDk3NjU3IDIxLjE5OTIxOSAxMC41OTc2NTcgMjkuMzk4NDM4IDE5LjA5NzY1NyA4LjUgOC4zMDA3ODEgMTUgMTguMzAwNzgxIDE5LjEwMTU2MiAyOS40MDIzNDMgMy41IDkgNy42OTkyMTkgMjIuNTk3NjU3IDguODAwNzgxIDQ3LjUgMS4xOTkyMTkgMjcgMS41IDM1LjA5NzY1NyAxLjUgMTAzLjM5ODQzOHMtLjMwMDc4MSA3Ni4zMDA3ODEtMS41IDEwMy4zMDA3ODF6bTAgMCIgZmlsbD0iIzlkOWQ5ZCIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiIgY2xhc3M9IiI+PC9wYXRoPjxwYXRoIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZD0ibTI1Ni40NDkyMTkgMTI0LjVjLTcyLjU5NzY1NyAwLTEzMS41IDU4Ljg5ODQzOC0xMzEuNSAxMzEuNXM1OC45MDIzNDMgMTMxLjUgMTMxLjUgMTMxLjVjNzIuNjAxNTYyIDAgMTMxLjUtNTguODk4NDM4IDEzMS41LTEzMS41cy01OC44OTg0MzgtMTMxLjUtMTMxLjUtMTMxLjV6bTAgMjE2LjgwMDc4MWMtNDcuMDk3NjU3IDAtODUuMzAwNzgxLTM4LjE5OTIxOS04NS4zMDA3ODEtODUuMzAwNzgxczM4LjIwMzEyNC04NS4zMDA3ODEgODUuMzAwNzgxLTg1LjMwMDc4MWM0Ny4xMDE1NjIgMCA4NS4zMDA3ODEgMzguMTk5MjE5IDg1LjMwMDc4MSA4NS4zMDA3ODFzLTM4LjE5OTIxOSA4NS4zMDA3ODEtODUuMzAwNzgxIDg1LjMwMDc4MXptMCAwIiBmaWxsPSIjOWQ5ZDlkIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3BhdGg+PHBhdGggeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBkPSJtNDIzLjg1MTU2MiAxMTkuMzAwNzgxYzAgMTYuOTUzMTI1LTEzLjc0NjA5MyAzMC42OTkyMTktMzAuNzAzMTI0IDMwLjY5OTIxOS0xNi45NTMxMjYgMC0zMC42OTkyMTktMTMuNzQ2MDk0LTMwLjY5OTIxOS0zMC42OTkyMTkgMC0xNi45NTcwMzEgMTMuNzQ2MDkzLTMwLjY5OTIxOSAzMC42OTkyMTktMzAuNjk5MjE5IDE2Ljk1NzAzMSAwIDMwLjcwMzEyNCAxMy43NDIxODggMzAuNzAzMTI0IDMwLjY5OTIxOXptMCAwIiBmaWxsPSIjOWQ5ZDlkIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3BhdGg+PC9nPjwvc3ZnPg=="
+                alt="Instagram"
+              />
+            </button>
+            <button>
+              <img
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSIiPjxnPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPGc+CgkJPHBhdGggZD0iTTQ5MC4yNCwxMTMuOTJjLTEzLjg4OC0yNC43MDQtMjguOTYtMjkuMjQ4LTU5LjY0OC0zMC45NzZDMzk5LjkzNiw4MC44NjQsMzIyLjg0OCw4MCwyNTYuMDY0LDgwICAgIGMtNjYuOTEyLDAtMTQ0LjAzMiwwLjg2NC0xNzQuNjU2LDIuOTEyYy0zMC42MjQsMS43Ni00NS43MjgsNi4yNzItNTkuNzQ0LDMxLjAwOEM3LjM2LDEzOC41OTIsMCwxODEuMDg4LDAsMjU1LjkwNCAgICBDMCwyNTUuOTY4LDAsMjU2LDAsMjU2YzAsMC4wNjQsMCwwLjA5NiwwLDAuMDk2djAuMDY0YzAsNzQuNDk2LDcuMzYsMTE3LjMxMiwyMS42NjQsMTQxLjcyOCAgICBjMTQuMDE2LDI0LjcwNCwyOS4wODgsMjkuMTg0LDU5LjcxMiwzMS4yNjRDMTEyLjAzMiw0MzAuOTQ0LDE4OS4xNTIsNDMyLDI1Ni4wNjQsNDMyYzY2Ljc4NCwwLDE0My44NzItMS4wNTYsMTc0LjU2LTIuODE2ICAgIGMzMC42ODgtMi4wOCw0NS43Ni02LjU2LDU5LjY0OC0zMS4yNjRDNTA0LjcwNCwzNzMuNTA0LDUxMiwzMzAuNjg4LDUxMiwyNTYuMTkyYzAsMCwwLTAuMDk2LDAtMC4xNmMwLDAsMC0wLjA2NCwwLTAuMDk2ICAgIEM1MTIsMTgxLjA4OCw1MDQuNzA0LDEzOC41OTIsNDkwLjI0LDExMy45MnogTTE5MiwzNTJWMTYwbDE2MCw5NkwxOTIsMzUyeiIgZmlsbD0iIzlkOWQ5ZCIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiIgY2xhc3M9IiI+PC9wYXRoPgoJPC9nPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjwvZz48L3N2Zz4="
+                alt="Youtube"
+              />
+            </button>
+            <button>
+              <img
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDY4Mi42NjY2OSA2ODIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSIiPjxnPjxwYXRoIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZD0ibTc3LjYxMzI4MS0uNjY3OTY5Yy00Ni45Mjk2ODcgMC03Ny42MTMyODEgMzAuODE2NDA3LTc3LjYxMzI4MSA3MS4zMjAzMTMgMCAzOS42MDkzNzUgMjkuNzY5NTMxIDcxLjMwNDY4NyA3NS44MTI1IDcxLjMwNDY4N2guODkwNjI1YzQ3Ljg0NzY1NiAwIDc3LjYyNS0zMS42OTUzMTIgNzcuNjI1LTcxLjMwNDY4Ny0uODk0NTMxLTQwLjUwMzkwNi0yOS43NzczNDQtNzEuMzIwMzEzLTc2LjcxNDg0NC03MS4zMjAzMTN6bTAgMCIgZmlsbD0iIzlkOWQ5ZCIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiI+PC9wYXRoPjxwYXRoIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZD0ibTguMTA5Mzc1IDE5OC4zMTI1aDEzNy4xOTUzMTN2NDEyLjc1NzgxMmgtMTM3LjE5NTMxM3ptMCAwIiBmaWxsPSIjOWQ5ZDlkIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIj48L3BhdGg+PHBhdGggeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBkPSJtNDgyLjA1NDY4OCAxODguNjI1Yy03NC4wMTE3MTkgMC0xMjMuNjQwNjI2IDY5LjU0Njg3NS0xMjMuNjQwNjI2IDY5LjU0Njg3NXYtNTkuODU5Mzc1aC0xMzcuMTk5MjE4djQxMi43NTc4MTJoMTM3LjE5MTQwNnYtMjMwLjVjMC0xMi4zMzk4NDMuODk0NTMxLTI0LjY2MDE1NiA0LjUxOTUzMS0zMy40ODQzNzQgOS45MTc5NjktMjQuNjQwNjI2IDMyLjQ4ODI4MS01MC4xNjc5NjkgNzAuMzkwNjI1LTUwLjE2Nzk2OSA0OS42NDQ1MzIgMCA2OS41IDM3Ljg1MTU2MiA2OS41IDkzLjMzOTg0M3YyMjAuODEyNWgxMzcuMTgzNTk0di0yMzYuNjY3OTY4YzAtMTI2Ljc4MTI1LTY3LjY4NzUtMTg1Ljc3NzM0NC0xNTcuOTQ1MzEyLTE4NS43NzczNDR6bTAgMCIgZmlsbD0iIzlkOWQ5ZCIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiI+PC9wYXRoPjwvZz48L3N2Zz4="
+                alt="linkedin"
+              />
+            </button>
+          </div>
+          <h5>Download the Revv App</h5>
+          <br />
+          <Button
+            style={{
+              backgroundColor: "#fff",
+              display: "flex",
+              justifyContent: "space-evenly",
+            }}
+          >
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDI5MS41MzggMjkxLjUzOCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+Cgk8cGF0aCBzdHlsZT0iIiBkPSJNMTg4LjM3Myw0NC4zMDhjMTAuOTctMTEuNzQ0LDE4LjM5LTI4LjA0OSwxNi4zNTktNDQuMzA4Yy0xNS44MDQsMC41NjQtMzQuOTU4LDkuMjc3LTQ2LjMwMiwyMS4wMiAgIGMtMTAuMTY5LDEwLjM5Ni0xOS4wNzIsMjcuMDExLTE2LjY5Niw0Mi45NTFDMTU5LjM2OSw2NS4xNjQsMTc3LjM4NSw1Ni4wMzMsMTg4LjM3Myw0NC4zMDh6IE0yMjIuMDMsMTU2LjU5MyAgIGMtMC4zMzctMzYuNDUxLDI4Ljg1OS01My45NTgsMzAuMTUyLTU0LjgwNGMtMTYuNDE0LTI0Ljc1My00MS45NzctMjguMTQtNTEuMDgxLTI4LjUyMmMtMjEuNzY3LTIuMjg1LTQyLjQ0MiwxMy4xODItNTMuNDkzLDEzLjE4MiAgIGMtMTEuMDA2LDAtMjguMDMtMTIuODgyLTQ2LjA4My0xMi41MzZjLTIzLjczMywwLjM5MS00NS42MDEsMTQuMjExLTU3Ljc5LDM2LjExNEMxOS4wODEsMTU0LjA5LDM3LjQxNiwyMTkuMzYzLDYxLjQ0LDI1NS4xMDQgICBjMTEuNzQ0LDE3LjQ5NywyNS43MjcsMzcuMTI1LDQ0LjA4OSwzNi40MTVjMTcuNzI1LTAuNzEsMjQuNDA3LTExLjc4OSw0NS43OTItMTEuNzg5YzIxLjM5NCwwLDI3LjM4NCwxMS43ODksNDYuMTAxLDExLjQzNCAgIGMxOS4wNDUtMC4zNTUsMzEuMDk4LTE3LjgzNCw0Mi43NDItMzUuMzg2YzEzLjQ3My0yMC4yOTIsMTkuMDI3LTM5LjkzOCwxOS4zNDUtNDAuOTMgICBDMjU5LjEsMjE0LjYxMSwyMjIuNDIxLDIwMC4xODIsMjIyLjAzLDE1Ni41OTN6IiBmaWxsPSIjY2NkMGQyIiBkYXRhLW9yaWdpbmFsPSIjY2NkMGQyIj48L3BhdGg+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPC9nPjwvc3ZnPg=="
+              alt="applelogo"
+              width="20"
+              style={{ marginRight: "5px" }}
+            />
+            Download App Store
+          </Button>
+          <Button
+            style={{
+              backgroundColor: "#fff",
+              display: "flex",
+              justifyContent: "space-evenly",
+            }}
+          >
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDUxMS45OTkgNTExLjk5OSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGc+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+Cgk8cGF0aCBzdHlsZT0iIiBkPSJNMzgyLjM2OSwxNzUuNjIzQzMyMi44OTEsMTQyLjM1NiwyMjcuNDI3LDg4LjkzNyw3OS4zNTUsNi4wMjggICBDNjkuMzcyLTAuNTY1LDU3Ljg4Ni0xLjQyOSw0Ny45NjIsMS45M2wyNTQuMDUsMjU0LjA1TDM4Mi4zNjksMTc1LjYyM3oiIGZpbGw9IiMzMmJiZmYiIGRhdGEtb3JpZ2luYWw9IiMzMmJiZmYiPjwvcGF0aD4KCTxwYXRoIHN0eWxlPSIiIGQ9Ik00Ny45NjIsMS45M2MtMS44NiwwLjYzLTMuNjcsMS4zOS01LjQwMSwyLjMwOEMzMS42MDIsMTAuMTY2LDIzLjU0OSwyMS41NzMsMjMuNTQ5LDM2djQzOS45NiAgIGMwLDE0LjQyNyw4LjA1MiwyNS44MzQsMTkuMDEyLDMxLjc2MWMxLjcyOCwwLjkxNywzLjUzNywxLjY4LDUuMzk1LDIuMzE0TDMwMi4wMTIsMjU1Ljk4TDQ3Ljk2MiwxLjkzeiIgZmlsbD0iIzMyYmJmZiIgZGF0YS1vcmlnaW5hbD0iIzMyYmJmZiI+PC9wYXRoPgoJPHBhdGggc3R5bGU9IiIgZD0iTTMwMi4wMTIsMjU1Ljk4TDQ3Ljk1Niw1MTAuMDM1YzkuOTI3LDMuMzg0LDIxLjQxMywyLjU4NiwzMS4zOTktNC4xMDMgICBjMTQzLjU5OC04MC40MSwyMzcuOTg2LTEzMy4xOTYsMjk4LjE1Mi0xNjYuNzQ2YzEuNjc1LTAuOTQxLDMuMzE2LTEuODYxLDQuOTM4LTIuNzcyTDMwMi4wMTIsMjU1Ljk4eiIgZmlsbD0iIzMyYmJmZiIgZGF0YS1vcmlnaW5hbD0iIzMyYmJmZiI+PC9wYXRoPgo8L2c+CjxwYXRoIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3R5bGU9IiIgZD0iTTIzLjU0OSwyNTUuOTh2MjE5Ljk4YzAsMTQuNDI3LDguMDUyLDI1LjgzNCwxOS4wMTIsMzEuNzYxYzEuNzI4LDAuOTE3LDMuNTM3LDEuNjgsNS4zOTUsMi4zMTQgIEwzMDIuMDEyLDI1NS45OEgyMy41NDl6IiBmaWxsPSIjMmM5ZmQ5IiBkYXRhLW9yaWdpbmFsPSIjMmM5ZmQ5Ij48L3BhdGg+CjxwYXRoIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3R5bGU9IiIgZD0iTTc5LjM1NSw2LjAyOEM2Ny41LTEuOCw1My41Mi0xLjU3Nyw0Mi41NjEsNC4yMzlsMjU1LjU5NSwyNTUuNTk2bDg0LjIxMi04NC4yMTIgIEMzMjIuODkxLDE0Mi4zNTYsMjI3LjQyNyw4OC45MzcsNzkuMzU1LDYuMDI4eiIgZmlsbD0iIzI5Y2M1ZSIgZGF0YS1vcmlnaW5hbD0iIzI5Y2M1ZSI+PC9wYXRoPgo8cGF0aCB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSIiIGQ9Ik0yOTguMTU4LDI1Mi4xMjZMNDIuNTYxLDUwNy43MjFjMTAuOTYsNS44MTUsMjQuOTM5LDYuMTUxLDM2Ljc5NC0xLjc4OSAgYzE0My41OTgtODAuNDEsMjM3Ljk4Ni0xMzMuMTk2LDI5OC4xNTItMTY2Ljc0NmMxLjY3NS0wLjk0MSwzLjMxNi0xLjg2MSw0LjkzOC0yLjc3MkwyOTguMTU4LDI1Mi4xMjZ6IiBmaWxsPSIjZDkzZjIxIiBkYXRhLW9yaWdpbmFsPSIjZDkzZjIxIj48L3BhdGg+CjxwYXRoIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3R5bGU9IiIgZD0iTTQ4OC40NSwyNTUuOThjMC0xMi4xOS02LjE1MS0yNC40OTItMTguMzQyLTMxLjMxNGMwLDAtMjIuNzk5LTEyLjcyMS05Mi42ODItNTEuODA5bC04My4xMjMsODMuMTIzICBsODMuMjA0LDgzLjIwNWM2OS4xMTYtMzguODA3LDkyLjYtNTEuODkyLDkyLjYtNTEuODkyQzQ4Mi4yOTksMjgwLjQ3Miw0ODguNDUsMjY4LjE3LDQ4OC40NSwyNTUuOTh6IiBmaWxsPSIjZmZkNTAwIiBkYXRhLW9yaWdpbmFsPSIjZmZkNTAwIj48L3BhdGg+CjxwYXRoIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3R5bGU9IiIgZD0iTTQ3MC4xMDgsMjg3LjI5NGMxMi4xOTEtNi44MjIsMTguMzQyLTE5LjEyNCwxOC4zNDItMzEuMzE0SDI5NC4zMDNsODMuMjA0LDgzLjIwNSAgQzQ0Ni42MjQsMzAwLjM3OSw0NzAuMTA4LDI4Ny4yOTQsNDcwLjEwOCwyODcuMjk0eiIgZmlsbD0iI2ZmYWEwMCIgZGF0YS1vcmlnaW5hbD0iI2ZmYWEwMCI+PC9wYXRoPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8L2c+PC9zdmc+"
+              alt="googleplay"
+              width="20"
+              style={{ marginRight: "5px" }}
+            />
+            Download Google Play
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Footer;

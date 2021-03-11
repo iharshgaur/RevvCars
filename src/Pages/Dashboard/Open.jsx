@@ -1,22 +1,28 @@
 import React from "react";
 import CarouselBannerOpen from "../../Components/Dashboard/CarouselBannerOpen";
-import Footer from "../../Components/Dashboard/Footer";
-import Last from "../../Components/Dashboard/Last";
-import Process from "../../Components/Dashboard/Process";
-import Testimonials from "../../Components/Dashboard/Testimonials";
-import WhyRev from "../../Components/Dashboard/WhyRev";
+import FAQ from "../../Components/Dashboard/FAQ";
+import FooterOpen from "../../Components/Dashboard/FooterOpen";
+import HowItWorks from "../../Components/Dashboard/HowItWorks";
+import LastOpen from "../../Components/Dashboard/LastOpen";
+import SubscriptionBenefits from "../../Components/Dashboard/SubscriptionBenefits";
 import Navbar from "../../Components/Navbar/Navbar";
 import styles from "./Dashboard.module.css";
+import TestimonialsOpen from "../../Components/Dashboard/TestimonialsOpen";
+import Comparision from "../../Components/Dashboard/Comparision";
+import FeaturedOn from "../../Components/Dashboard/FeaturedOn";
 function Open() {
   return (
     <div className={styles.Dashboard}>
       <Navbar />
       <CarouselBannerOpen />
-      <Process />
-      <WhyRev />
-      <Testimonials />
-      <Footer />
-      <Last />
+      <SubscriptionBenefits />
+      <HowItWorks />
+      <FAQ />
+      <Comparision />
+      <TestimonialsOpen />
+      <FeaturedOn />
+      <FooterOpen />
+      <LastOpen />
     </div>
   );
 }

@@ -75,11 +75,16 @@ function Navbar() {
           src="https://www.revv.co.in/grapheneImages/newopen/logo.svg"
           alt="logo"
         />
+        <p className={styles.Navbar__Logo__Text}>Sanitised. Safe</p>
       </div>
       <div></div>
       <div className={styles.Navbar__Button__Cars}>
-        <button>Hyundai Subscription</button>
-        <button>Mahindra Subscription</button>
+        <button>
+          <b>Hyundai</b> Subscription
+        </button>
+        <button>
+          <b>Mahindra</b> Subscription
+        </button>
       </div>
       <div className={styles.Navbar__Button__Info}>
         <button>Cars Subscription</button>

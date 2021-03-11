@@ -1,0 +1,39 @@
+.Partners {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0 5%;
+}
+.Partners__Images {
+  width: 150px;
+  padding: 1%;
+}
+
+.Partners__Images > img:hover {
+  border-radius: 5%;
+  border: none;
+  transition: 0.5s;
+  box-shadow: 0 0 5px;
+}
+.Partners__Images > img {
+  width: 100%;
+  transition: 0.5s;
+  border: 1px solid transparent;
+}
+
+.Journey {
+  background-image: linear-gradient(#ffffff, #f6f6f6);
+  padding: 5%;
+}
+.Journey__Icons__Container {
+  display: flex;
+  margin-top: 5%;
+  justify-content: space-around;
+  align-items: center;
+}
+.Journey__Icons > div {
+  margin-top: 20%;
+}
+.CustomerReviews {
+  margin: 5%;
+}
