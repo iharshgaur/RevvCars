@@ -7,6 +7,7 @@ import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import { TextField } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { authUser, logoutUser, createUser } from "../../Redux/Auth/action";
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -52,6 +53,7 @@ function Navbar() {
   const [email, setEmail] = React.useState("");
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
+  let history = useHistory();
   const classes = useStyles();
   const dispatch = useDispatch();
   const [openLogin, setOpenLogin] = React.useState(false);
@@ -261,7 +263,12 @@ function Navbar() {
                 className={styles.Login__DropDown}
                 onMouseLeave={() => setToggleUser(!toggleUser)}
               >
-                <Button style={{ width: "80%" }}>Profile</Button>
+                <Button
+                  style={{ width: "80%" }}
+                  onClick={() => history.push("/profile")}
+                >
+                  Profile
+                </Button>
 
                 <Button
                   style={{ width: "80%" }}
