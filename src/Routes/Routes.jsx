@@ -8,6 +8,7 @@ import Open from "../Pages/Dashboard/Open";
 import { CarsDesc } from "../Components/RentalSec/CarsDesc";
 import { Booking } from "../Components/RentalSec/Booking";
 import { PrivateRoute } from "./PrivateRoute";
+import {SubscriptionPage} from "../Pages/subscription/MainPart/SubscriptionPage"
 
 const Routes = () => {
   return (
@@ -27,6 +28,9 @@ const Routes = () => {
         </PrivateRoute>
         <PrivateRoute exact={true} path="/bookcars">
           <Booking />
+        </PrivateRoute>
+        <PrivateRoute exact={true} path="/subscription/:location">
+        <SubscriptionPage/>
         </PrivateRoute>
       </Switch>
     </div>
