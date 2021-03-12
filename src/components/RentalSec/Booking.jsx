@@ -63,7 +63,7 @@ const Booking = () => {
   //   setSum((prev) => prev + total);
   // }
   const history = useHistory();
-
+  console.log("manish",bookcars)
   const payment = () => {
     const amount = total;
     history.push(`/payment/${bookcars._id}/${amount}/rental`);
