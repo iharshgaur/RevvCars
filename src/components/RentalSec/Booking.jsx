@@ -36,11 +36,37 @@ const Booking = () => {
     (state) => state.mybookcars,
     shallowEqual
   );
-  // console.log("object11", bookcars);
+  const { city, start_date, end_date } = useSelector(
+    (state) => state.dashboard,
+    shallowEqual
+  );
+  const startDate = start_date.split("T");
+  const endDate1 = end_date.split("T");
+  const [duration, setDuration] = React.useState("");
+  const [sum, setSum] = React.useState(0);
+  let total = Math.round(Number(duration) * Number(2072));
+  React.useEffect(() => {
+    if (start_date !== "" && end_date !== "") {
+      let start = start_date.split("T")[0];
+      let end = end_date.split("T")[0];
+
+      start = start.split("-").map(Number);
+      start = new Date(start[0], start[1] - 1, start[2]);
+
+      end = end.split("-").map(Number);
+      end = new Date(end[0], end[1] - 1, end[2]);
+      setDuration((end.getTime() - start.getTime()) / (1000 * 3600 * 24));
+      setSum((prev) => prev + total);
+    }
+  }, [start_date, end_date, total]);
+  // if (total > 0) {
+  //   setSum((prev) => prev + total);
+  // }
   const history = useHistory();
-  const amount = bookcars.car_rental_price[0];
+
   const payment = () => {
-    history.push(`/payment/${bookcars._id}/${amount}/:type`);
+    const amount = total;
+    history.push(`/payment/${bookcars._id}/${amount}/rental`);
   };
   return (
     <div>
@@ -92,12 +118,25 @@ const Booking = () => {
                 </div>
                 <div className={styles.left__first__second__bodyPart}>
                   <div className={styles.left__first__second__bodyPart__a}>
-                    <p>start_date</p>
+                    <p>
+                      {startDate[0]}, {startDate[1]} hrs
+                    </p>
                     <img src="to.svg" alt="to" />
-                    <p>end_date</p>
+                    <p>
+                      {endDate1[0]}, {endDate1[1]} hrs
+                    </p>
                   </div>
                   <p style={{ textAlign: "center", marginTop: "15px" }}>
-                    Duartion
+                    <p
+                      style={{
+                        textAlign: "center",
+                        marginTop: "13px",
+                        fontWeight: "500",
+                      }}
+                    >
+                      Duration:&nbsp;
+                      <span style={{ fontWeight: "400" }}>{duration}</span> day
+                    </p>
                   </p>
                   <p
                     style={{
@@ -106,7 +145,7 @@ const Booking = () => {
                       fontWeight: "600",
                     }}
                   >
-                    city
+                    {city}
                   </p>
                   <p
                     style={{
@@ -264,7 +303,7 @@ const Booking = () => {
               }}
             >
               <p>Total</p>
-              <p>Sum</p>
+              <p>{sum}</p>
             </div>
             <hr style={{ marginTop: "7%" }} />
             <div

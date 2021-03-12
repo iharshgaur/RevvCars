@@ -25,9 +25,9 @@ import { CarsDesc } from "./CarsDesc";
 import Navbar from "../Navbar/Navbar";
 import { SubscriptionFooter } from "../footer/SubscriptionFooter";
 const RentalSec = () => {
-  const [city, setCity] = React.useState();
-  const [startdate, setStartDate] = React.useState();
-  const [enddate, setEndDate] = React.useState();
+  // const [city, setCity] = React.useState();
+  // const [startdate, setStartDate] = React.useState();
+  // const [enddate, setEndDate] = React.useState();
   const [check, setCheck] = React.useState();
   const handleChange = (event) => {
     setCheck(event.target.checked);
@@ -41,7 +41,11 @@ const RentalSec = () => {
     (state) => state.mycars,
     shallowEqual
   );
-  // const {city,start_date,end_date}=useSelector((state)=>state)
+
+  const { city, start_date, end_date } = useSelector(
+    (state) => state.dashboard,
+    shallowEqual
+  );
   let { location } = useParams();
 
   React.useEffect(() => {
@@ -191,7 +195,7 @@ const RentalSec = () => {
   const handleReset = () => {
     dispatch(getCar());
   };
-  //for the small div
+
   return (
     <div>
       {/* Navpart Start*/}
@@ -202,33 +206,38 @@ const RentalSec = () => {
             type="text"
             value={city}
             className={styles.input}
-            onChange={(e) => setCity(e.target.value)}
+            // onChange={(e) => setCity(e.target.value)}
           />
           <p className={styles.city}>CITY</p>
           <img
-            src="./public/locationIcon.png"
+            src="https://www.revv.co.in/assets/RentalImages/HomeScreen/locationIcon.png"
             alt="map"
             className={styles.map}
           />
           <input
             type="text"
-            value={startdate}
+            value={start_date}
             className={styles.input}
-            onChange={(e) => setStartDate(e.target.value)}
+            // onChange={(e) => setStartDate(e.target.value)}
           />
           <p className={styles.startDate}>START DATE</p>
-          <img src="./dateIcon.svg" alt="dateIcon" className={styles.date} />
+          <img
+            src="https://www.revv.co.in/assets/RentalImages/HomeScreen/dateIcon.svg"
+            alt="dateIcon"
+            className={styles.date}
+          />
           <input
             type="text"
-            value={enddate}
+            value={end_date}
             className={styles.input}
-            onChange={(e) => setEndDate(e.target.value)}
+            // onChange={(e) => setEndDate(e.target.value)}
           />
           <p className={styles.endDate}>END DATE</p>
           <img
-            src="./dateIcon.svg"
+            src="https://www.revv.co.in/assets/RentalImages/HomeScreen/dateIcon.svg"
             alt="dateIcon"
             className={styles.enddateImg}
+            width="10px"
           />
           <button className={styles.button}>Modify Search</button>
         </div>
@@ -261,10 +270,19 @@ const RentalSec = () => {
                   height: "26vh",
                   marginTop: "20px",
                   marginLeft: "12px",
+                  textAlign: "center",
                 }}
               >
                 {/* for the segment style */}
-                <h3 style={{ marginBottom: "2.1vh" }}>Segment</h3>
+                <h3
+                  style={{
+                    marginLeft: "0vw",
+                    marginBottom: "0.8vh",
+                    fontSize: "25px",
+                  }}
+                >
+                  Segment
+                </h3>
                 <div
                   style={{
                     height: "80%",
@@ -318,10 +336,19 @@ const RentalSec = () => {
                   height: "35vh",
                   marginTop: "20px",
                   marginLeft: "12px",
+                  textAlign: "center",
                 }}
               >
                 {/* for the brand type */}
-                <h3 style={{ marginBottom: "2.1vh" }}>Brand</h3>
+                <p
+                  style={{
+                    fontSize: "25px",
+                    marginLeft: "-3vw",
+                    marginBottom: "0.8vh",
+                  }}
+                >
+                  Brand
+                </p>
                 <div
                   style={{
                     height: "80%",
@@ -373,10 +400,19 @@ const RentalSec = () => {
                   height: "16vh",
                   marginTop: "20px",
                   marginLeft: "12px",
+                  textAlign: "center",
                 }}
               >
                 {/* for the fuel type */}
-                <h3 style={{ marginBottom: "2.1vh" }}>Fuel Type</h3>
+                <h3
+                  style={{
+                    marginLeft: "0vw",
+                    marginBottom: "0.8vh",
+                    fontSize: "25px",
+                  }}
+                >
+                  Fuel Type
+                </h3>
                 <div
                   style={{
                     height: "80%",
@@ -409,11 +445,20 @@ const RentalSec = () => {
                   width: "50%",
                   height: "16vh",
                   marginTop: "20px",
-                  marginLeft: "12px",
+                  marginLeft: "8px",
+                  textAlign: "center",
                 }}
               >
                 {/* for the Transmission Type */}
-                <h3 style={{ marginBottom: "2.1vh" }}>Transmission</h3>
+                <h3
+                  style={{
+                    marginLeft: "2vw",
+                    marginBottom: "0.8vh",
+                    fontSize: "25px",
+                  }}
+                >
+                  Transmission
+                </h3>
                 <div
                   style={{
                     height: "80%",
@@ -447,10 +492,20 @@ const RentalSec = () => {
                   height: "16vh",
                   marginTop: "20px",
                   marginLeft: "12px",
+                  textAlign: "center",
                 }}
               >
                 {/* for the seating capacity */}
-                <h3 style={{ marginBottom: "2.1vh" }}>Segment</h3>
+                <h3
+                  style={{
+                    marginBottom: "2.1vh",
+                    marginLeft: "0vw",
+                    marginBottom: "0.8vh",
+                    fontSize: "25px",
+                  }}
+                >
+                  Segment
+                </h3>
                 <div
                   style={{
                     height: "80%",

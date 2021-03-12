@@ -3,6 +3,7 @@ import styles from "./CarsDesc.module.css";
 import { useDispatch } from "react-redux";
 import { getCarById } from "../../Redux/Booking/action";
 import { Link } from "react-router-dom";
+import { getcarPrice } from "../../Redux/carPrice/action";
 const CarsDesc = ({
   car_name,
   car_images,
@@ -35,8 +36,10 @@ const CarsDesc = ({
   };
   const dispatch = useDispatch();
   const handleCheckOut = (id) => {
-    console.log("id", id);
     dispatch(getCarById(id));
+  };
+  const handlePrice = (e) => {
+    dispatch(getcarPrice(e));
   };
   console.log("car_specs", car_specs[0]);
   return (
@@ -63,16 +66,25 @@ const CarsDesc = ({
           </div>
           <div className={styles.container2__c}>
             <div>
-              <img src="automatic.svg" alt="automatic" />
+              <img
+                src="https://www.revv.co.in/imgs/car-card/automatic.svg"
+                alt="automatic"
+              />
               &nbsp;
               {car_specs[0]}
             </div>
             <div>
-              <img src="petrol.svg" alt="petrol" />
+              <img
+                src="https://www.revv.co.in/imgs/car-card/petrol.svg"
+                alt="petrol"
+              />
               &nbsp;{car_specs[1]}
             </div>
             <div>
-              <img src="seat.svg" alt="seat" />
+              <img
+                src="https://www.revv.co.in/imgs/car-card/seat.svg"
+                alt="seat"
+              />
               &nbsp;{car_specs[2]}
             </div>
           </div>
@@ -88,6 +100,7 @@ const CarsDesc = ({
                 fontSize: "18px",
                 fontFamily: "'Roboto', sans-serif",
               }}
+              onClick={() => handlePrice(car_rental_price[0])}
             >
               ₹{car_rental_price[0]}
             </p>
