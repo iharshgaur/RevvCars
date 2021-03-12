@@ -46,6 +46,8 @@ const RentalSec = () => {
     (state) => state.dashboard,
     shallowEqual
   );
+  const startDate = start_date.split("T");
+  const endDate1 = end_date.split("T");
   let { location } = useParams();
 
   React.useEffect(() => {
@@ -216,7 +218,7 @@ const RentalSec = () => {
           />
           <input
             type="text"
-            value={start_date}
+            value={startDate[0]}
             className={styles.input}
             // onChange={(e) => setStartDate(e.target.value)}
           />
@@ -228,7 +230,7 @@ const RentalSec = () => {
           />
           <input
             type="text"
-            value={end_date}
+            value={endDate1[0]}
             className={styles.input}
             // onChange={(e) => setEndDate(e.target.value)}
           />
