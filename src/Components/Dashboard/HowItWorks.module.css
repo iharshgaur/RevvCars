@@ -1,0 +1,35 @@
+.Container {
+  background-image: linear-gradient(#ffffff, #f6f6f6);
+  padding: 5%;
+}
+.Container__Top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.Container__Icons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 500px;
+  flex-wrap: wrap;
+  padding: 3% 0;
+}
+.Container__Icons > div {
+  position: relative;
+
+  display: flex;
+  width: 41%;
+  height: 100px;
+  align-items: center;
+  margin: 3% 0;
+}
+.Container__Icons > div > div > p {
+  color: grey;
+}
+.Container__Icons__Background {
+  position: absolute;
+  width: 60px;
+  top: -55%;
+  left: 11%;
+}

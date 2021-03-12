@@ -35,8 +35,10 @@ const CarsDesc = ({
   };
   const dispatch = useDispatch();
   const handleCheckOut = (id) => {
+    console.log("id", id);
     dispatch(getCarById(id));
   };
+  console.log("car_specs", car_specs[0]);
   return (
     <div>
       <div className={styles.container1}>
@@ -77,10 +79,8 @@ const CarsDesc = ({
         </div>
         <div className={styles.container3}>
           <div
-            className={styles.container3__a}
-            style={{ backgroundColor: divcolor, color: divText }}
             onClick={() => hanldeActive("1")}
-            className={boxActive === "1" ? styles.bg : null}
+            className={boxActive === "1" ? styles.bg : styles.container3__a}
           >
             <p
               style={{
@@ -93,7 +93,7 @@ const CarsDesc = ({
             </p>
             <p
               style={{
-                paddingTop: "2px",
+                marginTop: "-20%",
                 fontSize: "9px",
                 fontFamily: "'Roboto', sans-serif",
               }}
@@ -102,10 +102,8 @@ const CarsDesc = ({
             </p>
           </div>
           <div
-            className={styles.container3__a}
-            style={{ backgroundColor: divcolor, color: divText }}
             onClick={() => hanldeActive("3")}
-            className={boxActive === "3" ? styles.bg : null}
+            className={boxActive === "3" ? styles.bg : styles.container3__a}
           >
             <p
               style={{
@@ -118,7 +116,7 @@ const CarsDesc = ({
             </p>
             <p
               style={{
-                paddingTop: "2px",
+                marginTop: "-20%",
                 fontSize: "9px",
                 fontFamily: "'Roboto', sans-serif",
               }}
@@ -127,9 +125,8 @@ const CarsDesc = ({
             </p>
           </div>
           <div
-            className={styles.container3__a}
             onClick={() => hanldeActive("6")}
-            className={boxActive === "6" ? styles.bg : null}
+            className={boxActive === "6" ? styles.bg : styles.container3__a}
           >
             <p
               style={{
@@ -142,7 +139,7 @@ const CarsDesc = ({
             </p>
             <p
               style={{
-                paddingTop: "2px",
+                marginTop: "-20%",
                 fontSize: "9px",
                 fontFamily: "'Roboto', sans-serif",
               }}
@@ -152,10 +149,9 @@ const CarsDesc = ({
           </div>
         </div>
         <div className={styles.container4}>
-          <p>
+          <p style={{ marginTop: "10%", fontSize: "12px", color: "#767676" }}>
             Extra km charge @ <br /> ₹{extra_price}/km
           </p>
-
           {car_is_booked ? (
             <button
               style={{

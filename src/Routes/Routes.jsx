@@ -1,22 +1,44 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { CarsDesc } from "../components/RentalSec/CarsDesc";
-import { RentalSec } from "../components/RentalSec/RentalSec";
-import { Booking } from "../components/RentalSec/Booking";
+import { RentalSec } from "../Components/RentalSec/RentalSec";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import Open from "../Pages/Dashboard/Open";
+import { CarsDesc } from "../Components/RentalSec/CarsDesc";
+import { Booking } from "../Components/RentalSec/Booking";
+import { PrivateRoute } from "./PrivateRoute";
+import { SubscriptionPage } from "../Pages/subscription/MainPart/SubscriptionPage";
+import { Payment } from "../Pages/SubscriptionPay/MainPage/Payment";
+import { FinalPayment } from "../Pages/payment/FinalPayment";
+import Profile from "../Pages/Profile/Profile";
 
 const Routes = () => {
   return (
     <div>
       <Switch>
         <Route exact path="/">
+          <Dashboard />
+        </Route>
+        <Route exact path="/open">
+          <Open />
+        </Route>
+        <PrivateRoute exact={true} path="/cars/:location">
           <RentalSec />
-        </Route>
-        <Route exact path="/cars">
-          <CarsDesc />
-        </Route>
-        <Route exact path="/bookcars">
+        </PrivateRoute>
+        <PrivateRoute exact={true} path="/bookcars">
           <Booking />
-        </Route>
+        </PrivateRoute>
+        <PrivateRoute exact={true} path="/subscription/:location">
+          <SubscriptionPage />
+        </PrivateRoute>
+        <PrivateRoute exact={true} path="/profile">
+          <Profile />
+        </PrivateRoute>
+        <PrivateRoute exact={true} path="/subpay/:id">
+          <Payment />
+        </PrivateRoute>
+        <PrivateRoute exact={true} path="/payment/:id/:amount/:type">
+          <FinalPayment />
+        </PrivateRoute>
       </Switch>
     </div>
   );

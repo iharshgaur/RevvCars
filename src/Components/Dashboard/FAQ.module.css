@@ -1,0 +1,11 @@
+.FAQ {
+  background-image: linear-gradient(#ffffff, #f6f6f6);
+  padding: 5%;
+}
+.FAQ > h2 {
+  margin-bottom: 1%;
+}
+.FAQ__List {
+  margin: 5%;
+  margin-top: 2%;
+}

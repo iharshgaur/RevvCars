@@ -1,0 +1,78 @@
+.container{
+    margin-top: 80px;
+    margin-left: 35%;
+    height: 580px;
+    width: 400px;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px 0 rgb(0 0 0 / 16%);
+}
+.headBox
+{
+    border-radius:  4px 4px  0 0;
+    height: 100px;
+    width: 100%;
+    background-image: linear-gradient(
+        270deg
+        ,#1caba2 20%,#1c7fab);
+}
+.headBoxImg{
+    margin-left: 42%;
+    margin-top: 10px;
+}
+.headBoxP
+{
+    text-align: center;
+   color: #fff;
+   font-weight: 500;
+}
+.p{
+    margin-left: 10px;
+    font-weight: 500;
+    color: #656565;
+}
+.phone
+{
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.cardBox{
+    margin-top: 15px;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.credit{
+    margin-top: 10px;
+    margin-left: 8px;
+    color: #1caba2;
+}
+.cardBox>div{
+    height: 100%;
+    width: 60px;
+    margin-left: 55px;
+    cursor: pointer;
+}
+.bg{    
+    background-color: #fff;
+    box-shadow: 0 2px 6px 0 rgb(0 0 0 / 16%);
+}
+.payBox
+{
+    height: 50px;
+    width: 80%;
+    border-radius: 4px;
+    margin: auto;
+    margin-top: 10px;
+    background-image: linear-gradient(
+        270deg
+        ,#1caba2 20%,#1c7fab);
+    color: #fff;  
+    text-align: center;  
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.payP{
+    padding-top: 10px;
+}

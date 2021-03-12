@@ -1,0 +1,43 @@
+.Subscriptions {
+  margin: 5%;
+  box-shadow: 0 0 10px grey;
+  padding: 5%;
+  border-radius: 10px;
+}
+.Subscriptions > h4 {
+  margin-bottom: 50px;
+}
+
+.Subscriptions__Icons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.Subscriptions__Icons > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  width: 200px;
+}
+.Subscriptions__Information {
+  display: flex;
+  margin: 5% 0 0 0;
+  justify-content: space-between;
+}
+.Subscriptions__Information__Left,
+.Subscriptions__Information__Right {
+  width: 48%;
+}
+.Subscriptions__Information__Left > p {
+  text-align: justify;
+  font-size: 18px;
+  font-weight: 400;
+  color: grey;
+  margin: 5% 0;
+}
+
+.Subscriptions__Information__Button {
+  color: #1caba2;
+}

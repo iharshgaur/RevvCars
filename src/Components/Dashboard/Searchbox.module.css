@@ -4,11 +4,10 @@
   max-width: 500px;
   max-height: 500px;
   background-color: white;
-  height: 65%;
   border: none;
   box-shadow: 0 0 10px;
   border-radius: 3px;
-  margin-top: 8%;
+  margin-top: 7%;
   margin-left: 5%;
   z-index: 1;
   padding: 2%;
@@ -23,24 +22,29 @@
 }
 .SearchBox__MidRow {
   text-align: center;
-  margin: 5% 0;
+  margin: 3% 0;
   color: grey;
 }
-.Cities {
-  width: 100%;
-  border-bottom: 2px solid black;
-}
+
 .SearchBox__Dropdowns__Date {
   display: flex;
-  margin: 0 5%;
+  justify-content: space-around;
+  /* border: 1px solid red; */
 }
-.SearchBox__Dropdowns__Date > input {
-  width: 45%;
-  margin: 2%;
+.SearchBox__Dropdowns__Date > div {
+  /* border: 1px solid red; */
+  width: 48%;
+}
+.SearchBox__Dropdowns__Date > div > input {
+  width: 100%;
 }
 .SearchBox__Submit {
   text-align: center;
   margin-top: 5%;
+}
+
+.SearchBox__Submit > p {
+  margin: 0;
 }
 
 .SearchBox__Submit > button {
@@ -59,4 +63,9 @@
 .SearchBox__Dropdowns__List {
   display: flex;
   flex-direction: column;
+}
+.DateTime {
+  border: none;
+  border-bottom: 1px solid grey;
+  height: 50px;
 }

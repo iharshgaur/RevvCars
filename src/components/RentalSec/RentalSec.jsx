@@ -1,5 +1,4 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import Switch from "@material-ui/core/Switch";
 import axios from "axios";
 import styles from "./RentalSec.module.css";
@@ -23,6 +22,8 @@ import {
 } from "../../Redux/RentalSec/action";
 import { useParams } from "react-router-dom";
 import { CarsDesc } from "./CarsDesc";
+import Navbar from "../Navbar/Navbar";
+import { SubscriptionFooter } from "../footer/SubscriptionFooter";
 const RentalSec = () => {
   const [city, setCity] = React.useState();
   const [startdate, setStartDate] = React.useState();
@@ -40,6 +41,7 @@ const RentalSec = () => {
     (state) => state.mycars,
     shallowEqual
   );
+  // const {city,start_date,end_date}=useSelector((state)=>state)
   let { location } = useParams();
 
   React.useEffect(() => {
@@ -193,6 +195,7 @@ const RentalSec = () => {
   return (
     <div>
       {/* Navpart Start*/}
+      <Navbar />
       <div className={styles.container}>
         <div className={styles.container__first}>
           <input
@@ -202,7 +205,11 @@ const RentalSec = () => {
             onChange={(e) => setCity(e.target.value)}
           />
           <p className={styles.city}>CITY</p>
-          <img src="./locationIcon.png" alt="map" className={styles.map} />
+          <img
+            src="./public/locationIcon.png"
+            alt="map"
+            className={styles.map}
+          />
           <input
             type="text"
             value={startdate}
@@ -475,16 +482,14 @@ const RentalSec = () => {
           </div>
           <div className={styles.containerWrap__right}>
             <div className={styles.containerWrap__right__first}>
-              <div style={{ width: "20vw" }}>
-                <p style={{ marginLeft: "-18%" }}>
+              <div style={{ width: "20vw", textAlign: "left" }}>
+                <p style={{ marginLeft: "-20%" }}>
                   Car Rental in <b>{city}</b>
                 </p>
               </div>
               <div
                 style={{
                   display: "flex",
-                  justifyContent: "space-evenly",
-                  alignItems: "center",
                 }}
               >
                 <Switch
@@ -493,7 +498,7 @@ const RentalSec = () => {
                   color="primary"
                   name="check"
                 />
-                <p>Prices exclude fuel cost</p>
+                <p style={{ marginTop: "2%" }}>Prices exclude fuel cost</p>
               </div>
               <div
                 style={{
@@ -502,7 +507,7 @@ const RentalSec = () => {
                   alignItems: "center",
                 }}
               >
-                <p>Sort by:</p>
+                <p style={{ marginTop: "5px" }}>Sort by:</p>
                 <div className={styles.cont__sort}>
                   <select
                     name="sort"
@@ -536,6 +541,7 @@ const RentalSec = () => {
           </div>
         </div>
       </div>
+      <SubscriptionFooter />
     </div>
   );
 };

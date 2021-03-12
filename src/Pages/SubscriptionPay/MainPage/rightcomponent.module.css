@@ -1,0 +1,157 @@
+.container {
+  height: 650px;
+  padding-top: 2%;
+  width: 37%;
+  left: 850px;
+  top: 40px;
+  position: relative;
+  position: fixed;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px 0 rgb(0 0 0 / 16%);
+  background-color: #fff;
+}
+.head {
+  height: 70px;
+  width: 100%;
+  background-color: #f9f9f9;
+}
+.head > p {
+  font-size: 25px;
+  padding: 15px;
+  padding-left: 35px;
+  font-weight: 700;
+}
+.headP {
+  font-size: 22px;
+  padding: 15px;
+  padding-left: 35px;
+  font-weight: 700;
+}
+.tentureBox {
+  height: 70px;
+  width: 100%;
+}
+.tentureBox > div {
+  float: left;
+  margin-left: 18px;
+  height: 90%;
+  width: 13%;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px 0 rgb(0 0 0 / 16%);
+  cursor: pointer;
+}
+.tentureBox_p1 {
+  font-size: 16px;
+  text-align: center;
+  font-weight: 800;
+  color: #656565;
+}
+
+.tentureBox_p2 {
+  font-size: 15px;
+  text-align: center;
+  font-weight: 500;
+  color: #656565;
+}
+.price {
+  font-size: 35px;
+  padding-left: 35px;
+  font-weight: 700;
+}
+.price_span1 {
+  font-size: 20px;
+  color: #656565;
+  font-weight: 200;
+}
+.price_span2 {
+  margin-left: 10px;
+  font-size: 20px;
+  color: #656565;
+  font-weight: 500;
+  text-decoration: line-through;
+}
+.price_span3 {
+  margin-left: 10px;
+  font-size: 20px;
+  color: #1caba2;
+  font-weight: 500;
+}
+.offerImg {
+  margin-left: 35px;
+}
+.offerImgP {
+  margin-left: 10px;
+  color: #1caba2;
+  font-weight: 500;
+}
+.payContainer {
+  height: 70px;
+  width: 80%;
+  margin-top: 10px;
+  margin-left: 35px;
+  background-image: linear-gradient(270deg, #1caba2 20%, #1c7fab);
+  border-radius: 4px !important;
+  color: #fff;
+  border: #fff;
+  cursor: pointer;
+}
+.payContainerP {
+  text-align: center;
+  font-size: 20px;
+  padding-top: 15px;
+  font-weight: 500;
+}
+.deliveryP {
+  margin-top: 10px;
+  margin-left: 35px;
+  font-size: 12px;
+  color: #656565;
+  font-weight: 500;
+}
+.deliveryspan {
+  margin-left: 20px;
+}
+.deliverySpark {
+  margin-left: 35px;
+}
+.deliveryl1 {
+  font-size: 16px;
+  margin-left: 10px;
+  color: #656565;
+  font-weight: 700;
+}
+.deliveryl2 {
+  margin-left: 45px;
+  font-size: 16px;
+  color: #656565;
+  font-weight: 700;
+}
+.deliverygold {
+  margin-left: 35px;
+  font-size: 10px;
+  color: #d1a619;
+  font-weight: 700;
+}
+.detailsl1 {
+  margin-left: 15px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.callBox {
+  height: 50px;
+  width: 80%;
+  margin-top: 10px;
+  margin-left: 35px;
+  color: #1caba2;
+  border-radius: 4px;
+  border: 2px solid #ebebeb;
+}
+.callBox > p {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+.bg {
+  background-image: linear-gradient(270deg, #1caba2 20%, #1c7fab);
+}
