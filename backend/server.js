@@ -46,10 +46,21 @@ app.get("/users", async (req, res) => {
   res.status(200).json(data);
 });
 
+app.get("/users/:id", async (req, res) => {
+  const data = await users.findById(req.params.id)
+  res.status(200).json(data);
+});
+
 app.post("/users", async (req, res) => {
   const data = await users.create(req.body);
   res.status(201).json(data);
 });
+
+
+app.patch("/usersPatching/:id",async(req,res)=>{
+  const data = await users.findByIdAndUpdate(req.params.id,req.body,{new:true})
+  res.status(201).json(data)
+})
 
 let rentalCarSchema = new mongoose.Schema(
   {

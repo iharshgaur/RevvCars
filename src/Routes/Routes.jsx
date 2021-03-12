@@ -39,7 +39,7 @@ const Routes = () => {
         <PrivateRoute exact={true} path="/subpay/:id">
           <Payment />
         </PrivateRoute>
-        <PrivateRoute exact={true} path="/payment/:id/:amount">
+        <PrivateRoute exact={true} path="/payment/:id/:amount/:type">
           <FinalPayment />
         </PrivateRoute>
       </Switch>
