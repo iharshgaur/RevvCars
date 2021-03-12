@@ -46,10 +46,21 @@ app.get("/users", async (req, res) => {
   res.status(200).json(data);
 });
 
+app.get("/users/:id", async (req, res) => {
+  const data = await users.findById(req.params.id)
+  res.status(200).json(data);
+});
+
 app.post("/users", async (req, res) => {
   const data = await users.create(req.body);
   res.status(201).json(data);
 });
+
+
+app.patch("/usersPatching/:id",async(req,res)=>{
+  const data = await users.findByIdAndUpdate(req.params.id,req.body,{new:true})
+  res.status(201).json(data)
+})
 
 let rentalCarSchema = new mongoose.Schema(
   {
@@ -169,7 +180,10 @@ app.get("/subpay/:id",async(req,res)=>{
   res.status(200).json(data)
 })
 
-
+app.get("/payment/:id/",async(req,res)=>{
+  const data = await sub.findById(req.params.id).lean().exec()
+  res.status(200).json(data)
+})
 
 
 
@@ -185,86 +199,89 @@ res.status(200).json(data)
 
 //get request for price
 
-app.get("/price/btw10-15",async(req,res)=>{
-    const data = await sub.find({$and:[{car_subscription_price:{$gt:10000}},{car_subscription_price:{$lt:15000}}]})
+app.get("/price/btw10-15/:location",async(req,res)=>{
+  const data = await sub.find({$and:[{car_subscription_price:{$gt:10000}},{car_subscription_price:{$lt:15000}},{rental_location : {$eq : req.params.location}}]})
+  console.log("here",data)
     res.status(200).json(data)
 })
 
 
-app.get("/price/btw15-20",async(req,res)=>{
-    const data = await sub.find({$and:[{car_subscription_price:{$gt:15000}},{car_subscription_price:{$lt:20000}}]})
+app.get("/price/btw15-20/:location",async(req,res)=>{
+    const data = await sub.find({$and:[{car_subscription_price:{$gt:15000}},{car_subscription_price:{$lt:20000}},{rental_location : {$eq : req.params.location}}]})
     res.status(200).json(data)
 })
 
-app.get("/price/btw20-25",async(req,res)=>{
-    const data = await sub.find({$and:[{car_subscription_price:{$gt:20000}},{car_subscription_price:{$lt:25000}}]})
+app.get("/price/btw20-25/:location",async(req,res)=>{
+    const data = await sub.find({$and:[{car_subscription_price:{$gt:20000}},{car_subscription_price:{$lt:25000}},{rental_location : {$eq : req.params.location}}]})
     res.status(200).json(data)
 })
 
-app.get("/price/btw25-30",async(req,res)=>{
-    const data = await sub.find({$and:[{car_subscription_price:{$gt:25000}},{car_subscription_price:{$lt:40000}}]})
+app.get("/price/btw25-30/:location",async(req,res)=>{
+    const data = await sub.find({$and:[{car_subscription_price:{$gt:25000}},{car_subscription_price:{$lt:40000}},{rental_location : {$eq : req.params.location}}]})
     res.status(200).json(data)
 })
 
 
 
 // filtering the segment
-app.get("/hatch",async(req,res)=>{
-    const data = await sub.find({car_type:{$eq:"Hatch Back"}})
-    res.status(200).json(data)
-})
-
-app.get("/sedan",async(req,res)=>{
-    const data = await sub.find({car_type:{$eq:"Sedan"}})
-    res.status(200).json(data)
-})
-
-app.get("/suv",async(req,res)=>{
-    const data = await sub.find({car_type:{$eq:"SUV"}})
+app.get("/hatch/:location",async(req,res)=>{
+  console.log("here")
+    const data = await sub.find({$and :[{car_type:{$eq:"Hatch Back"}},{rental_location :{$eq: req.params.location}}]})
 
     res.status(200).json(data)
 })
 
-app.get("/hatch&sedan",async(req,res)=>{
-    const data = await sub.find({car_type:{$eq:"Hatch Back"}})
-    const data2 = await sub.find({car_type:{$eq:"Sedan"}})
+app.get("/sedan/:location",async(req,res)=>{
+  const data = await sub.find({$and :[{car_type:{$eq:"Sedan"}},{rental_location :{$eq: req.params.location}}]})
+    res.status(200).json(data)
+})
+
+app.get("/suv/:location",async(req,res)=>{
+  const data = await sub.find({$and :[{car_type:{$eq:"SUV"}},{rental_location :{$eq: req.params.location}}]})
+
+    res.status(200).json(data)
+})
+
+app.get("/hatch&sedan/:location",async(req,res)=>{
+    const data =  await sub.find({$and :[{car_type:{$eq:"Hatch Back"}},{rental_location :{$eq: req.params.location}}]})
+    const data2 = await sub.find({$and :[{car_type:{$eq:"Sedan"}},{rental_location :{$eq: req.params.location}}]})
 
     const updateData = [...data,...data2]
     res.status(200).json(updateData)
 })
 
-app.get("/hatch&suv",async(req,res)=>{
-    const data = await sub.find({car_type:{$eq:"Hatch Back"}})
-    const data2 = await sub.find({car_type:{$eq:"SUV"}})
+app.get("/hatch&suv/:location",async(req,res)=>{
+    const data =  await sub.find({$and :[{car_type:{$eq:"Hatch Back"}},{rental_location :{$eq: req.params.location}}]})
+    const data2 =await sub.find({$and :[{car_type:{$eq:"SUV"}},{rental_location :{$eq: req.params.location}}]})
 
     const updateData = [...data,...data2]
     res.status(200).json(updateData)
 })
-app.get("/sedan&suv",async(req,res)=>{
-    const data = await sub.find({car_type:{$eq:"Sedan"}})
-    const data2 = await sub.find({car_type:{$eq:"SUV"}})
-
+app.get("/sedan&suv/:location",async(req,res)=>{
+    const data = await sub.find({$and :[{car_type:{$eq:"Sedan"}},{rental_location :{$eq: req.params.location}}]})
+    const data2 = await sub.find({$and :[{car_type:{$eq:"SUV"}},{rental_location :{$eq: req.params.location}}]})
     const updateData = [...data,...data2]
     res.status(200).json(updateData)
 })
 
 //filtering the petrol
-app.get("/petrol",async(req,res)=>{
-    const data = await sub.find({car_specs:{$eq:"petrol"}})
+app.get("/petrol/:location",async(req,res)=>{
+    const data = await sub.find({$and : [{car_specs:{$eq:"petrol"}},{rental_location :{$eq: req.params.location}}]})
     res.status(200).json(data)
 })
-app.get("/diesel",async(req,res)=>{
-    const data = await sub.find({car_specs:{$eq:"diesel"}})
+app.get("/diesel/:location",async(req,res)=>{
+  const data = await sub.find({$and : [{car_specs:{$eq:"diesel"}},{rental_location :{$eq: req.params.location}}]})
     res.status(200).json(data)
 })
 
 //filtering with transistion
-app.get("/manual",async(req,res)=>{
-    const data = await sub.find({car_specs:{$eq:"Manual"}})
+app.get("/manual/:location",async(req,res)=>{
+  
+  const data = await sub.find({$and : [{car_specs:"Manual"},{rental_location :{$eq: req.params.location}}]})
     res.status(200).json(data)
 })
-app.get("/automatic",async(req,res)=>{
-    const data = await sub.find({car_specs:{$eq:"Automatic"}})
+app.get("/automatic/:location",async(req,res)=>{
+  const data = await sub.find({$and : [{car_specs:"Automatic"},{rental_location :{$eq: req.params.location}}]})
     res.status(200).json(data)
 })
 
