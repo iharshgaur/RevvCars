@@ -119,7 +119,7 @@ export const FinalPayment = () => {
             <div onClick={()=>handleActive("2")} className={active==="2"?style.bg:null}><AccountBalance style={{fontSize:"45px"}} className={style.credit}/></div>
             <div onClick={()=>handleActive("3")} className={active==="3"?style.bg:null}><AccountBalanceWallet style={{fontSize:"45px"}} className={style.credit}/></div>
         </div>
-        <div className={style.payBox} onClick={hanldePay}>
+        <div className={style.payBox} >
             <p  className={style.payP}>Pay the amount with {active==="1"?"Credit Card": active==="2"?"Net Banking":active==="3"?"Wallet":""}</p>
         </div>
             </div>
