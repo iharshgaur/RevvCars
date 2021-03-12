@@ -6,12 +6,27 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { useHistory, useParams } from 'react-router'
 import style from "./Finalpayment.module.css"
+import Modal from '@material-ui/core/Modal';
+import Backdrop from '@material-ui/core/Backdrop';
+import Fade from '@material-ui/core/Fade';
 
-const useStyles = makeStyles(()=>({
+const useStyles = makeStyles((theme)=>({
     icon:{
         marginTop:"20px",
         marginLeft:"20px"
-    }
+    },
+    modal: {
+        display: 'flex',
+        marginLeft:"33%",
+        marginTop:"50px"
+      },
+      paper: {
+          marginLeft:"20px",
+          height:"450px",
+        width:"410px",          
+        backgroundColor:"#fff",
+        borderRadius:"4px"
+      },
 }))
 
 
@@ -49,6 +64,20 @@ export const FinalPayment = () => {
         return SetActive(num)
     }
 
+    
+    const originalPrice = type==="rental"?amount:data?.car_subscription_price
+    const month = type==="rental"?"day":"month"
+    
+    const [open, setOpen] = React.useState(false);
+    
+    const handleOpen = () => {
+      setOpen(true);
+    };
+  
+    const handleClose = () => {
+        setOpen(false);
+    };
+    
     const history = useHistory()
 
     const hanldePay = ()=>{
@@ -76,13 +105,12 @@ export const FinalPayment = () => {
             }
              axios.patch(`http://localhost:1234/usersPatching/${currentUser._id}`,payload)
         }
- 
-        history.push("/profile")
+        handleOpen()
     }
 
-
-    const month = type==="rental"?"day":"month"
-
+    const hanldeRoute =()=>{
+        history.push("/profile")
+    }
 
     return (
         <div>
@@ -91,7 +119,7 @@ export const FinalPayment = () => {
                     <img className={style.headBoxImg} src="https://www.revv.co.in/grapheneImages/newopen/logo.svg" alt="pic"/>
                     <p className={style.headBoxP}>Self car Rentals | Sanitized and Safe</p>
                 </div>
-                <p className={style.p}>Original Price - ₹ {data?.car_subscription_price} /{month}</p>
+                <p className={style.p}>Original Price - ₹ {originalPrice} /{month}</p>
                 <p className={style.p}>Choosen Price - ₹ {amount} /{month}</p>
                 <p className={style.p}>Tax - ₹ {d} /{month}</p>
                 <p className={style.p}>Total - ₹ {total} /{month}</p>
@@ -119,11 +147,38 @@ export const FinalPayment = () => {
             <div onClick={()=>handleActive("2")} className={active==="2"?style.bg:null}><AccountBalance style={{fontSize:"45px"}} className={style.credit}/></div>
             <div onClick={()=>handleActive("3")} className={active==="3"?style.bg:null}><AccountBalanceWallet style={{fontSize:"45px"}} className={style.credit}/></div>
         </div>
-        <div className={style.payBox} >
+        <div className={style.payBox} onClick={handleOpen}>
             <p  className={style.payP}>Pay the amount with {active==="1"?"Credit Card": active==="2"?"Net Banking":active==="3"?"Wallet":""}</p>
         </div>
             </div>
         
+
+            <Modal
+        aria-labelledby="transition-modal-title"
+        aria-describedby="transition-modal-description"
+        className={classes.modal}
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        <Fade in={open}>
+          <div className={classes.paper}>
+          <div className={style.headBox}>
+                <img className={style.headBoxImg} src="https://www.revv.co.in/grapheneImages/newopen/logo.svg" alt="pic"/>
+                <p className={style.headBoxP}>Self car Rentals | Sanitized and Safe</p>
+            </div> 
+            <p style={{color:"#1caba2"}} className={style.modelP} onClick={hanldePay}>Payment Successfull</p>
+            <div className={style.payBox} onClick={hanldeRoute}>
+            <p  className={style.payP}>ok</p>
+        </div>
+          </div>
+        </Fade>
+      </Modal>
+
         </div>
     )
 }

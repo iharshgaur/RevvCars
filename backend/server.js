@@ -47,6 +47,7 @@ app.get("/users", async (req, res) => {
 });
 
 app.get("/users/:id", async (req, res) => {
+  
   const data = await users.findById(req.params.id)
   res.status(200).json(data);
 });
