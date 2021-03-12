@@ -66,7 +66,7 @@ export const FinalPayment = () => {
 
     
     const originalPrice = type==="rental"?amount:data?.car_subscription_price
-    const month = type==="rental"?"day":"month"
+    const month = type==="rental"?"ride":"month"
     
     const [open, setOpen] = React.useState(false);
     
@@ -100,9 +100,10 @@ export const FinalPayment = () => {
                 username:currentUser.username,
                 email:currentUser.email,
                 password:currentUser.password,
-                cars_booked:[data2?.cars_booked,data],
+                cars_booked:[...data2?.cars_booked,data],
                 cars_subscribed:currentUser.cars_subscribed
             }
+            console.log(payload)
              axios.patch(`http://localhost:1234/usersPatching/${currentUser._id}`,payload)
         }
         handleOpen()
@@ -148,7 +149,7 @@ export const FinalPayment = () => {
             <div onClick={()=>handleActive("3")} className={active==="3"?style.bg:null}><AccountBalanceWallet style={{fontSize:"45px"}} className={style.credit}/></div>
         </div>
         <div className={style.payBox} onClick={handleOpen}>
-            <p  className={style.payP}>Pay the amount with {active==="1"?"Credit Card": active==="2"?"Net Banking":active==="3"?"Wallet":""}</p>
+            <p  className={style.payP} onClick={hanldePay}>Pay the amount with {active==="1"?"Credit Card": active==="2"?"Net Banking":active==="3"?"Wallet":""}</p>
         </div>
             </div>
         
@@ -171,7 +172,7 @@ export const FinalPayment = () => {
                 <img className={style.headBoxImg} src="https://www.revv.co.in/grapheneImages/newopen/logo.svg" alt="pic"/>
                 <p className={style.headBoxP}>Self car Rentals | Sanitized and Safe</p>
             </div> 
-            <p style={{color:"#1caba2"}} className={style.modelP} onClick={hanldePay}>Payment Successfull</p>
+            <p style={{color:"#1caba2"}} className={style.modelP}>Payment Successfull</p>
             <div className={style.payBox} onClick={hanldeRoute}>
             <p  className={style.payP}>ok</p>
         </div>
