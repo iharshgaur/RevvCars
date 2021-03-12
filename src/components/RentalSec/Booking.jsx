@@ -6,7 +6,9 @@ import TextField from "@material-ui/core/TextField";
 import FormControl from "@material-ui/core/FormControl";
 import Input from "@material-ui/core/Input";
 import InputLabel from "@material-ui/core/InputLabel";
-
+import Navbar from "../Navbar/Navbar";
+import { SubscriptionFooter } from "../footer/SubscriptionFooter";
+import { useHistory } from "react-router";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -34,11 +36,17 @@ const Booking = () => {
     (state) => state.mybookcars,
     shallowEqual
   );
-  console.log("object11", bookcars);
+  // console.log("object11", bookcars);
+  const history = useHistory();
+  const amount = bookcars.car_rental_price[0];
+  const payment = () => {
+    history.push(`/payment/${bookcars._id}/${amount}/rental`);
+  };
   return (
     <div>
+      <Navbar />
       {isLoading ? (
-        <div>...isLoading</div>
+        <div>.</div>
       ) : (
         <div className={styles.container}>
           <div className={styles.left}>
@@ -324,6 +332,7 @@ const Booking = () => {
                   border: "none",
                   borderRadius: "5px",
                 }}
+                onClick={payment}
               >
                 Pay
               </button>
@@ -331,6 +340,7 @@ const Booking = () => {
           </div>
         </div>
       )}
+      <SubscriptionFooter />
     </div>
   );
 };

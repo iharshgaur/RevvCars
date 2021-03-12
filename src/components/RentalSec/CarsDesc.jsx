@@ -32,6 +32,11 @@ const CarsDesc = ({
   const handleCheckOut = (id) => {
     dispatch(getCarById(id));
   };
+  const [boxActive, SetActive] = React.useState("");
+
+  const hanldeActive = (num) => {
+    return SetActive(num);
+  };
   return (
     <div>
       <div className={styles.container1}>
@@ -72,9 +77,8 @@ const CarsDesc = ({
         </div>
         <div className={styles.container3}>
           <div
-            className={styles.container3__a}
-            style={{ backgroundColor: divcolor, color: divText }}
-            onClick={handleChangeColor}
+            onClick={() => hanldeActive("1")}
+            className={boxActive === "1" ? styles.bg : styles.container3__a}
           >
             <p
               style={{
@@ -87,7 +91,7 @@ const CarsDesc = ({
             </p>
             <p
               style={{
-                paddingTop: "2px",
+                marginTop: "-20%",
                 fontSize: "9px",
                 fontFamily: "'Roboto', sans-serif",
               }}
@@ -96,9 +100,8 @@ const CarsDesc = ({
             </p>
           </div>
           <div
-            className={styles.container3__a}
-            style={{ backgroundColor: divcolor, color: divText }}
-            onClick={() => handleChangeColor(car_rental_price[1])}
+            onClick={() => hanldeActive("3")}
+            className={boxActive === "3" ? styles.bg : styles.container3__a}
           >
             <p
               style={{
@@ -111,7 +114,7 @@ const CarsDesc = ({
             </p>
             <p
               style={{
-                paddingTop: "2px",
+                marginTop: "-20%",
                 fontSize: "9px",
                 fontFamily: "'Roboto', sans-serif",
               }}
@@ -119,7 +122,10 @@ const CarsDesc = ({
               3255 kms
             </p>
           </div>
-          <div className={styles.container3__a}>
+          <div
+            onClick={() => hanldeActive("6")}
+            className={boxActive === "6" ? styles.bg : styles.container3__a}
+          >
             <p
               style={{
                 paddingTop: "10px",
@@ -131,7 +137,7 @@ const CarsDesc = ({
             </p>
             <p
               style={{
-                paddingTop: "2px",
+                marginTop: "-20%",
                 fontSize: "9px",
                 fontFamily: "'Roboto', sans-serif",
               }}
@@ -141,28 +147,46 @@ const CarsDesc = ({
           </div>
         </div>
         <div className={styles.container4}>
-          <p>
+          <p style={{ marginTop: "10%", fontSize: "12px", color: "#767676" }}>
             Extra km charge @ <br /> ₹{extra_price}/km
           </p>
-          <Link to="/bookcars">
+          {car_is_booked ? (
             <button
               style={{
                 width: "8vw",
                 height: "5vh",
-                backgroundColor: "#0ebaba",
-                color: "white",
-                cursor: "pointer",
-                border: "none",
+                backgroundColor: "white",
+                color: "red",
+                border: "1px solid blue",
                 borderRadius: "5px",
                 fontFamily: "Roboto,sans-serif",
                 fontWeight: "700",
                 fontStretch: "normal",
               }}
-              onClick={() => handleCheckOut(_id)}
             >
-              {car_is_booked ? <p>SOLD OUT</p> : <p>BOOK</p>}
+              SOLD OUT
             </button>
-          </Link>
+          ) : (
+            <Link to="/bookcars">
+              <button
+                style={{
+                  width: "8vw",
+                  height: "5vh",
+                  backgroundColor: "#0ebaba",
+                  color: "white",
+                  cursor: "pointer",
+                  border: "none",
+                  borderRadius: "5px",
+                  fontFamily: "Roboto,sans-serif",
+                  fontWeight: "700",
+                  fontStretch: "normal",
+                }}
+                onClick={() => handleCheckOut(_id)}
+              >
+                BOOK
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </div>
