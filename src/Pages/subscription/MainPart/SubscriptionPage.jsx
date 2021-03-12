@@ -37,22 +37,22 @@ export const SubscriptionPage = () => {
   };
 
   React.useEffect(() => {
-    console.log(price)
+    console.log(price);
     if (price.price === "") {
       getData(getUrl);
     }
     if (price.price === "10000") {
       console.log("yes");
-      return getData("http://localhost:1234/price/btw10-15");
+      return getData(`http://localhost:1234/price/btw10-15/${location}`);
     }
     if (price.price === "15000") {
-      return getData("http://localhost:1234/price/btw15-20");
+      return getData(`http://localhost:1234/price/btw15-20/${location}`);
     }
     if (price.price === "20000") {
-      return getData("http://localhost:1234/price/btw20-25");
+      return getData(`http://localhost:1234/price/btw20-25/${location}`);
     }
     if (price.price === "25000") {
-      return getData("http://localhost:1234/price/btw25-30");
+      return getData(`http://localhost:1234/price/btw25-30/${location}`);
     }
   }, [price.price]);
 
@@ -82,22 +82,22 @@ export const SubscriptionPage = () => {
       getData(getUrl);
     }
     if (segment.HatchBack === true && segment.Sedan === true) {
-      getData("http://localhost:1234/hatch&sedan");
+      getData(`http://localhost:1234/hatch&sedan/${location}`);
     }
     if (segment.HatchBack === true && segment.Suv === true) {
-      getData("http://localhost:1234/hatch&suv");
+      getData(`http://localhost:1234/hatch&suv/${location}`);
     }
     if (segment.Sedan === true && segment.Suv === true) {
-      getData("http://localhost:1234/sedan&suv");
+      getData(`http://localhost:1234/sedan&suv/${location}`);
     }
     if (segment.HatchBack === true) {
-      getData("http://localhost:1234/hatch");
+      getData(`http://localhost:1234/hatch/${location}`);
     }
     if (segment.Sedan === true) {
-      getData("http://localhost:1234/sedan");
+      getData(`http://localhost:1234/sedan/${location}`);
     }
     if (segment.Suv === true) {
-      getData("http://localhost:1234/suv");
+      getData(`http://localhost:1234/suv/${location}`);
     }
   }, [segment]);
 
@@ -142,10 +142,10 @@ export const SubscriptionPage = () => {
       return getData(getUrl);
     }
     if (trans.Auto === true) {
-      return getData("http://localhost:1234/automatic");
+      return getData(`http://localhost:1234/automatic/${location}`);
     }
     if (trans.Manual === true) {
-      return getData("http://localhost:1234/manual");
+      return getData(`http://localhost:1234/manual/${location}`);
     }
   }, [trans]);
 
