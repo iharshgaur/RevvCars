@@ -60,7 +60,7 @@ export const FinalPayment = () => {
                 email:currentUser.email,
                 password:currentUser.password,
                 cars_booked:currentUser.cars_booked,
-                cars_subscribed:[...data2?.cars_subscribed,l.id]
+                cars_subscribed:[...data2?.cars_subscribed,data]
             }
             
             axios.patch(`http://localhost:1234/usersPatching/${currentUser._id}`,payload)
@@ -71,7 +71,7 @@ export const FinalPayment = () => {
                 username:currentUser.username,
                 email:currentUser.email,
                 password:currentUser.password,
-                cars_booked:[data2?.cars_booked,l.id],
+                cars_booked:[data2?.cars_booked,data],
                 cars_subscribed:currentUser.cars_subscribed
             }
              axios.patch(`http://localhost:1234/usersPatching/${currentUser._id}`,payload)
