@@ -109,6 +109,8 @@ function Navbar() {
         <img
           src="https://www.revv.co.in/grapheneImages/newopen/logo.svg"
           alt="logo"
+          style={{ cursor: "pointer" }}
+          onClick={() => history.push("/")}
         />
         <p className={styles.Navbar__Logo__Text}>Sanitised. Safe</p>
       </div>
