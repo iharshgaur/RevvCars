@@ -60,7 +60,7 @@ export const FinalPayment = () => {
                 email:currentUser.email,
                 password:currentUser.password,
                 cars_booked:currentUser.cars_booked,
-                cars_subscribed:[...data2?.cars_subscribed,l.id]
+                cars_subscribed:[...data2?.cars_subscribed,data]
             }
             
             axios.patch(`http://localhost:1234/usersPatching/${currentUser._id}`,payload)
@@ -71,7 +71,7 @@ export const FinalPayment = () => {
                 username:currentUser.username,
                 email:currentUser.email,
                 password:currentUser.password,
-                cars_booked:[data2?.cars_booked,l.id],
+                cars_booked:[data2?.cars_booked,data],
                 cars_subscribed:currentUser.cars_subscribed
             }
              axios.patch(`http://localhost:1234/usersPatching/${currentUser._id}`,payload)
@@ -119,7 +119,7 @@ export const FinalPayment = () => {
             <div onClick={()=>handleActive("2")} className={active==="2"?style.bg:null}><AccountBalance style={{fontSize:"45px"}} className={style.credit}/></div>
             <div onClick={()=>handleActive("3")} className={active==="3"?style.bg:null}><AccountBalanceWallet style={{fontSize:"45px"}} className={style.credit}/></div>
         </div>
-        <div className={style.payBox} onClick={hanldePay}>
+        <div className={style.payBox} >
             <p  className={style.payP}>Pay the amount with {active==="1"?"Credit Card": active==="2"?"Net Banking":active==="3"?"Wallet":""}</p>
         </div>
             </div>
