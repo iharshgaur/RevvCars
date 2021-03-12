@@ -21,11 +21,8 @@ const Routes = () => {
         <Route exact path="/open">
           <Open />
         </Route>
-        <PrivateRoute exact={true} path="/cars">
+        <PrivateRoute exact={true} path="/cars/:location">
           <RentalSec />
-        </PrivateRoute>
-        <PrivateRoute exact={true} path="/cars">
-          <CarsDesc />
         </PrivateRoute>
         <PrivateRoute exact={true} path="/bookcars">
           <Booking />

@@ -4,7 +4,7 @@ import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { setUserRequest } from "../../Redux/Dashboard/action";
 const cities = [
@@ -44,6 +44,8 @@ function Searchbox() {
   const [duration, setDuration] = React.useState(0);
   const [end_date, setEndDate] = React.useState("");
   const [open, setOpen] = React.useState(false);
+  const userSearch = useSelector((state) => state.dashboard);
+
   const currentDate = new Date();
   const dispatch = useDispatch();
   const history = useHistory();
@@ -60,6 +62,10 @@ function Searchbox() {
       setDuration((end.getTime() - start.getTime()) / (1000 * 3600 * 24));
     }
   }, [start_date, end_date]);
+
+  React.useEffect(() => {
+    handleSubmit();
+  }, [city, start_date, end_date]);
 
   const handleSubmit = () => {
     const payload = {
@@ -209,7 +215,9 @@ function Searchbox() {
               : ` ${duration} Days`}
           </p>
         )}
-        <button onClick={handleSubmit}>Search</button>
+        <button onClick={() => history.push(`/cars/${userSearch.city}`)}>
+          Search
+        </button>
       </div>
     </div>
   );

@@ -57,15 +57,9 @@ export const Payment = () => {
 
   const history = useHistory();
 
-<<<<<<< HEAD
   const handleRoute = (id, price) => {
-    return history.push(`/payment/${id}/${price}`);
+    return history.push(`/payment/${id}/${price}/subs`);
   };
-=======
-    const handleRoute = (id,price)=>{
-        return history.push(`/payment/${id}/${price}/subs`)
-    }
->>>>>>> Manish
 
   return (
     <>
