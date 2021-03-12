@@ -113,6 +113,10 @@ app.get("/rental", async (req, res) => {
   const data = await rental_cars.find({}).lean().exec();
   res.status(200).json(data);
 });
+app.get("/paymentRental/:id", async (req, res) => {
+  const data = await rental_cars.findById(req.params.id).lean().exec();
+  res.status(200).json(data);
+});
 
 app.get("/rental/:id", async (req, res) => {
   const id = req.params.id;

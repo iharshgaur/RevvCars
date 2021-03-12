@@ -45,12 +45,19 @@ export const FinalPayment = () => {
   let d = (amount * 1 * (0.18 / 100))?.toFixed(2);
   let total = Math.round(amount * 1 + d * 1);
   const [data, setData] = React.useState(null);
+  const [data3, setData3] = React.useState(null);
   const [data2, setData2] = React.useState(null);
 
   React.useState(() => {
     return axios
       .get(`http://localhost:1234/payment/${id}`)
       .then((res) => setData(res.data))
+      .catch((err) => console.log(err));
+  }, []);
+  React.useState(() => {
+    return axios
+      .get(`http://localhost:1234/paymentRental/${id}`)
+      .then((res) => setData3(res.data))
       .catch((err) => console.log(err));
   }, []);
   React.useState(() => {
@@ -66,7 +73,7 @@ export const FinalPayment = () => {
 
   const originalPrice =
     type === "rental" ? amount : data?.car_subscription_price;
-  const month = type === "rental" ? "ride" : "month";
+  const month = type === "rental" ? "day" : "month";
 
   const [open, setOpen] = React.useState(false);
 
@@ -79,7 +86,7 @@ export const FinalPayment = () => {
   };
 
   const history = useHistory();
-  const handlePay = () => {
+  const hanldePay = () => {
     if (type === "subs") {
       const payload = {
         username: currentUser.username,
@@ -99,7 +106,7 @@ export const FinalPayment = () => {
         username: currentUser.username,
         email: currentUser.email,
         password: currentUser.password,
-        cars_booked: [...data2?.cars_booked, data],
+        cars_booked: [...data2?.cars_booked, data3],
         cars_subscribed: currentUser.cars_subscribed,
       };
       axios.patch(
@@ -187,7 +194,7 @@ export const FinalPayment = () => {
             />
           </div>
         </div>
-        <div className={style.payBox} onClick={handlePay}>
+        <div className={style.payBox} onClick={hanldePay}>
           <p className={style.payP}>
             Pay the amount with{" "}
             {active === "1"
@@ -228,7 +235,7 @@ export const FinalPayment = () => {
             <p
               style={{ color: "#1caba2" }}
               className={style.modelP}
-              onClick={handlePay}
+              onClick={hanldePay}
             >
               Payment Successfull
             </p>
