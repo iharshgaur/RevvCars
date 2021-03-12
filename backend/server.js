@@ -169,7 +169,10 @@ app.get("/subpay/:id",async(req,res)=>{
   res.status(200).json(data)
 })
 
-
+app.get("/payment/:id/",async(req,res)=>{
+  const data = await sub.findById(req.params.id).lean().exec()
+  res.status(200).json(data)
+})
 
 
 
@@ -186,6 +189,7 @@ res.status(200).json(data)
 //get request for price
 
 app.get("/price/btw10-15",async(req,res)=>{
+  console.log("yes")
     const data = await sub.find({$and:[{car_subscription_price:{$gt:10000}},{car_subscription_price:{$lt:15000}}]})
     res.status(200).json(data)
 })

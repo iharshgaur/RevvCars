@@ -37,20 +37,21 @@ export const SubscriptionPage = () => {
   };
 
   React.useEffect(() => {
+    console.log(price)
     if (price.price === "") {
       getData(getUrl);
     }
-    if (price.price === 10000) {
+    if (price.price === "10000") {
       console.log("yes");
       return getData("http://localhost:1234/price/btw10-15");
     }
-    if (price.price === 15000) {
+    if (price.price === "15000") {
       return getData("http://localhost:1234/price/btw15-20");
     }
-    if (price.price === 20000) {
+    if (price.price === "20000") {
       return getData("http://localhost:1234/price/btw20-25");
     }
-    if (price.price === 25000) {
+    if (price.price === "25000") {
       return getData("http://localhost:1234/price/btw25-30");
     }
   }, [price.price]);

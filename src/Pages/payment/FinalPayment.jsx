@@ -21,14 +21,15 @@ export const FinalPayment = () => {
     let id = l.id
     let amount = l.amount
     
-    let d = (amount*1) * (0.18/100)
+    let d = ((amount*1) * (0.18/100))?.toFixed(2)
 
-    let total = Math.round(amount*1 + d)
+    let total = Math.round(amount*1 + d*1)
 
     const [data,setData] = React.useState(null)
+    
 
     React.useState(()=>{
-        return axios.get(`http://localhost:1234/subscription/${id}`).then(res=>setData(res.data)).catch(err=>console.log(err))
+        return axios.get(`http://localhost:1234/payment/${id}`).then(res=>setData(res.data)).catch(err=>console.log(err))
     },[])
 
     const [active,SetActive] =React.useState("1")
@@ -36,6 +37,8 @@ export const FinalPayment = () => {
     const handleActive = (num)=>{
         return SetActive(num)
     }
+
+
 
     return (
         <div>
