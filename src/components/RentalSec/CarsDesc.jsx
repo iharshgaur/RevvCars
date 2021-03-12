@@ -28,6 +28,11 @@ const CarsDesc = ({
       setDivText("black");
     }
   };
+  const [boxActive, SetActive] = React.useState("");
+
+  const hanldeActive = (num) => {
+    return SetActive(num);
+  };
   const dispatch = useDispatch();
   const handleCheckOut = (id) => {
     dispatch(getCarById(id));
@@ -74,7 +79,8 @@ const CarsDesc = ({
           <div
             className={styles.container3__a}
             style={{ backgroundColor: divcolor, color: divText }}
-            onClick={handleChangeColor}
+            onClick={() => hanldeActive("1")}
+            className={boxActive === "1" ? styles.bg : null}
           >
             <p
               style={{
@@ -98,7 +104,8 @@ const CarsDesc = ({
           <div
             className={styles.container3__a}
             style={{ backgroundColor: divcolor, color: divText }}
-            onClick={() => handleChangeColor(car_rental_price[1])}
+            onClick={() => hanldeActive("3")}
+            className={boxActive === "3" ? styles.bg : null}
           >
             <p
               style={{
@@ -119,7 +126,11 @@ const CarsDesc = ({
               3255 kms
             </p>
           </div>
-          <div className={styles.container3__a}>
+          <div
+            className={styles.container3__a}
+            onClick={() => hanldeActive("6")}
+            className={boxActive === "6" ? styles.bg : null}
+          >
             <p
               style={{
                 paddingTop: "10px",
@@ -144,25 +155,44 @@ const CarsDesc = ({
           <p>
             Extra km charge @ <br /> ₹{extra_price}/km
           </p>
-          <Link to="/bookcars">
+
+          {car_is_booked ? (
             <button
               style={{
                 width: "8vw",
                 height: "5vh",
-                backgroundColor: "#0ebaba",
-                color: "white",
-                cursor: "pointer",
-                border: "none",
+                backgroundColor: "white",
+                color: "red",
+                border: "1px solid blue",
                 borderRadius: "5px",
                 fontFamily: "Roboto,sans-serif",
                 fontWeight: "700",
                 fontStretch: "normal",
               }}
-              onClick={() => handleCheckOut(_id)}
             >
-              {car_is_booked ? <p>SOLD OUT</p> : <p>BOOK</p>}
+              SOLD OUT
             </button>
-          </Link>
+          ) : (
+            <Link to="/bookcars">
+              <button
+                style={{
+                  width: "8vw",
+                  height: "5vh",
+                  backgroundColor: "#0ebaba",
+                  color: "white",
+                  cursor: "pointer",
+                  border: "none",
+                  borderRadius: "5px",
+                  fontFamily: "Roboto,sans-serif",
+                  fontWeight: "700",
+                  fontStretch: "normal",
+                }}
+                onClick={() => handleCheckOut(_id)}
+              >
+                BOOK
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </div>

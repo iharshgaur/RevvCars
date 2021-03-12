@@ -21,6 +21,7 @@ import {
   getCarFSeats,
   getCarBrand,
 } from "../../Redux/RentalSec/action";
+import { useParams } from "react-router-dom";
 import { CarsDesc } from "./CarsDesc";
 const RentalSec = () => {
   const [city, setCity] = React.useState();
@@ -39,10 +40,11 @@ const RentalSec = () => {
     (state) => state.mycars,
     shallowEqual
   );
+  let { location } = useParams();
+
   React.useEffect(() => {
-    dispatch(getCar());
+    dispatch(getCar(location));
   }, []);
-  //for the common url
   //for the sedan types
   const [segment, setSegment] = React.useState({
     HatchBack: false,
@@ -187,6 +189,7 @@ const RentalSec = () => {
   const handleReset = () => {
     dispatch(getCar());
   };
+  //for the small div
   return (
     <div>
       {/* Navpart Start*/}

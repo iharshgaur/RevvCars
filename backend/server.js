@@ -70,6 +70,13 @@ app.get("/rental", async (req, res) => {
   console.log(data.length);
 });
 
+app.get("/rental/:location", async (req, res) => {
+  const data = await rental_cars.find({}).lean().exec();
+  const locationCars = data.filter(
+    (cars) => cars.rental_location === req.params.location
+  );
+  res.status(200).json(locationCars);
+});
 app.get("/rental/:id", async (req, res) => {
   const id = req.params.id;
   const data = await rental_cars.findById(id).lean().exec();
@@ -169,7 +176,7 @@ app.get("/rentalCar/SSeat", async (req, res) => {
 //filtering with Brands
 app.get("/rentalCar/Toyota", async (req, res) => {
   const data = await rental_cars.find({
-    car_name: { $eq: "Toyota Innova Crysta" },
+    car_name: { $eq: "Toyota" },
   });
   res.status(200).json(data);
 });

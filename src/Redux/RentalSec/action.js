@@ -25,11 +25,11 @@ const getCarFailure = (payload) => {
   };
 };
 
-const getUrl = "http://localhost:1234/rental";
 const getCar = (payload) => (dispatch) => {
+  console.log("payload", payload);
   dispatch(getCarRequest);
   axios
-    .get(getUrl)
+    .get(`http://localhost:1234/rental`)
     .then((res) => dispatch(getCarSuccess(res.data)))
     .catch((err) => {
       dispatch(getCarFailure(err));

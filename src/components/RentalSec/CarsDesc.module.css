@@ -80,3 +80,7 @@
   align-items: center;
   justify-content: space-around;
 }
+.bg {
+  background-image: linear-gradient(270deg, #1caba2 20%, #1c7fab);
+  width: 20%;
+}
