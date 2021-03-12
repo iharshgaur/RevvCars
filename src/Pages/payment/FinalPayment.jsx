@@ -187,7 +187,7 @@ export const FinalPayment = () => {
             />
           </div>
         </div>
-        <div className={style.payBox} onClick={hanldePay}>
+        <div className={style.payBox} onClick={handleOpen}>
           <p className={style.payP}>
             Pay the amount with{" "}
             {active === "1"

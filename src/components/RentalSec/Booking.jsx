@@ -41,11 +41,11 @@ const Booking = () => {
     shallowEqual
   );
   const { price } = useSelector((state) => state.price, shallowEqual);
-  console.log("pricw", price);
+
   const startDate = start_date.split("T");
   const endDate1 = end_date.split("T");
   const [duration, setDuration] = React.useState("");
-  const [sum, setSum] = React.useState(0);
+  const [sum, setSum] = React.useState(price);
   let total = Math.round(Number(duration) * Number(2072));
   React.useEffect(() => {
     if (start_date !== "" && end_date !== "") {
