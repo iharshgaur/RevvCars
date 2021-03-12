@@ -38,7 +38,7 @@ const Booking = () => {
   );
   // console.log("object11", bookcars);
   const history = useHistory();
-  const amount = "2072";
+  const amount = bookcars.car_rental_price[0];
   const payment = () => {
     history.push(`/payment/${bookcars._id}/${amount}/:type`);
   };
