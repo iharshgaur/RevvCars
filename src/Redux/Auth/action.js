@@ -98,6 +98,23 @@ const authUser = (payload) => (dispatch) => {
 };
 
 
+const getUser = (payload) => (dispatch) => {
+  dispatch(authUserRequest);
+  axios
+    .get(`http://localhost:1234/users`)
+    .then((res) => {
+      const users = res.data;
+      for(let i = 0; i < users.length; i++){
+        if(users[i]._id === payload){
+            dispatch(authUserSuccess(users[i]))
+          }
+        }
+    })
+    .catch((err) => {
+      dispatch(authUserFailure(err));
+    });
+};
+
 const createUser = (payload) => (dispatch) => {
   dispatch(createUserRequest);
   axios
@@ -113,4 +130,4 @@ const createUser = (payload) => (dispatch) => {
 
 
 
-export { authUser,logoutUser, createUser };
+export { authUser,logoutUser, createUser,getUser };
