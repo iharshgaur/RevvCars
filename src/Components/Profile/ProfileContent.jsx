@@ -7,7 +7,8 @@ import { logoutUser } from "../../Redux/Auth/action";
 const useStyles = makeStyles({});
 
 function ProfileContent() {
-  const { username, email } = useSelector((state) => state.auth.currentUser);
+  const currentUser = useSelector((state) => state.auth.currentUser);
+  console.log(currentUser);
   const classes = useStyles();
   const dispatch = useDispatch();
   return (
@@ -25,8 +26,8 @@ function ProfileContent() {
       </div>
       <div className={styles.Container_Right}>
         <div className={styles.Container_Right_Top}>
-          <h5>Username : {username} </h5>
-          <h5>Email : {email} </h5>
+          <h5>Username : {currentUser.username} </h5>
+          <h5>Email : {currentUser.email} </h5>
         </div>
 
         <div className={styles.Container_Right_Mid}>
