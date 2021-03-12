@@ -44,7 +44,10 @@ function ProfileContent() {
               </div>
             )}
             {cars_booked?.map((car) => (
-              <div className={styles.Container_Right_Bottom_List_Car}>
+              <div
+                key={car._id}
+                className={styles.Container_Right_Bottom_List_Car}
+              >
                 <img src={car.car_images} alt={car.car_name} />
 
                 <div className={styles.Cars_Info}>
@@ -67,7 +70,10 @@ function ProfileContent() {
               </div>
             )}
             {cars_subscribed?.map((car) => (
-              <div className={styles.Container_Right_Bottom_List_Car}>
+              <div
+                key={car._id}
+                className={styles.Container_Right_Bottom_List_Car}
+              >
                 <img src={car.car_images} alt={car.car_name} />
 
                 <div className={styles.Cars_Info}>

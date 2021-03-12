@@ -180,9 +180,6 @@ app.get("/subscription", async (req, res) => {
 app.get("/subscription/:location", async (req, res) => {
   const data = await sub.find({}).lean().exec();
 
-
-app.get("/subscription/:location",async(req,res)=>{
-  const data = await sub.find({}).lean().exec()
   const locationCars = data.filter(
     (cars) => cars.rental_location === req.params.location
   );
