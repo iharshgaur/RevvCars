@@ -12,7 +12,7 @@ export const Payment = () => {
 
     const [data,setData] = React.useState(null)
 
-    const originalPrice = data?.car_subscription_price.toString().split("")
+    const originalPrice = data?.car_subscription_price?.toString().split("")
     const dummy = originalPrice?.splice(2,0,",").join("")
 
     let dis = data?.car_subscription_price * (data?.car_discount / 100)
@@ -23,8 +23,9 @@ export const Payment = () => {
 
 
     React.useState(()=>{
-        return axios.get(`http://localhost:1234/subscription/${id}`).then(res=>setData(res.data)).catch(err=>console.log(err))
+        return axios.get(`http://localhost:1234/subpay/${id}`).then(res=>setData(res.data)).catch(err=>console.log(err))
     },[])
+    console.log(data)
 
     const [boxActive,SetActive] = React.useState("")
     

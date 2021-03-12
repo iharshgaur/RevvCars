@@ -6,7 +6,7 @@ import {
 } from "./actionType";
 
 const initState = {
-  isAuth : false,
+  isAuth : true,
   currentUser: {},
   error: "",
   isError : false,

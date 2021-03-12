@@ -164,6 +164,13 @@ app.get("/subscription/:location",async(req,res)=>{
 res.status(200).json(locationCars)
 })
 
+app.get("/subpay/:id",async(req,res)=>{
+  const data = await sub.findById(req.params.id).lean().exec()
+  res.status(200).json(data)
+})
+
+
+
 
 
 app.post("/subscription",async(req,res)=>{
