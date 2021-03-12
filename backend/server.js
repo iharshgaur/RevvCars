@@ -167,11 +167,7 @@ app.get("/subscription",async(req,res)=>{
     const data = await sub.find({}).lean().exec()
     res.status(200).json(data)
 })
-app.get("/subscription/:id", async (req, res) => {
-  const id = req.params.id;
-  const data = await sub.findById(id).lean().exec();
-  res.status(200).json(data);
-});
+
 
 app.get("/subscription/:location",async(req,res)=>{
   const data = await sub.find({}).lean().exec()
