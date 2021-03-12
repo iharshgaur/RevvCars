@@ -56,7 +56,6 @@ export const Payment = () => {
   }, [boxActive]);
 
   const history = useHistory();
-
   const handleRoute = (id, price) => {
     return history.push(`/payment/${id}/${price}/subs`);
   };

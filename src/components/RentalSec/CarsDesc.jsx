@@ -3,6 +3,7 @@ import styles from "./CarsDesc.module.css";
 import { useDispatch } from "react-redux";
 import { getCarById } from "../../Redux/Booking/action";
 import { Link } from "react-router-dom";
+import { getcarPrice } from "../../Redux/carPrice/action";
 const CarsDesc = ({
   car_name,
   car_images,
@@ -28,10 +29,19 @@ const CarsDesc = ({
       setDivText("black");
     }
   };
+  const [boxActive, SetActive] = React.useState("");
+
+  const hanldeActive = (num) => {
+    return SetActive(num);
+  };
   const dispatch = useDispatch();
   const handleCheckOut = (id) => {
     dispatch(getCarById(id));
   };
+  const handlePrice = (e) => {
+    dispatch(getcarPrice(e));
+  };
+  console.log("car_specs", car_specs[0]);
   return (
     <div>
       <div className={styles.container1}>
@@ -56,25 +66,33 @@ const CarsDesc = ({
           </div>
           <div className={styles.container2__c}>
             <div>
-              <img src="automatic.svg" alt="automatic" />
+              <img
+                src="https://www.revv.co.in/imgs/car-card/automatic.svg"
+                alt="automatic"
+              />
               &nbsp;
               {car_specs[0]}
             </div>
             <div>
-              <img src="petrol.svg" alt="petrol" />
+              <img
+                src="https://www.revv.co.in/imgs/car-card/petrol.svg"
+                alt="petrol"
+              />
               &nbsp;{car_specs[1]}
             </div>
             <div>
-              <img src="seat.svg" alt="seat" />
+              <img
+                src="https://www.revv.co.in/imgs/car-card/seat.svg"
+                alt="seat"
+              />
               &nbsp;{car_specs[2]}
             </div>
           </div>
         </div>
         <div className={styles.container3}>
           <div
-            className={styles.container3__a}
-            style={{ backgroundColor: divcolor, color: divText }}
-            onClick={handleChangeColor}
+            onClick={() => hanldeActive("1")}
+            className={boxActive === "1" ? styles.bg : styles.container3__a}
           >
             <p
               style={{
@@ -82,12 +100,13 @@ const CarsDesc = ({
                 fontSize: "18px",
                 fontFamily: "'Roboto', sans-serif",
               }}
+              onClick={() => handlePrice(car_rental_price[0])}
             >
               ₹{car_rental_price[0]}
             </p>
             <p
               style={{
-                paddingTop: "2px",
+                marginTop: "-20%",
                 fontSize: "9px",
                 fontFamily: "'Roboto', sans-serif",
               }}
@@ -96,9 +115,8 @@ const CarsDesc = ({
             </p>
           </div>
           <div
-            className={styles.container3__a}
-            style={{ backgroundColor: divcolor, color: divText }}
-            onClick={() => handleChangeColor(car_rental_price[1])}
+            onClick={() => hanldeActive("3")}
+            className={boxActive === "3" ? styles.bg : styles.container3__a}
           >
             <p
               style={{
@@ -111,7 +129,7 @@ const CarsDesc = ({
             </p>
             <p
               style={{
-                paddingTop: "2px",
+                marginTop: "-20%",
                 fontSize: "9px",
                 fontFamily: "'Roboto', sans-serif",
               }}
@@ -119,7 +137,10 @@ const CarsDesc = ({
               3255 kms
             </p>
           </div>
-          <div className={styles.container3__a}>
+          <div
+            onClick={() => hanldeActive("6")}
+            className={boxActive === "6" ? styles.bg : styles.container3__a}
+          >
             <p
               style={{
                 paddingTop: "10px",
@@ -131,7 +152,7 @@ const CarsDesc = ({
             </p>
             <p
               style={{
-                paddingTop: "2px",
+                marginTop: "-20%",
                 fontSize: "9px",
                 fontFamily: "'Roboto', sans-serif",
               }}
@@ -141,28 +162,46 @@ const CarsDesc = ({
           </div>
         </div>
         <div className={styles.container4}>
-          <p>
+          <p style={{ marginTop: "10%", fontSize: "12px", color: "#767676" }}>
             Extra km charge @ <br /> ₹{extra_price}/km
           </p>
-          <Link to="/bookcars">
+          {car_is_booked ? (
             <button
               style={{
                 width: "8vw",
                 height: "5vh",
-                backgroundColor: "#0ebaba",
-                color: "white",
-                cursor: "pointer",
-                border: "none",
+                backgroundColor: "white",
+                color: "red",
+                border: "1px solid blue",
                 borderRadius: "5px",
                 fontFamily: "Roboto,sans-serif",
                 fontWeight: "700",
                 fontStretch: "normal",
               }}
-              onClick={() => handleCheckOut(_id)}
             >
-              {car_is_booked ? <p>SOLD OUT</p> : <p>BOOK</p>}
+              SOLD OUT
             </button>
-          </Link>
+          ) : (
+            <Link to="/bookcars">
+              <button
+                style={{
+                  width: "8vw",
+                  height: "5vh",
+                  backgroundColor: "#0ebaba",
+                  color: "white",
+                  cursor: "pointer",
+                  border: "none",
+                  borderRadius: "5px",
+                  fontFamily: "Roboto,sans-serif",
+                  fontWeight: "700",
+                  fontStretch: "normal",
+                }}
+                onClick={() => handleCheckOut(_id)}
+              >
+                BOOK
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </div>
