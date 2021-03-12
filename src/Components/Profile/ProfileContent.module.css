@@ -28,9 +28,16 @@
   height: 500px;
   width: 70%;
   padding: 4%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 .Container_Right_Top {
+  /* border: 1px solid red; */
   display: flex;
   justify-content: space-around;
+}
+
+.Container_Right_Mid,
+.Container_Right_Bottom {
+  /* border: 1px solid red; */
+  margin: 50px;
 }
