@@ -456,8 +456,9 @@ app.get("/rentalCar/SSeat", async (req, res) => {
 //filtering with Brands
 app.get("/rentalCar/Toyota", async (req, res) => {
   const data = await rental_cars.find({
-    car_name: { $eq: "Toyota" },
+    car_name: { $eq: "Toyota Innova Crysta" },
   });
+
   res.status(200).json(data);
 });
 const start = async () => {

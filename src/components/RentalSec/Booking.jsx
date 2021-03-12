@@ -40,6 +40,8 @@ const Booking = () => {
     (state) => state.dashboard,
     shallowEqual
   );
+  const { price } = useSelector((state) => state.price, shallowEqual);
+  console.log("pricw", price);
   const startDate = start_date.split("T");
   const endDate1 = end_date.split("T");
   const [duration, setDuration] = React.useState("");
@@ -247,7 +249,7 @@ const Booking = () => {
                 <p>Refundable security deposit</p>
               </div>
               <div className={styles.rightBase2}>
-                <p>₹{bookcars.car_rental_price[0]}</p>
+                <p>₹{price}</p>
                 <p>₹ 400</p>
                 <p>Included</p>
                 <p>₹ 1000 </p>
