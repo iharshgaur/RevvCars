@@ -3,6 +3,7 @@ import styles from "./ProfileContent.module.css";
 import { makeStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
+import axios from "axios";
 import { logoutUser } from "../../Redux/Auth/action";
 const useStyles = makeStyles({});
 
@@ -10,8 +11,6 @@ function ProfileContent() {
   const { email, username, cars_subscribed, cars_booked } = useSelector(
     (state) => state.auth.currentUser
   );
-
-  React.useEffect(() => {}, []);
 
   const classes = useStyles();
   const dispatch = useDispatch();
