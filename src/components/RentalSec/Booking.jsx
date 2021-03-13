@@ -45,8 +45,9 @@ const Booking = () => {
   const startDate = start_date.split("T");
   const endDate1 = end_date.split("T");
   const [duration, setDuration] = React.useState("");
-  const [sum, setSum] = React.useState(price);
-  let total = Math.round(Number(duration) * Number(2072));
+  const [sum, setSum] = React.useState(0);
+  let total =
+    duration === 0 ? price : Math.round(Number(duration) * Number(price));
   React.useEffect(() => {
     if (start_date !== "" && end_date !== "") {
       let start = start_date.split("T")[0];

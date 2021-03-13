@@ -163,6 +163,42 @@ const getCarBrand = (payload) => (dispatch) => {
       dispatch(getCarFailure(err));
     });
 };
+const getCarBrandMaruti = (payload) => (dispatch) => {
+  dispatch(getCarRequest);
+  axios
+    .get("http://localhost:1234/rentalCar/Maruti")
+    .then((res) => dispatch(getCarSuccess(res.data)))
+    .catch((err) => {
+      dispatch(getCarFailure(err));
+    });
+};
+const getCarBrandMahindara = (payload) => (dispatch) => {
+  dispatch(getCarRequest);
+  axios
+    .get("http://localhost:1234/rentalCar/Mahindara")
+    .then((res) => dispatch(getCarSuccess(res.data)))
+    .catch((err) => {
+      dispatch(getCarFailure(err));
+    });
+};
+const getCarBrandHyundai = (payload) => (dispatch) => {
+  dispatch(getCarRequest);
+  axios
+    .get("http://localhost:1234/rentalCar/Hyundai")
+    .then((res) => dispatch(getCarSuccess(res.data)))
+    .catch((err) => {
+      dispatch(getCarFailure(err));
+    });
+};
+const getCarBrandHonda = (payload) => (dispatch) => {
+  dispatch(getCarRequest);
+  axios
+    .get("http://localhost:1234/rentalCar/Honda")
+    .then((res) => dispatch(getCarSuccess(res.data)))
+    .catch((err) => {
+      dispatch(getCarFailure(err));
+    });
+};
 export {
   getCar,
   getCarHatch,
@@ -179,4 +215,8 @@ export {
   getCarSSeats,
   getCarFSeats,
   getCarBrand,
+  getCarBrandMaruti,
+  getCarBrandMahindara,
+  getCarBrandHyundai,
+  getCarBrandHonda,
 };
