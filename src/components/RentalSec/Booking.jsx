@@ -67,7 +67,8 @@ const Booking = () => {
   const history = useHistory();
 
   const payment = () => {
-    const amount = total;
+    const amount = total !== 0 ? total : price;
+    console.log(amount);
     history.push(`/payment/${bookcars._id}/${amount}/rental`);
   };
   return (
