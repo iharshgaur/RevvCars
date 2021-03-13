@@ -27,15 +27,16 @@ In this project we have used the following tech stack.
 5. redux
 6. react-router-dom
 7. axios
-   8.Material UI
-   9.express
-   10.mongoose
-   11.cors
-   12.antd
-   13.bootstrap
-   14.styled-components
-   You can install the libraries using the "**npm install**" command
-   <br>
+8. Material UI
+9. express
+10. mongoose
+11. cors
+12. antd
+13. bootstrap
+14. styled-components
+
+You can install the libraries using the "**npm install**" command
+<br>
 
 ## End Notes 📑
 
