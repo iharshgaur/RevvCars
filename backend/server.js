@@ -120,7 +120,7 @@ app.get("/paymentRental/:id", async (req, res) => {
 
 app.get("/rental/:id", async (req, res) => {
   const id = req.params.id;
-  console.log(id);
+
   const data = await rental_cars.findById(id).lean().exec();
   res.status(200).json(data);
 });
@@ -220,7 +220,7 @@ app.get("/price/btw10-15/:location", async (req, res) => {
       { rental_location: { $eq: req.params.location } },
     ],
   });
-  console.log("here", data);
+
   res.status(200).json(data);
 });
 
@@ -259,7 +259,7 @@ app.get("/price/btw25-30/:location", async (req, res) => {
 
 // filtering the segment
 app.get("/hatch/:location", async (req, res) => {
-  console.log("here");
+
   const data = await sub.find({
     $and: [
       { car_type: { $eq: "Hatch Back" } },
