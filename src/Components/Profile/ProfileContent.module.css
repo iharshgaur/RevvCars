@@ -41,3 +41,23 @@
   /* border: 1px solid red; */
   margin: 50px;
 }
+.Container_Right_Bottom_List {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5%;
+}
+.Container_Right_Bottom_List_Car > img {
+  width: 100%;
+}
+.Container_Right_Bottom_List_Car {
+  width: 40%;
+  margin: 2%;
+  text-align: center;
+  box-shadow: 0 0 10px grey;
+  border-radius: 15px;
+  padding: 1%;
+}
+.Cars_Info > h4 {
+  color: black;
+  font-size: 14px;
+}
