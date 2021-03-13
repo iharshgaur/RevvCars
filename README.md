@@ -48,7 +48,7 @@ You can also take the glimpse of our Project,just follow the below steps:
 
     2.run the command npm run start in terminal to start the app at port 3000.
 
-    3.Go to the browser you will land in the landing page just login if you have log before or do the signup.
+    3.Go to the browser you will land in the landing page just login (email : harshgaur@gmail.com, password: 123456) if you have signed up before or do the signup.
 
     4.Our website had 2 things Rental and Subscription feature.
 
