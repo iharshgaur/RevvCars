@@ -73,7 +73,7 @@ export const FinalPayment = () => {
 
   const originalPrice =
     type === "rental" ? amount : data?.car_subscription_price;
-  const month = type === "rental" ? "day" : "month";
+  const month = type === "rental" ? "ride" : "month";
 
   const [open, setOpen] = React.useState(false);
 
