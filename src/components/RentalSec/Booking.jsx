@@ -46,8 +46,13 @@ const Booking = () => {
   const endDate1 = end_date.split("T");
   const [duration, setDuration] = React.useState("");
   const [sum, setSum] = React.useState(0);
+  const [promo, setPromo] = React.useState("");
+  const handlePromo = (e) => {
+    setPromo(e.target.value);
+  };
   let total =
     duration === 0 ? price : Math.round(Number(duration) * Number(price));
+
   React.useEffect(() => {
     if (start_date !== "" && end_date !== "") {
       let start = start_date.split("T")[0];
@@ -271,6 +276,8 @@ const Booking = () => {
                   <TextField
                     id="standard-full-width"
                     label="Promo Code"
+                    value={promo}
+                    onChange={handlePromo}
                     style={{ margin: 8, color: "#2BBABA" }}
                     placeholder=""
                     fullWidth
