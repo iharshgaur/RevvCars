@@ -41,7 +41,13 @@ const CarsDesc = ({
   const handlePrice = (e) => {
     dispatch(getcarPrice(e));
   };
-  console.log("car_specs", car_specs[0]);
+  const handlePrice1 = (e) => {
+    dispatch(getcarPrice(e));
+  };
+  const handlePrice2 = (e) => {
+    dispatch(getcarPrice(e));
+  };
+
   return (
     <div>
       <div className={styles.container1}>
@@ -124,6 +130,7 @@ const CarsDesc = ({
                 fontSize: "18px",
                 fontFamily: "'Roboto', sans-serif",
               }}
+              onClick={() => handlePrice1(car_rental_price[1])}
             >
               ₹{car_rental_price[1]}
             </p>
@@ -147,6 +154,7 @@ const CarsDesc = ({
                 fontSize: "18px",
                 fontFamily: "'Roboto', sans-serif",
               }}
+              onClick={() => handlePrice2(car_rental_price[2])}
             >
               ₹{car_rental_price[2]}
             </p>

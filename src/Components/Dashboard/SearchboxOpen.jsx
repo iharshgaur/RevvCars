@@ -94,7 +94,7 @@ function Searchbox() {
           src="https://www.revv.co.in/grapheneImages/newopen/logo_subscription.png"
           alt="Banner"
         />
-        <h5>Car Subscriptions in Delhi-NCR</h5>
+        <h5>Car Subscriptions in {city}</h5>
       </div>
 
       <div className={style.SearchBox__Dropdowns}>

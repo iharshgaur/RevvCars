@@ -1,3 +1,4 @@
+import { Facebook, Instagram, LinkedIn, Twitter, YouTube } from '@material-ui/icons'
 import React from 'react'
 import style from "./SubFooter.module.css"
 export const SubscriptionFooter = () => {
@@ -20,11 +21,11 @@ export const SubscriptionFooter = () => {
         <div className={style.socialBox}>
             <p>Social</p>
             <div>
-                <img style={{marginLeft:"40px"}} src="https://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19754.png" alt="pic"/>
-                <img src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c53e.png" alt="pic"/>
-                <img src="http://assets.stickpng.com/images/5ecec78673e4440004f09e77.png" alt="pic"/>
-                <img src="http://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c545.png" alt="pic"/>
-                <img src="https://pngimg.com/uploads/linkedIn/linkedIn_PNG38.png" alt="pic"/>
+                <Facebook/>
+                <Twitter/>
+                <Instagram/>
+                <YouTube/>
+                <LinkedIn/>
             </div>
             <p>Download the Revv App!</p>
             <div id={style.box}>

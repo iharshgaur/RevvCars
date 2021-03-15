@@ -113,10 +113,13 @@ app.get("/rental", async (req, res) => {
   const data = await rental_cars.find({}).lean().exec();
   res.status(200).json(data);
 });
+app.get("/paymentRental/:id", async (req, res) => {
+  const data = await rental_cars.findById(req.params.id).lean().exec();
+  res.status(200).json(data);
+});
 
 app.get("/rental/:id", async (req, res) => {
   const id = req.params.id;
-  console.log(id);
   const data = await rental_cars.findById(id).lean().exec();
   res.status(200).json(data);
 });
@@ -223,7 +226,6 @@ app.get("/price/btw10-15/:location", async (req, res) => {
       { rental_location: { $eq: req.params.location } },
     ],
   });
-  console.log("here", data);
   res.status(200).json(data);
 });
 
@@ -262,7 +264,6 @@ app.get("/price/btw25-30/:location", async (req, res) => {
 
 // filtering the segment
 app.get("/hatch/:location", async (req, res) => {
-  console.log("here");
   const data = await sub.find({
     $and: [
       { car_type: { $eq: "Hatch Back" } },
@@ -463,8 +464,67 @@ app.get("/rentalCar/SSeat", async (req, res) => {
 //filtering with Brands
 app.get("/rentalCar/Toyota", async (req, res) => {
   const data = await rental_cars.find({
-    car_name: { $eq: "Toyota" },
+    $or: [
+      { car_name: { $eq: "Toyota Innova Crysta" } },
+      { car_name: { $eq: "Toyota Innova" } },
+    ],
   });
+
+  res.status(200).json(data);
+});
+app.get("/rentalCar/Maruti", async (req, res) => {
+  const data = await rental_cars.find({
+    $or: [
+      { car_name: { $eq: "Maruti Brezza AT" } },
+      { car_name: { $eq: "Maruti Brezza" } },
+      { car_name: { $eq: "Maruti Ertiga" } },
+      { car_name: { $eq: "Maruti Swift Dzire" } },
+      { car_name: { $eq: "Maruti Ciaz" } },
+    ],
+  });
+
+  res.status(200).json(data);
+});
+app.get("/rentalCar/Mahindara", async (req, res) => {
+  const data = await rental_cars.find({
+    $or: [
+      { car_name: { $eq: "Mahindra Scorpio" } },
+      { car_name: { $eq: "Mahindra XUV" } },
+      { car_name: { $eq: "Mahindra XUV300" } },
+      { car_name: { $eq: "Mahindra Marazzo" } },
+    ],
+  });
+
+  res.status(200).json(data);
+});
+app.get("/rentalCar/Hyundai", async (req, res) => {
+  const data = await rental_cars.find({
+    $or: [
+      { car_name: { $eq: "Hyundai Creta" } },
+      { car_name: { $eq: "Hyundai Creta AT" } },
+      { car_name: { $eq: "Hyundai Venue AT" } },
+      { car_name: { $eq: "Hyundai Xcent" } },
+      { car_name: { $eq: "Hyundai Verna AT" } },
+      { car_name: { $eq: "Hyundai Eon" } },
+      { car_name: { $eq: "Hyundai Santro MT" } },
+      { car_name: { $eq: "Hyundai Grand i10 AT" } },
+    ],
+  });
+
+  res.status(200).json(data);
+});
+app.get("/rentalCar/Honda", async (req, res) => {
+  const data = await rental_cars.find({
+    $or: [{ car_name: { $eq: "Honda Amaze" } }],
+  });
+
+  res.status(200).json(data);
+});
+app.get("/rentalCar/Ford", async (req, res) => {
+  const data = await rental_cars.find({
+    $or: [{ car_name: { $eq: "Ford Ecosport" } }],
+  });
+
   res.status(200).json(data);
 });
 const start = async () => {

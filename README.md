@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Revv Cars (clone) 🚗
 
-## Available Scripts
+**Revv Cars** is an Indian car-rental startup that offers multiple options to meet all your self-drive needs. The company was founded in 2015 and currently operates in 11 cities in India namely: Bangalore, Hyderabad, Chennai, Mumbai, Pune, Delhi NCR, Chandigarh, Jaipur, Vizag, Mysore, and Coimbatore.
 
-In the project directory, you can run:
+In this project we have tried to make a look alike clone of **Revv Cars**. With our efforts and the technology stack, that we have learned so far in the masai school, we were able to clone the front end with high precision and quality.
 
-### `npm start`
+# Technology Stack Used 💻
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+In this project we have used the following tech stack.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- React <i class="devicon-react-plain colored"></i>
+- Redux <i class="devicon-redux-plain colored"></i>
+- CSS <i class="devicon-css3-plain colored"></i>
+- Nodejs <i class="devicon-nodejs-plain"></i>
+- MongoDB <i class="devicon-mongodb-plain"></i>
 
-### `npm test`
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Libraries Used 🌟
 
-### `npm run build`
+1. font-awesome
+2. react-redux
+3. react-hook-form
+4. uuid
+5. redux
+6. react-router-dom
+7. axios
+8. Material UI
+9. express
+10. mongoose
+11. cors
+12. antd
+13. bootstrap
+14. styled-components
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+You can install the libraries using the "**npm install**" command
+<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## End Notes 📑
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+In this project we were able to achieve a near to perfect clone of the original website. As we do not want to overwhelm you, we haven't shared all the pages here.Please fork the repository and then use it on your own. If you want to collaborate with us on this project then please feel free to reach out to us.
 
-### `npm run eject`
+You can also take the glimpse of our Project,just follow the below steps:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    1.run the command npm run server in terminal to start the server at port 1234.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    2.run the command npm run start in terminal to start the app at port 3000.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    3.Go to the browser you will land in the landing page just login if you have log before or do the signup.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    4.Our website had 2 things Rental and Subscription feature.
 
-## Learn More
+## For Rental
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    1.Just select the location,start date and end date,then click on Search
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    2.It will take to the Rental page where you can see many car available at your location you can also filter many things on the basis of brand,segment,transmission and many more.
 
-### Code Splitting
+    3.For selecting the car first we had to select base fare and then click on book after which you will go to booking page.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    4.On Booking page you can see all the information about car which you select and the price corresponding to  how many days you want to rent it.
 
-### Analyzing the Bundle Size
+    5.You can click on pay which will take to payment page just pay the amount with the payment method of your choice.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    6.After payment you will redirect to profile page where you can see all the cars you booked.
 
-### Making a Progressive Web App
+## For Subscription
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    1.Just select the location,then click on Search
 
-### Advanced Configuration
+    2.It will take to the Subscription page where you can see many car available at your location you can also filter many things on the basis of brand,segment,transmission and many more.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    3.You can select the car of your own choice after which you will be landed to the description page of the car.
 
-### Deployment
+    4.On Description page you can see all the information about car which you select and the price corresponding to  how many months you want to subscribe to it.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    5.You can click on pay which will take to payment page just pay the amount with the payment method of your choice.
 
-### `npm run build` fails to minify
+    6.After payment you will redirect to profile page where you can see all the cars you booked.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<br>
+
+## Team Members and Contributors 😇
+
+👤 **Harsh gaur**
+
+- Github: [iharshgaur](https://github.com/iharshgaur)
+
+👤 **Himanshu Kumar**
+
+- Github: [hithanos](hkghimanshu@gmail.com)
+
+👤 **Manish Raghavan**
+
+- Github: [Manish Raghavan](manish.mahendran9499@gmail.com)

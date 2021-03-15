@@ -19,6 +19,10 @@ import {
   getCarSSeats,
   getCarFSeats,
   getCarBrand,
+  getCarBrandMaruti,
+  getCarBrandMahindara,
+  getCarBrandHyundai,
+  getCarBrandHonda,
 } from "../../Redux/RentalSec/action";
 import { useParams } from "react-router-dom";
 import { CarsDesc } from "./CarsDesc";
@@ -46,6 +50,8 @@ const RentalSec = () => {
     (state) => state.dashboard,
     shallowEqual
   );
+  const startDate = start_date.split("T");
+  const endDate1 = end_date.split("T");
   let { location } = useParams();
 
   React.useEffect(() => {
@@ -192,6 +198,67 @@ const RentalSec = () => {
       dispatch(getCarBrand());
     }
   }, [toyota]);
+  //filtering with brand (Maruti)
+  const [Maruti, setMaruti] = React.useState({
+    ciaz: false,
+  });
+  const handleChangeMaruti = (event) => {
+    setMaruti({ ...Maruti, [event.target.name]: event.target.checked });
+  };
+  React.useEffect(() => {
+    if (Maruti.ciaz === false) {
+      dispatch(getCar());
+    }
+    if (Maruti.ciaz === true) {
+      dispatch(getCarBrandMaruti());
+    }
+  }, [Maruti]);
+  //filtering with brand (Mahindara)
+  const [Mahindara, setMahindara] = React.useState({
+    xuv: false,
+  });
+  const handleChangeMahindara = (event) => {
+    setMahindara({ ...Mahindara, [event.target.name]: event.target.checked });
+  };
+  React.useEffect(() => {
+    if (Mahindara.xuv === false) {
+      dispatch(getCar());
+    }
+    if (Mahindara.xuv === true) {
+      dispatch(getCarBrandMahindara());
+    }
+  }, [Mahindara]);
+
+  //filtering with brand (Hyundai)
+  const [Hyundai, setHyundai] = React.useState({
+    i20: false,
+  });
+  const handleChangeHyundai = (event) => {
+    setHyundai({ ...Hyundai, [event.target.name]: event.target.checked });
+  };
+  React.useEffect(() => {
+    if (Hyundai.i20 === false) {
+      dispatch(getCar());
+    }
+    if (Hyundai.i20 === true) {
+      dispatch(getCarBrandHyundai());
+    }
+  }, [Hyundai]);
+  //filtering with brand (Honda)
+  const [Honda, setHonda] = React.useState({
+    amaze: false,
+  });
+  const handleChangeHonda = (event) => {
+    setHonda({ ...Honda, [event.target.name]: event.target.checked });
+  };
+  React.useEffect(() => {
+    if (Honda.amaze === false) {
+      dispatch(getCar());
+    }
+    if (Honda.amaze === true) {
+      dispatch(getCarBrandHonda());
+    }
+  }, [Honda]);
   const handleReset = () => {
     dispatch(getCar());
   };
@@ -216,7 +283,7 @@ const RentalSec = () => {
           />
           <input
             type="text"
-            value={start_date}
+            value={startDate[0]}
             className={styles.input}
             // onChange={(e) => setStartDate(e.target.value)}
           />
@@ -228,7 +295,7 @@ const RentalSec = () => {
           />
           <input
             type="text"
-            value={end_date}
+            value={endDate1[0]}
             className={styles.input}
             // onChange={(e) => setEndDate(e.target.value)}
           />
@@ -291,7 +358,7 @@ const RentalSec = () => {
                 >
                   <input
                     type="checkbox"
-                    style={{ marginBottom: "2.4vh" }}
+                    style={{ marginBottom: "2.4vh", marginLeft: "-0.3vw" }}
                     name="HatchBack"
                     value={segment.HatchBack}
                     onClick={handleChangeSegment}
@@ -301,7 +368,7 @@ const RentalSec = () => {
                   <br />
                   <input
                     type="checkbox"
-                    style={{ marginLeft: "-4vw", marginBottom: "2.4vh" }}
+                    style={{ marginLeft: "-3.9vw", marginBottom: "2.4vh" }}
                     name="Suv"
                     value={segment.Suv}
                     onClick={handleChangeSegment}
@@ -358,6 +425,9 @@ const RentalSec = () => {
                   <input
                     type="checkbox"
                     style={{ marginBottom: "2.4vh", marginLeft: "-2.6vw" }}
+                    name="ciaz"
+                    value={segment.ciaz}
+                    onClick={handleChangeMaruti}
                   />
                   &nbsp;
                   <label htmlFor="">Maruti</label>
@@ -365,6 +435,9 @@ const RentalSec = () => {
                   <input
                     type="checkbox"
                     style={{ marginLeft: "-1.7vw", marginBottom: "2.4vh" }}
+                    name="i20"
+                    value={segment.i20}
+                    onClick={handleChangeHyundai}
                   />
                   &nbsp;
                   <label htmlFor="">Hyundai</label>
@@ -372,6 +445,9 @@ const RentalSec = () => {
                   <input
                     type="checkbox"
                     style={{ marginLeft: "-1.1vw", marginBottom: "2.4vh" }}
+                    name="xuv"
+                    value={segment.xuv}
+                    onClick={handleChangeMahindara}
                   />
                   &nbsp;
                   <label htmlFor="">Mahindra</label>
@@ -379,6 +455,9 @@ const RentalSec = () => {
                   <input
                     type="checkbox"
                     style={{ marginLeft: "-2.8vw", marginBottom: "2.4vh" }}
+                    name="amaze"
+                    value={segment.amaze}
+                    onClick={handleChangeHonda}
                   />
                   &nbsp;
                   <label htmlFor="">Honda</label>
@@ -577,7 +656,7 @@ const RentalSec = () => {
             </div>
             <div className={styles.containerWrap__right__second}>
               {isLoading ? (
-                <div>....isLoading</div>
+                <div>Loading....</div>
               ) : (
                 <div
                   style={{
