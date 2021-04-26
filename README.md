@@ -40,7 +40,7 @@ In this project we have used the following tech stack.
 You can install the libraries using the "**npm install**" command
 <br>
 
-## Installation Guide 📑
+## How to run the project 📑
 
 In this project we were able to achieve a near to perfect clone of the original website. As we do not want to overwhelm you, we haven't shared all the pages here.Please fork the repository and then use it on your own. If you want to collaborate with us on this project then please feel free to reach out to us.
 
