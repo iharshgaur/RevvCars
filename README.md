@@ -84,6 +84,19 @@ You can also take the glimpse of our Project,just follow the below steps:
 
 <br>
 
+## Features
+
+1. User can book a car on the basis of dates
+2. User can subscribe a car on monthly basis
+
+<br>
+
+## Limitations
+
+1. Not responsive yet and might not be properly visible on small screen devices
+
+<br>
+
 ## Team Members and Contributors 😇
 
 👤 **Harsh gaur**
