@@ -523,7 +523,7 @@ app.get("/rentalCar/Ford", async (req, res) => {
 const start = async () => {
   await connect();
   app.listen(port, () => {
-    console.log(`listening to the port ${port}`);
+    console.log(`Server is running at ${port}`);
   });
 };
 
