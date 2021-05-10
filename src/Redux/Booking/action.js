@@ -25,7 +25,7 @@ const getCar = (payload) => {
 const getCarById = (payload) => (dispatch) => {
   //   dispatch(getCarRequest);
   axios
-    .get(`http://localhost:1234/rental/${payload}`)
+    .get(`https://revv-cars.herokuapp.com/rental/${payload}`)
     .then((res) => dispatch(getCar(res.data)))
     .catch((err) => {
       //   dispatch((err));

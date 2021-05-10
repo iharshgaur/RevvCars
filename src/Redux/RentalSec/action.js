@@ -29,7 +29,7 @@ const getCar = (payload) => (dispatch) => {
   console.log("payload", payload);
   dispatch(getCarRequest);
   axios
-    .get(`http://localhost:1234/rental`)
+    .get(`https://revv-cars.herokuapp.com/rental`)
     .then((res) => dispatch(getCarSuccess(res.data)))
     .catch((err) => {
       dispatch(getCarFailure(err));
@@ -39,7 +39,7 @@ const getCar = (payload) => (dispatch) => {
 const getCarHatch = (payload) => (dispatch) => {
   dispatch(getCarRequest);
   axios
-    .get("http://localhost:1234/rentalCar/hatch")
+    .get("https://revv-cars.herokuapp.com/rentalCar/hatch")
     .then((res) => dispatch(getCarSuccess(res.data)))
     .catch((err) => {
       dispatch(getCarFailure(err));
@@ -48,7 +48,7 @@ const getCarHatch = (payload) => (dispatch) => {
 const getCarSedan = (payload) => (dispatch) => {
   dispatch(getCarRequest);
   axios
-    .get("http://localhost:1234/rentalCar/sedan")
+    .get("https://revv-cars.herokuapp.com/rentalCar/sedan")
     .then((res) => dispatch(getCarSuccess(res.data)))
     .catch((err) => {
       dispatch(getCarFailure(err));
@@ -57,7 +57,7 @@ const getCarSedan = (payload) => (dispatch) => {
 const getCarSuv = (payload) => (dispatch) => {
   dispatch(getCarRequest);
   axios
-    .get("http://localhost:1234/rentalCar/suv")
+    .get("https://revv-cars.herokuapp.com/rentalCar/suv")
     .then((res) => dispatch(getCarSuccess(res.data)))
     .catch((err) => {
       dispatch(getCarFailure(err));
@@ -66,7 +66,7 @@ const getCarSuv = (payload) => (dispatch) => {
 const getCarMuv = (payload) => (dispatch) => {
   dispatch(getCarRequest);
   axios
-    .get("http://localhost:1234/rentalCar/muv")
+    .get("https://revv-cars.herokuapp.com/rentalCar/muv")
     .then((res) => dispatch(getCarSuccess(res.data)))
     .catch((err) => {
       dispatch(getCarFailure(err));
@@ -75,7 +75,7 @@ const getCarMuv = (payload) => (dispatch) => {
 const getCarHatchSedan = (payload) => (dispatch) => {
   dispatch(getCarRequest);
   axios
-    .get("http://localhost:1234/rentalCar/hatch&sedan")
+    .get("https://revv-cars.herokuapp.com/rentalCar/hatch&sedan")
     .then((res) => dispatch(getCarSuccess(res.data)))
     .catch((err) => {
       dispatch(getCarFailure(err));
@@ -84,7 +84,7 @@ const getCarHatchSedan = (payload) => (dispatch) => {
 const getCarHatchSuv = (payload) => (dispatch) => {
   dispatch(getCarRequest);
   axios
-    .get("http://localhost:1234/rentalCar/hatch&suv")
+    .get("https://revv-cars.herokuapp.com/rentalCar/hatch&suv")
     .then((res) => dispatch(getCarSuccess(res.data)))
     .catch((err) => {
       dispatch(getCarFailure(err));
@@ -93,7 +93,7 @@ const getCarHatchSuv = (payload) => (dispatch) => {
 const getCarSedanSuv = (payload) => (dispatch) => {
   dispatch(getCarRequest);
   axios
-    .get("http://localhost:1234/rentalCar/sedan&suv")
+    .get("https://revv-cars.herokuapp.com/rentalCar/sedan&suv")
     .then((res) => dispatch(getCarSuccess(res.data)))
     .catch((err) => {
       dispatch(getCarFailure(err));
@@ -103,7 +103,7 @@ const getCarSedanSuv = (payload) => (dispatch) => {
 const getCarPetrol = (payload) => (dispatch) => {
   dispatch(getCarRequest);
   axios
-    .get("http://localhost:1234/rentalCar/petrol")
+    .get("https://revv-cars.herokuapp.com/rentalCar/petrol")
     .then((res) => dispatch(getCarSuccess(res.data)))
     .catch((err) => {
       dispatch(getCarFailure(err));
@@ -112,7 +112,7 @@ const getCarPetrol = (payload) => (dispatch) => {
 const getCarDiesel = (payload) => (dispatch) => {
   dispatch(getCarRequest);
   axios
-    .get("http://localhost:1234/rentalCar/diesel")
+    .get("https://revv-cars.herokuapp.com/rentalCar/diesel")
     .then((res) => dispatch(getCarSuccess(res.data)))
     .catch((err) => {
       dispatch(getCarFailure(err));
@@ -121,7 +121,7 @@ const getCarDiesel = (payload) => (dispatch) => {
 const getCarAutomatic = (payload) => (dispatch) => {
   dispatch(getCarRequest);
   axios
-    .get("http://localhost:1234/rentalCar/automatic")
+    .get("https://revv-cars.herokuapp.com/rentalCar/automatic")
     .then((res) => dispatch(getCarSuccess(res.data)))
     .catch((err) => {
       dispatch(getCarFailure(err));
@@ -130,7 +130,7 @@ const getCarAutomatic = (payload) => (dispatch) => {
 const getCarManual = (payload) => (dispatch) => {
   dispatch(getCarRequest);
   axios
-    .get("http://localhost:1234/rentalCar/manual")
+    .get("https://revv-cars.herokuapp.com/rentalCar/manual")
     .then((res) => dispatch(getCarSuccess(res.data)))
     .catch((err) => {
       dispatch(getCarFailure(err));
@@ -139,7 +139,7 @@ const getCarManual = (payload) => (dispatch) => {
 const getCarFSeats = (payload) => (dispatch) => {
   dispatch(getCarRequest);
   axios
-    .get("http://localhost:1234/rentalCar/FSeat")
+    .get("https://revv-cars.herokuapp.com/rentalCar/FSeat")
     .then((res) => dispatch(getCarSuccess(res.data)))
     .catch((err) => {
       dispatch(getCarFailure(err));
@@ -148,7 +148,7 @@ const getCarFSeats = (payload) => (dispatch) => {
 const getCarSSeats = (payload) => (dispatch) => {
   dispatch(getCarRequest);
   axios
-    .get("http://localhost:1234/rentalCar/SSeat")
+    .get("https://revv-cars.herokuapp.com/rentalCar/SSeat")
     .then((res) => dispatch(getCarSuccess(res.data)))
     .catch((err) => {
       dispatch(getCarFailure(err));
@@ -157,7 +157,7 @@ const getCarSSeats = (payload) => (dispatch) => {
 const getCarBrand = (payload) => (dispatch) => {
   dispatch(getCarRequest);
   axios
-    .get("http://localhost:1234/rentalCar/Toyota")
+    .get("https://revv-cars.herokuapp.com/rentalCar/Toyota")
     .then((res) => dispatch(getCarSuccess(res.data)))
     .catch((err) => {
       dispatch(getCarFailure(err));
@@ -166,7 +166,7 @@ const getCarBrand = (payload) => (dispatch) => {
 const getCarBrandMaruti = (payload) => (dispatch) => {
   dispatch(getCarRequest);
   axios
-    .get("http://localhost:1234/rentalCar/Maruti")
+    .get("https://revv-cars.herokuapp.com/rentalCar/Maruti")
     .then((res) => dispatch(getCarSuccess(res.data)))
     .catch((err) => {
       dispatch(getCarFailure(err));
@@ -175,7 +175,7 @@ const getCarBrandMaruti = (payload) => (dispatch) => {
 const getCarBrandMahindara = (payload) => (dispatch) => {
   dispatch(getCarRequest);
   axios
-    .get("http://localhost:1234/rentalCar/Mahindara")
+    .get("https://revv-cars.herokuapp.com/rentalCar/Mahindara")
     .then((res) => dispatch(getCarSuccess(res.data)))
     .catch((err) => {
       dispatch(getCarFailure(err));
@@ -184,7 +184,7 @@ const getCarBrandMahindara = (payload) => (dispatch) => {
 const getCarBrandHyundai = (payload) => (dispatch) => {
   dispatch(getCarRequest);
   axios
-    .get("http://localhost:1234/rentalCar/Hyundai")
+    .get("https://revv-cars.herokuapp.com/rentalCar/Hyundai")
     .then((res) => dispatch(getCarSuccess(res.data)))
     .catch((err) => {
       dispatch(getCarFailure(err));
@@ -193,7 +193,7 @@ const getCarBrandHyundai = (payload) => (dispatch) => {
 const getCarBrandHonda = (payload) => (dispatch) => {
   dispatch(getCarRequest);
   axios
-    .get("http://localhost:1234/rentalCar/Honda")
+    .get("https://revv-cars.herokuapp.com/rentalCar/Honda")
     .then((res) => dispatch(getCarSuccess(res.data)))
     .catch((err) => {
       dispatch(getCarFailure(err));
