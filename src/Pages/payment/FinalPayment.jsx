@@ -50,19 +50,19 @@ export const FinalPayment = () => {
 
   React.useState(() => {
     return axios
-      .get(`http://localhost:1234/payment/${id}`)
+      .get(`https://revv-cars.herokuapp.com/payment/${id}`)
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }, []);
   React.useState(() => {
     return axios
-      .get(`http://localhost:1234/paymentRental/${id}`)
+      .get(`https://revv-cars.herokuapp.com/paymentRental/${id}`)
       .then((res) => setData3(res.data))
       .catch((err) => console.log(err));
   }, []);
   React.useState(() => {
     return axios
-      .get(`http://localhost:1234/users/${currentUser._id}`)
+      .get(`https://revv-cars.herokuapp.com/users/${currentUser._id}`)
       .then((res) => setData2(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -97,7 +97,7 @@ export const FinalPayment = () => {
       };
 
       axios.patch(
-        `http://localhost:1234/usersPatching/${currentUser._id}`,
+        `https://revv-cars.herokuapp.com/usersPatching/${currentUser._id}`,
         payload
       );
     }
@@ -110,7 +110,7 @@ export const FinalPayment = () => {
         cars_subscribed: currentUser.cars_subscribed,
       };
       axios.patch(
-        `http://localhost:1234/usersPatching/${currentUser._id}`,
+        `https://revv-cars.herokuapp.com/usersPatching/${currentUser._id}`,
         payload
       );
     }

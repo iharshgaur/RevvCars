@@ -10,7 +10,7 @@ export const SubscriptionPage = () => {
   let { location } = useParams();
 
   const [data, SetData] = React.useState(null);
-  const getUrl = `http://localhost:1234/subscription/${location}`;
+  const getUrl = `https://revv-cars.herokuapp.com/subscription/${location}`;
 
   const getData = (url) => {
     return axios
@@ -43,16 +43,24 @@ export const SubscriptionPage = () => {
     }
     if (price.price === "10000") {
       console.log("yes");
-      return getData(`http://localhost:1234/price/btw10-15/${location}`);
+      return getData(
+        `https://revv-cars.herokuapp.com/price/btw10-15/${location}`
+      );
     }
     if (price.price === "15000") {
-      return getData(`http://localhost:1234/price/btw15-20/${location}`);
+      return getData(
+        `https://revv-cars.herokuapp.com/price/btw15-20/${location}`
+      );
     }
     if (price.price === "20000") {
-      return getData(`http://localhost:1234/price/btw20-25/${location}`);
+      return getData(
+        `https://revv-cars.herokuapp.com/price/btw20-25/${location}`
+      );
     }
     if (price.price === "25000") {
-      return getData(`http://localhost:1234/price/btw25-30/${location}`);
+      return getData(
+        `https://revv-cars.herokuapp.com/price/btw25-30/${location}`
+      );
     }
   }, [price.price]);
 
@@ -82,22 +90,22 @@ export const SubscriptionPage = () => {
       getData(getUrl);
     }
     if (segment.HatchBack === true && segment.Sedan === true) {
-      getData(`http://localhost:1234/hatch&sedan/${location}`);
+      getData(`https://revv-cars.herokuapp.com/hatch&sedan/${location}`);
     }
     if (segment.HatchBack === true && segment.Suv === true) {
-      getData(`http://localhost:1234/hatch&suv/${location}`);
+      getData(`https://revv-cars.herokuapp.com/hatch&suv/${location}`);
     }
     if (segment.Sedan === true && segment.Suv === true) {
-      getData(`http://localhost:1234/sedan&suv/${location}`);
+      getData(`https://revv-cars.herokuapp.com/sedan&suv/${location}`);
     }
     if (segment.HatchBack === true) {
-      getData(`http://localhost:1234/hatch/${location}`);
+      getData(`https://revv-cars.herokuapp.com/hatch/${location}`);
     }
     if (segment.Sedan === true) {
-      getData(`http://localhost:1234/sedan/${location}`);
+      getData(`https://revv-cars.herokuapp.com/sedan/${location}`);
     }
     if (segment.Suv === true) {
-      getData(`http://localhost:1234/suv/${location}`);
+      getData(`https://revv-cars.herokuapp.com/suv/${location}`);
     }
   }, [segment]);
 
@@ -118,10 +126,10 @@ export const SubscriptionPage = () => {
       return getData(getUrl);
     }
     if (fuel.Petrol === true) {
-      return getData("http://localhost:1234/petrol");
+      return getData("https://revv-cars.herokuapp.com/petrol");
     }
     if (fuel.Diesel === true) {
-      return getData("http://localhost:1234/diesel");
+      return getData("https://revv-cars.herokuapp.com/diesel");
     }
   }, [fuel]);
 
@@ -142,10 +150,10 @@ export const SubscriptionPage = () => {
       return getData(getUrl);
     }
     if (trans.Auto === true) {
-      return getData(`http://localhost:1234/automatic/${location}`);
+      return getData(`https://revv-cars.herokuapp.com/automatic/${location}`);
     }
     if (trans.Manual === true) {
-      return getData(`http://localhost:1234/manual/${location}`);
+      return getData(`https://revv-cars.herokuapp.com/manual/${location}`);
     }
   }, [trans]);
 

@@ -23,7 +23,7 @@ export const Payment = () => {
 
   React.useState(() => {
     return axios
-      .get(`http://localhost:1234/subpay/${id}`)
+      .get(`https://revv-cars.herokuapp.com/subpay/${id}`)
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }, []);
